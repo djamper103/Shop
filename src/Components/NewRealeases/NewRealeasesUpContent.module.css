@@ -1,0 +1,86 @@
+.Content img{
+    position: absolute;
+    width: 1200px;
+    height: 600px;
+    left: 300px;
+    top: 250px;
+
+}
+.Content{
+    position: absolute;
+    width: 1680px;
+    height: 316px;
+    left: 0px;
+    top:60px;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.Nike270{
+    position: absolute;
+    width: 700px;
+    height: 86px;
+    left: 110px;
+    top: 280px;
+
+    font-family: TradeGothic LT CondEighteen;
+    font-size: 72px;
+    line-height: 86px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    color: #131212;
+}
+.TheNike{
+    position: absolute;
+    width: 370px;
+    height: 60px;
+    left: 116px;
+    top: 400px;
+
+    font-family: Helvetica Neue;
+    font-size: 20px;
+    line-height: 30px;
+    color: #131212;
+
+    opacity: 0.5;
+}
+.Mens{
+    position: absolute;
+    width: 200px;
+    height: 24px;
+    left: 116px;
+    top: 240px;
+
+    font-family: TradeGothic LT CondEighteen;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #131212;
+}
+.Size h3{
+    position: absolute;
+    left: 1480px;
+    top: 268px;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #131212;
+}
+.SelectSize{
+    width: 400px;
+    height: 140px;
+    background-color: #ffa600;
+    position: relative;
+    top: 320px;
+    left: 1480px;
+}

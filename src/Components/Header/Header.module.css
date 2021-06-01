@@ -1,0 +1,95 @@
+*{
+    transition: 0.2s;
+}
+
+.Header{
+    grid-area: Header;
+    background: white;
+    display:grid;
+    grid-template-areas:
+            'Logo HeaderMain Login ';
+    grid-template-columns: 2fr 7.5fr 3.5fr ;
+    margin: 0;
+    font-family: 'Popins', sans-serif;
+    padding: 0;
+    position: relative;
+
+
+}
+.Header a:hover {
+
+    color: #bf1650;
+    /*#ec5990;*/
+
+
+}
+
+.logo{
+    color: black;
+    grid-area: Logo;
+    position: relative;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 15px;
+    margin-left: 50px;
+
+
+
+}
+.logo a{
+
+    color: black;
+    text-decoration: none;
+
+}
+.HeaderMain{
+    grid-area: HeaderMain;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+}
+.HeaderMain a{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    text-indent: 5em;
+    font-size: 20px;
+    margin-top: 30px;
+
+
+}
+.Login a{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    text-indent: 2em;
+    font-size: 20px;
+    margin-top: 30px;
+
+
+
+}
+.cart{
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    letter-spacing: 2px;
+    text-indent: 2em;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 100px;
+
+}
+.cartLength{
+    display: inline-block;
+
+}
+
+
+
+

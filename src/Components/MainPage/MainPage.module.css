@@ -1,0 +1,8 @@
+.Maincontent{
+    grid-area: maincontent;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+
+}
+

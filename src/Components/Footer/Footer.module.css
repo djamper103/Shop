@@ -1,0 +1,139 @@
+*{
+    transition: 0.2s;
+}
+
+.Footer {
+    grid-area: footer;
+    margin: 0;
+    padding: 30px 180px;
+    font-family: 'Popins', sans-serif;
+    background: #22242A;
+    color: #fff;
+    position: relative;
+}
+
+.Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.AboutUs {
+    margin-right: 30px;
+    width: 40%;
+
+}
+
+.Container h3 {
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.AboutUs h3:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 77px;
+    height: 2px;
+    background: #f00;
+}
+
+.AboutUs p {
+    color: #999;
+}
+
+.Links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
+}
+
+.Links a {
+
+    display: inline-block;
+    font-size: 20px;
+    background: rgb(40, 39, 39);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+
+
+}
+
+.Links a:hover {
+
+    background: rgba(224, 11, 11, 0.9);
+
+
+}
+
+.QuickLinks h3:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 91px;
+    height: 2px;
+    background: #f00;
+}
+.QuickLinks {
+    position: relative;
+    width: 25%;
+}
+
+.QuickLinks   a{
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: flex;
+    list-style: none;
+
+
+}
+.QuickLinks  a:hover{
+    color: #fff;
+
+}
+.Contact{
+    position: relative;
+    width: 25%;
+
+
+}
+.Contact h3:before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: #f00;
+}
+.Contact  a{
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: flex;
+    list-style: none;
+
+
+}
+
+.Contact  a:hover{
+    color: #fff;
+
+}
+.CopyrightText{
+    width: 100%;
+    text-align: center;
+    color: #999;
+}
