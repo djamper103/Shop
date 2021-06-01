@@ -11,11 +11,11 @@ const Header = ({cart,priceCount,loading}) => {
 
         <div className={style.Header}>
             <div className={style.logo}>
-                <NavLink to={'/Home'}> Logo</NavLink>
+                <NavLink to={'/'}> Logo</NavLink>
             </div>
 
             <div className={style.HeaderMain}>
-                <NavLink to='/Home'>Home</NavLink>
+                <NavLink to='/'>Home</NavLink>
                 <NavLink to='/NewRealeases'>New Releases</NavLink>
                 <NavLink to='/Man'>Man</NavLink>
                 <NavLink to='/Woman'>Woman</NavLink>

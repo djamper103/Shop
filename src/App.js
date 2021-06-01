@@ -19,6 +19,7 @@ import SignupContainer from "./Components/Login/SignupContainer";
 import ForgotPasswordContainer from "./Components/Login/ForgotPasswordContainer";
 import DashboardContainer from './Components/Login/DashNoardContainer'
 import HeaderContainer from "./Components/Header/HeaderContainer";
+import Product from "./Components/MainPage/Content/Product/Product"
 
 
 
@@ -90,10 +91,11 @@ function App({loading,}) {
             <div className='Content'>
                 <HeaderContainer cart={cart.length} priceCount={priceCount}/>
                 <div className='Maincontent'>
-                    <Route exact path='/Home' render={() => <MainPage state={state} addToCart={addToCart}/>}/>
+                    <Route exact path='/' render={() => <MainPage state={state} addToCart={addToCart}/>}/>
                     <Route exact path='/Man' render={() => <ManMain/>}/>
                     <Route exact path='/Woman' render={() => <WomanMain/>}/>
                     <Route exact path='/NewRealeases' render={() => <NewRealeases/>}/>
+                    <Route exact path='/Product' render={() => <Product/>}/>
                     <Container
                         className="d-flex align-items-center justify-content-center"
                         style={{minHeight: "100vh"}}>
