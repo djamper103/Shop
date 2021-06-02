@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import style from "./Sale.module.css";
+import { NavLink } from "react-router-dom";
 export default function Sale({addToCart,}) {
 
     const [state] = useState([
@@ -41,8 +42,10 @@ export default function Sale({addToCart,}) {
         <div className={style.sale}>
                 {state.map((product,idx) => (
                     <div className={style.component} key={idx}>
+                        <NavLink to={`/Product/${product.id}`}>
                     <img src={product.image} alt={product.product} title={product.product}/>
                         <div className={style.product}>{product.product}</div>
+                        </NavLink>
                         <div className={style.size}>{product.size}</div>
                         <div className={style.price}>{product.salePrice}<p>{product.price}</p></div>
                     <button onClick={()=>addToCart(product)}>Add to Cart</button>

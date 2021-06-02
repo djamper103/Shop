@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import style from "./NewReleases.module.css";
 
 
@@ -16,14 +16,13 @@ const  NewReleases=({state,addToCart,removeFromCart})=> {
                         state.map(product=>
                             <div key={product.id}>
                                 <div className={style.component} key={product.id} >
-                                    <NavLink to={`/Product${product.id}`}>
-                                    <img src={product.thumbnailrl} alt=''/>
+                                    <NavLink to={`/Product/${product.id}`}>
+                                    <img src={product.thumbnailUrl} alt=''/>
                                     <div className={style.product}>Сумка через плечо Staff navy</div>
+                                    </NavLink>
                                     <div className={style.size}>Универсальный</div>
                                     <div className={style.price}>280 грн.</div>
-                                    </NavLink>
                                     <button onClick={()=>addToCart(product)}>Add to Cart</button>
-
                                 </div>
                             </div>
                         )

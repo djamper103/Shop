@@ -10,11 +10,11 @@ import AppContainer from "./AppContainer";
 
 ReactDOM.render(
     <React.StrictMode>
-        <HashRouter >
+        <BrowserRouter >
             <Provider store={store}>
                 <AppContainer />
             </Provider>
-        </HashRouter>
+        </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );

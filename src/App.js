@@ -95,7 +95,7 @@ function App({loading,}) {
                     <Route exact path='/Man' render={() => <ManMain/>}/>
                     <Route exact path='/Woman' render={() => <WomanMain/>}/>
                     <Route exact path='/NewRealeases' render={() => <NewRealeases/>}/>
-                    <Route exact path='/Product' render={() => <Product/>}/>
+                    <Route exact path='/Product/:id' render={() => <Product state={state}/>}/>
                     <Container
                         className="d-flex align-items-center justify-content-center"
                         style={{minHeight: "100vh"}}>
