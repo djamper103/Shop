@@ -30,19 +30,20 @@ function App({loading,}) {
     const [totalCount, setTotalCount] = useState(0)
     const [cart, setCart] = useState([])
     const [priceCount, setPriceCount] = useState(0)
+  
 
-    const allPrice=(item)=>{
-        const nums = item.id;
-        const price = nums.reduce(function(result, num) {
-            return result + num;
-        }, 0);
-        setPriceCount({priceCount:price
-            
-        })
-    }
+    useEffect(()=>{
+        if(cart.length>0){
+            const res = cart.reduce((prev, product) => {
+                return prev + parseInt(product.price)
+            },0)
+            setPriceCount(res)
+        }
+    },[cart])
+
 
     const addToCart = (product,) => {
-        allPrice(product)
+    
         setCart([...cart, {...product}])
 
     }
@@ -89,9 +90,11 @@ function App({loading,}) {
     return (
         <AuthProvider>
             <div className='Content'>
-                <HeaderContainer cart={cart.length} priceCount={priceCount}/>
+                <HeaderContainer cart={cart.length}
+                 priceCount={priceCount} 
+                 />
                 <div className='Maincontent'>
-                    <Route exact path='/' render={() => <MainPage state={state} addToCart={addToCart}/>}/>
+                    <Route exact path='/Shop' render={() => <MainPage state={state} addToCart={addToCart}/>}/>
                     <Route exact path='/Man' render={() => <ManMain/>}/>
                     <Route exact path='/Woman' render={() => <WomanMain/>}/>
                     <Route exact path='/NewRealeases' render={() => <NewRealeases/>}/>
