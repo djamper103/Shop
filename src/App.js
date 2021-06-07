@@ -30,6 +30,7 @@ function App({loading,}) {
     const [totalCount, setTotalCount] = useState(0)
     const [cart, setCart] = useState([])
     const [priceCount, setPriceCount] = useState(0)
+    const [cartCount, setCartCount] = useState(0)
   
 
     useEffect(()=>{
@@ -51,9 +52,9 @@ function App({loading,}) {
 
     useEffect(() => {
         if (fetching) {
-            // fetch('http://localhost:3000/db.json')
+
             // axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=16&_page=${currentPage}`)
-            axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=16&_page=${currentPage}`)
+                axios.get('http://localhost:3000/shopItem?_limit=5&_page=${currentPage}')    
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)
@@ -62,6 +63,7 @@ function App({loading,}) {
                 .finally(() => setFetching(false))
 
         }
+        
 
     }, [fetching])
 

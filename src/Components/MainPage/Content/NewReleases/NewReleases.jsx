@@ -4,7 +4,7 @@ import style from "./NewReleases.module.css";
 
 
 
-const  NewReleases=({state,addToCart,removeFromCart})=> {
+const  NewReleases=({state,addToCart,})=> {
 
 
 
@@ -12,21 +12,18 @@ const  NewReleases=({state,addToCart,removeFromCart})=> {
         <div className={style.main}>
             <h3>New Releases</h3>
             <div className={style.sale}>
-                {
-                        state.map(product=>
-                            <div key={product.id}>
-                                <div className={style.component} key={product.id} >
-                                    <NavLink to={`/Product/${product.id}`}>
-                                    <img src={product.thumbnailUrl} alt=''/>
-                                    <div className={style.product}>Сумка через плечо Staff navy</div>
-                                    </NavLink>
-                                    <div className={style.size}>Универсальный</div>
-                                    <div className={style.price}>280 грн.</div>
-                                    <button onClick={()=>addToCart(product)}>Add to Cart</button>
-                                </div>
-                            </div>
-                        )
-                    }
+            {state.map((product) => (
+                    <div className={style.component} key={product.id}>
+                        <NavLink to={`/Product/${product.id}`}>
+                    <img src={product.image} alt={product.id} title={product.id}/>
+                        <div className={style.product}>{product.id}</div>
+                        </NavLink>
+                        <div className={style.size}>{product.size}</div>
+                        <div className={style.price}>{product.salePrice} грн.<p>{product.price} грн.</p></div>
+                    <button onClick={()=>addToCart(product)}>Add to Cart</button>
+                    </div>
+                    ))
+                }
             </div>
 
         </div>
