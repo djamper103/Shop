@@ -2,7 +2,8 @@ import React,{useEffect, useState} from "react"
 import {useParams} from "react-router-dom"
 import style from "./Product.module.css"
 
-export default function Product(state){
+export default function Product({state,addToCart}){
+    debugger
 
     const [products,setProoducts]=useState([])
     const {id}=useParams()
@@ -10,7 +11,7 @@ export default function Product(state){
 
     useEffect(()=>{
     
-        const product=state.state.filter(item=>{
+        const product=state.filter(item=>{
             if (item.id===id){
                 return item.id
             }
@@ -30,7 +31,7 @@ export default function Product(state){
                         <div className={style.product}>{product.id}</div>
                         <div className={style.size}>{product.size}</div>
                         <div className={style.price}>{product.salePrice} грн.<p>{product.price} грн.</p></div>
-                    {/* <button onClick={()=>addToCart(product)}>Add to Cart</button> */}
+                    <button onClick={()=>addToCart(product)}>Add to Cart</button>
                     </div>
                     ))
                 }

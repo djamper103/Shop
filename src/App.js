@@ -42,18 +42,14 @@ function App({loading,}) {
         }
     },[cart])
 
-
     const addToCart = (product,) => {
     
         setCart([...cart, {...product}])
 
     }
 
-
     useEffect(() => {
         if (fetching) {
-
-            // axios.get(`https://jsonplaceholder.typicode.com/photos?_limit=16&_page=${currentPage}`)
                 axios.get('http://localhost:3000/shopItem?_limit=5&_page=${currentPage}')    
                 .then(response => {
                     setState([...state, ...response.data])
@@ -61,10 +57,7 @@ function App({loading,}) {
                     setTotalCount(response.headers['x-total-count'])
                 })
                 .finally(() => setFetching(false))
-
         }
-        
-
     }, [fetching])
 
     useEffect(() => {
@@ -75,6 +68,7 @@ function App({loading,}) {
             document.removeEventListener('scroll', scrollHandler)
         }
     }, [])
+
     const scrollHandler = (e) => {
         if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
             setFetching(true)
@@ -89,18 +83,18 @@ function App({loading,}) {
         }
     }
 
+
     return (
         <AuthProvider>
             <div className='Content'>
-                <HeaderContainer cart={cart.length}
-                 priceCount={priceCount} 
+                <HeaderContainer cart={cart.length} priceCount={priceCount} 
                  />
                 <div className='Maincontent'>
                     <Route exact path='/Shop' render={() => <MainPage state={state} addToCart={addToCart}/>}/>
-                    <Route exact path='/Man' render={() => <ManMain/>}/>
+                    <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart}/>}/>
                     <Route exact path='/Woman' render={() => <WomanMain/>}/>
                     <Route exact path='/NewRealeases' render={() => <NewRealeases/>}/>
-                    <Route exact path='/Product/:id' render={() => <Product state={state}/>}/>
+                    <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart}/>}/>
                     <Container
                         className="d-flex align-items-center justify-content-center"
                         style={{minHeight: "100vh"}}>
