@@ -39,13 +39,49 @@ function App({loading,}) {
                 return prev + parseInt(product.price)
             },0)
             setPriceCount(res)
+        }else{
+            setPriceCount(0)
         }
     },[cart])
 
-    const addToCart = (product,) => {
-    
-        setCart([...cart, {...product}])
+    const addToCart = (product) => {
+        const check = cart.every(item =>{
+            return item.id !== product.id
+        })
+        if(check){
+            return setCart([...cart, {...product}])
+           
+        }else{
+            alert("The product has been added to cart")
+        
+        }
+        
+ 
+    }
 
+    const removeFromCart = (productToRemove) => {
+        setCart(cart.filter(product => product !== productToRemove))
+    }
+
+    const increaseCart=(product)=>{
+        cart.forEach(item=>{
+            if(item.id===product.id){
+                item.count === 1 ? item.count = 1 : item.count +=1
+                
+            }
+            setCart(cart)
+        })
+
+    }
+    
+    const decreaseCart=(product)=>{
+        cart.forEach(item=>{
+            if(item.id===product.id){
+                item.count === 1 ? item.count = 1 : item.count -=1
+            }
+            return setCart(cart)
+        })
+        
     }
 
     useEffect(() => {
@@ -76,12 +112,7 @@ function App({loading,}) {
 
     }
 
-    const removeFromCart = (productToRemove) => {
-        setCart(cart.filter(product => product !== productToRemove))
-        if (cart.length === 0) {
 
-        }
-    }
 
 
     return (
@@ -107,7 +138,9 @@ function App({loading,}) {
                                 <Route exact path='/Cart'
                                        render={() =>loading?
                                         <Redirect to="/login"/>:
-                                           <Cart cart={cart} removeFromCart={removeFromCart} addToCart={addToCart}/>}/>
+                                           <Cart cart={cart} removeFromCart={removeFromCart}
+                                           increaseCart={increaseCart} decreaseCart={decreaseCart}
+                                           />}/>
                                 <Route path="/signup" component={SignupContainer} />
                                 <Route path="/Login" component={LoginContainer} />
 

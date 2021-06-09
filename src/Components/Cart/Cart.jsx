@@ -3,8 +3,8 @@ import cartImg from '../../Common/Image/cart.svg'
 import style from './Cart.module.css'
 
 
-export default function Cart ({priceCount,cart,removeFromCart,addToCart}) {
-debugger
+export default function Cart ({cart,removeFromCart,increaseCart, decreaseCart}) {
+
     return(
         <div className={style.cart}>
             <h3>Корзина</h3>
@@ -17,8 +17,10 @@ debugger
                                 <div className={style.product}>{product.id}</div>
                                 <div className={style.size}>{product.title}</div>
                                 <div className={style.price}>{product.id}</div>
-                                <button onClick={()=>removeFromCart(product)} >Remove</button>
-                                <button onClick={()=>addToCart(product)}>Add to Cart</button>
+                                <button onClick={()=>decreaseCart(product)} >-</button>
+                                <span>{product.count}</span>
+                                <button onClick={()=>increaseCart(product)}>+</button>
+                                <button onClick={()=>removeFromCart(product)}>X</button>
                             </div>
                         </div>
                 )
