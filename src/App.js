@@ -30,7 +30,7 @@ function App({loading,}) {
     const [totalCount, setTotalCount] = useState(0)
     const [cart, setCart] = useState([])
     const [priceCount, setPriceCount] = useState(0)
-    const [cartCount, setCartCount] = useState(0)
+   
   
 
     useEffect(()=>{
@@ -39,50 +39,42 @@ function App({loading,}) {
                 return prev + parseInt(product.price)
             },0)
             setPriceCount(res)
+            
+           
         }else{
             setPriceCount(0)
         }
     },[cart])
+
+
 
     const addToCart = (product) => {
         const check = cart.every(item =>{
             return item.id !== product.id
         })
         if(check){
-            return setCart([...cart, {...product}])
-           
+           setCart([...cart, {...product}])
         }else{
             alert("The product has been added to cart")
         
         }
-        
- 
     }
 
     const removeFromCart = (productToRemove) => {
         setCart(cart.filter(product => product !== productToRemove))
     }
 
-    const increaseCart=(product)=>{
-        cart.forEach(item=>{
-            if(item.id===product.id){
-                item.count === 1 ? item.count = 1 : item.count +=1
-                
-            }
-            setCart(cart)
-        })
+    const increaseCart = (product) =>{
+            setCart(cart.map(item =>  item.id === product.id ?
+                {...item, count: item.count +1,price:item.price*(item.count+1)}
+                :{...item, count: 1}))       
+        }
 
-    }
-    
-    const decreaseCart=(product)=>{
-        cart.forEach(item=>{
-            if(item.id===product.id){
-                item.count === 1 ? item.count = 1 : item.count -=1
-            }
-            return setCart(cart)
-        })
-        
-    }
+    const decreaseCart = (product) =>{
+            setCart(cart.map(item =>  item.id === product.id ?item.count>1?
+                 {...item, count: item.count -1,price:item.price/item.count}
+                 :{...item, count: 1}:{...item, count: 1}))  
+        }
 
     useEffect(() => {
         if (fetching) {
