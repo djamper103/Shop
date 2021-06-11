@@ -1,19 +1,46 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import cartImg from '../../Common/Image/cart.svg'
 import style from './Cart.module.css'
+import StripeCheckout from 'react-stripe-checkout';
+import axios from "axios"
+import { toast } from "react-toastify";
 
 
-export default function Cart ({cart,removeFromCart,increaseCart, decreaseCart}) {
+
+export default function Cart ({cart,removeFromCart,increaseCart, decreaseCart,priceCount}) {
+
+    const handleToken= async (token)=>{
+        
+        const response = await axios.post(
+            "https://http://localhost:3002",
+            { token}
+          );
+          const { status } = response.data;
+          console.log("Response:", response.data);
+          if (status === "success") {
+            alert("Success! Check email for details", { type: "success" });
+          } else {
+            alert("Something went wrong", { type: "error" });
+          }
+        }
+
+    const [productName,setProductName]=useState([])
+
+    useEffect(()=>{
+        setProductName(cart.map(item=>item.id))
+    },[cart])
+
+    
 
     return(
-        <div className={style.cart}>
+        <div className={style.container}>
             <h3>Корзина</h3>
             <img src={cartImg}/>
             <div className={style.sale}>
                 {cart.map(product=>
                         <div key={product.id}>
                             <div className={style.component} key={product.id} >
-                                <img src={product.thumbnailUrl} alt=''/>
+                                <img src={product.image} alt=''/>
                                 <div className={style.product}>{product.id}</div>
                                 <div className={style.size}>{product.title}</div>
                                 <div className={style.price}>{product.id}</div>
@@ -27,7 +54,15 @@ export default function Cart ({cart,removeFromCart,increaseCart, decreaseCart}) 
                 }
             </div>
             <p>В корзине нет товаров</p>
-            <button>Перейти в каталог</button>
+        
+            <StripeCheckout
+            stripeKey="pk_test_51J12GCE9ORF0ZMb0UFA5Q0mkv6CRJvWLTA4jmDp2stqCIsvZWb0oUgdi3Y9tf7IV31RRkFWirBy24V9rcoEXZmp0008sZHH7AK"
+            token={handleToken}
+            billingAddress
+            shippingAddress
+            amount={priceCount}
+            name={productName}
+            />
         </div>
     )
 

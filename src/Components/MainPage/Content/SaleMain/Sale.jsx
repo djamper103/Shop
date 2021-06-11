@@ -9,16 +9,18 @@ export default function Sale({addToCart,}) {
             size: '40 41 41 43 44 45',
             price: '1150',
             salePrice: '990',
-            image: "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/86/c4fee785e5e94fe4b5b5205974f9b9e2.jpeg",
-            count: 1
+            image: "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
+            count: 1,
+            type:"shoes"
         },
         {
             id: 'Штаны Staff cargo kil brown',
             size: 'MXL',
             price: '810',
             salePrice: '570',
-            image: "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/86/c4fee785e5e94fe4b5b5205974f9b9e2.jpeg",
-            count: 1
+            image: "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/91/c09a552a72aa4f3bbc4db2dec836503a.jpeg",
+            count: 1,
+            type:"pants"
         },
         {
             id: 'Поло Staff graphite &amp; white',
@@ -26,7 +28,8 @@ export default function Sale({addToCart,}) {
             price: '450',
             salePrice: '340',
             image: "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
-            count: 1
+            count: 1,
+            type:"polo"
         },
         {
             id: 'Сумка через плечо Staff navy',
@@ -34,7 +37,8 @@ export default function Sale({addToCart,}) {
             price: '280',
             salePrice: '400',
             image: "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-            count: 1
+            count: 1,
+            type:"bag"
         },
 
 

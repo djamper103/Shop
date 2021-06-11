@@ -67,13 +67,13 @@ function App({loading,}) {
     const increaseCart = (product) =>{
             setCart(cart.map(item =>  item.id === product.id ?
                 {...item, count: item.count +1,price:item.price*(item.count+1)}
-                :{...item, count: 1}))       
+                :item))       
         }
 
     const decreaseCart = (product) =>{
             setCart(cart.map(item =>  item.id === product.id ?item.count>1?
                  {...item, count: item.count -1,price:item.price/item.count}
-                 :{...item, count: 1}:{...item, count: 1}))  
+                 :item:item))  
         }
 
     useEffect(() => {
