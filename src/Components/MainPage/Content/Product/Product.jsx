@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom"
 import style from "./Product.module.css"
 
 export default function Product({state,addToCart}){
-    debugger
+    
 
     const [products,setProoducts]=useState([])
     const {id}=useParams()
@@ -18,7 +18,7 @@ export default function Product({state,addToCart}){
         
         })
         setProoducts(product)
-        debugger
+       
 
     },[state])
     

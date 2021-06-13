@@ -1,13 +1,31 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import style from "./NewReleases.module.css";
+import _ from "lodash"
 
 
 
 const  NewReleases=({state,addToCart,})=> {
     const[typeItem,setTypeItem]=useState("all")
-    const[priceItem,setPriceItem]=useState("all")
-    
+    const[priceItem,setPriceItem]=useState(["all"])
+    const[productItem,setProductItem]=useState([])
+    const[productMostPriceItem,setProductMostPriceItem]=useState([])
+    const[productLowPriceItem,setProductLowPriceItem]=useState([])
+
+    useEffect(() => {
+        setProductItem(state)
+
+    }, [state])
+
+    useEffect(() => {
+        setProductMostPriceItem(productItem.sort((a,b)=>b.price-a.price))
+
+    }, [priceItem,productItem])
+
+    useEffect(() => {
+        setProductLowPriceItem(productItem.sort((a,b)=>a.price-b.price))
+
+    }, [priceItem,productItem])
 
 
     return (
@@ -26,22 +44,28 @@ const  NewReleases=({state,addToCart,})=> {
                 <option value="lowPrise">Low Prise</option>
             </select>
             <div className={style.sale}>
-            {   state.filter(product=>{
-                if(priceItem==="mostPrise"){
-                    return state.sort((a,b)=>b.price-a.price)
-                }else if (priceItem==="lowPrise"){
-                    return state.sort((a,b)=>a.price-b.price)
-                }else if (priceItem==="all"){
-                    return product
-                }
-            })
-                .filter(product=>{
-                if(product.type===typeItem){
-                    return product
-                }else if (typeItem==="all"){
-                    return state
-                }
-                }).map((product) => (
+
+                {  
+                    productItem.filter(product=>{
+                        if (priceItem==="mostPrise"){
+                            debugger
+                            return productMostPriceItem                 
+                        }else if (product==="lowPrise"){
+                            debugger
+                                return productLowPriceItem
+                            }    
+                        else{
+                            
+                            return productItem
+                        }
+                        
+                    }).filter((product)=>{
+                        if(product.type===typeItem){
+                            return product
+                        }else if (typeItem==="all"){
+                            return state
+                        }
+                    }).map((product) => (
                     <div className={style.component} key={product.id}>
                         <NavLink to={`/Product/${product.id}`}>
                     <img src={product.image} alt={product.id} title={product.id}/>
