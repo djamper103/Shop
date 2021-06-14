@@ -78,7 +78,7 @@ function App({loading,}) {
 
     useEffect(() => {
         if (fetching) {
-                axios.get('http://localhost:3000/shopItem?_limit=5&_page=${currentPage}')    
+                axios.get('http://localhost:3000/shopItem?_limit=4&_page=${currentPage}')    
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)

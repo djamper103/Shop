@@ -1,10 +1,36 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import { NavLink } from "react-router-dom";
 import style from "./NewReleases.module.css";
 
 
 
 const  NewReleases=({state,addToCart,})=> {
+    const[typeItem,setTypeItem]=useState("all")
+    const[priceItem,setPriceItem]=useState(["all"])
+    const[productItem,setProductItem]=useState([])
+
+  useEffect(() => {
+    applyFilters();
+  }, [typeItem, priceItem,state]);
+
+  function applyFilters() {
+    const newProducts = [...state]
+      .sort((a, b) => {
+        if (priceItem === "mostPrise"){
+            debugger
+            return  b.price-a.price
+        }else if 
+          (priceItem === "lowPrise"){
+          return a.price-b.price
+        }else{
+            return 0
+        }
+      })
+      .filter((product) =>
+      typeItem === "all" ? product : product.type === typeItem
+      );
+      setProductItem(newProducts);
+  }
 
 
 
@@ -12,7 +38,19 @@ const  NewReleases=({state,addToCart,})=> {
         <div className={style.main}>
             <h3>New Releases</h3>
             <div className={style.sale}>
-            {state.map((product) => (
+            <select name="select" onChange={event=>{setTypeItem(event.target.value)}}>
+                <option value="all" selected>All</option>
+                <option value="shoes" >Shoes</option>
+                <option value="pants">Pants</option>
+                <option value="polo" >Polo</option>
+                <option value="bag">Bag</option>
+            </select>
+            <select name="select" onChange={event=>{setPriceItem(event.target.value)}}>
+                <option value="all" selected>All</option>
+                <option value="mostPrise" >Most Prise</option>
+                <option value="lowPrise">Low Prise</option>
+            </select>
+            {productItem.map((product) => (
                     <div className={style.component} key={product.id}>
                         <NavLink to={`/Product/${product.id}`}>
                     <img src={product.image} alt={product.id} title={product.id}/>

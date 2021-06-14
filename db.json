@@ -1,14 +1,5 @@
 {
   "shopItem": [
-    {
-      "id": "Кросовки Staff white&red",
-      "size": "40 41 41 43 44 45",
-      "price": "1150",
-      "salePrice": "990",
-      "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
-      "count": "1",
-      "type":"shoes"
-  },
   {
       "id": "Штаны Staff cargo kil brown",
       "size": "MXL",
@@ -36,6 +27,15 @@
       "count": "1",
       "type":"bag"
   },
+  {
+    "id": "Кросовки Staff white&red",
+    "size": "40 41 41 43 44 45",
+    "price": "1150",
+    "salePrice": "990",
+    "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
+    "count": "1",
+    "type":"shoes"
+},
   {
     "id": "Кросовки Staff white&red",
     "size": "40 41 41 43 44 45",
