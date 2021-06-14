@@ -10,10 +10,6 @@ const  NewReleases=({state,addToCart,})=> {
     const[productItem,setProductItem]=useState([])
 
   useEffect(() => {
-    applyFilters();
-  }, [typeItem, priceItem,state]);
-
-  function applyFilters() {
     const newProducts = [...state]
       .sort((a, b) => {
         if (priceItem === "mostPrise"){
@@ -30,8 +26,7 @@ const  NewReleases=({state,addToCart,})=> {
       typeItem === "all" ? product : product.type === typeItem
       );
       setProductItem(newProducts);
-  }
-
+  }, [typeItem, priceItem,state]);
 
 
     return (
