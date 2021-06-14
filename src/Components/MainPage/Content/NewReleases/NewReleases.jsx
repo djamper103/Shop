@@ -13,17 +13,17 @@ const  NewReleases=({state,addToCart,})=> {
     const[productLowPriceItem,setProductLowPriceItem]=useState([])
 
     useEffect(() => {
-        setProductItem(state)
+        setProductItem(()=>state)
 
     }, [state])
 
     useEffect(() => {
-        setProductMostPriceItem(productItem.sort((a,b)=>b.price-a.price))
+        setProductMostPriceItem(()=>productItem.sort((a,b)=>b.price-a.price))
 
     }, [priceItem,productItem])
 
     useEffect(() => {
-        setProductLowPriceItem(productItem.sort((a,b)=>a.price-b.price))
+        setProductLowPriceItem(()=>productItem.sort((a,b)=>a.price-b.price))
 
     }, [priceItem,productItem])
 
@@ -50,7 +50,7 @@ const  NewReleases=({state,addToCart,})=> {
                         if (priceItem==="mostPrise"){
                             debugger
                             return productMostPriceItem                 
-                        }else if (product==="lowPrise"){
+                        }else if (priceItem==="lowPrise"){
                             debugger
                                 return productLowPriceItem
                             }    
