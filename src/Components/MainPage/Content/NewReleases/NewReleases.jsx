@@ -32,7 +32,6 @@ const  NewReleases=({state,addToCart,})=> {
     return (
         <div className={style.main}>
             <h3>New Releases</h3>
-            <div className={style.sale}>
             <select name="select" onChange={event=>{setTypeItem(event.target.value)}}>
                 <option value="all" selected>All</option>
                 <option value="shoes" >Shoes</option>
@@ -45,6 +44,7 @@ const  NewReleases=({state,addToCart,})=> {
                 <option value="mostPrise" >Most Prise</option>
                 <option value="lowPrise">Low Prise</option>
             </select>
+            <div className={style.sale}>
             {productItem.map((product) => (
                     <div className={style.component} key={product.id}>
                         <NavLink to={`/Product/${product.id}`}>
