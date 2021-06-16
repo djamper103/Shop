@@ -22,7 +22,7 @@ const Login_reducer = (state = intialState, action) => {
 export default Login_reducer;
 
 export const Loading = (item) => {
-    debugger
+    
     return {
         type: LOADING,
         item
