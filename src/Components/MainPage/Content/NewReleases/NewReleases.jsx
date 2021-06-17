@@ -9,23 +9,25 @@ const  NewReleases=({state,addToCart,})=> {
     const[typeItem,setTypeItem]=useState("all")
     const[priceItem,setPriceItem]=useState(["all"])
     const[productItem,setProductItem]=useState([])
-    const[productMostPriceItem,setProductMostPriceItem]=useState([])
-    const[productLowPriceItem,setProductLowPriceItem]=useState([])
 
-    useEffect(() => {
-        setProductItem(()=>state)
-
-    }, [state])
-
-    useEffect(() => {
-        setProductMostPriceItem(()=>productItem.sort((a,b)=>b.price-a.price))
-
-    }, [priceItem,productItem])
-
-    useEffect(() => {
-        setProductLowPriceItem(()=>productItem.sort((a,b)=>a.price-b.price))
-
-    }, [priceItem,productItem])
+  useEffect(() => {
+    const newProducts = [...state]
+      .sort((a, b) => {
+        if (priceItem === "mostPrise"){
+            debugger
+            return  b.price-a.price
+        }else if 
+          (priceItem === "lowPrise"){
+          return a.price-b.price
+        }else{
+            return 0
+        }
+      })
+      .filter((product) =>
+      typeItem === "all" ? product : product.type === typeItem
+      );
+      setProductItem(newProducts);
+  }, [typeItem, priceItem,state]);
 
 
     return (
@@ -44,28 +46,7 @@ const  NewReleases=({state,addToCart,})=> {
                 <option value="lowPrise">Low Prise</option>
             </select>
             <div className={style.sale}>
-
-                {  
-                    productItem.filter(product=>{
-                        if (priceItem==="mostPrise"){
-                            debugger
-                            return productMostPriceItem                 
-                        }else if (priceItem==="lowPrise"){
-                            debugger
-                                return productLowPriceItem
-                            }    
-                        else{
-                            
-                            return productItem
-                        }
-                        
-                    }).filter((product)=>{
-                        if(product.type===typeItem){
-                            return product
-                        }else if (typeItem==="all"){
-                            return state
-                        }
-                    }).map((product) => (
+            {productItem.map((product) => (
                     <div className={style.component} key={product.id}>
                         <NavLink to={`/Product/${product.id}`}>
                     <img src={product.image} alt={product.id} title={product.id}/>
