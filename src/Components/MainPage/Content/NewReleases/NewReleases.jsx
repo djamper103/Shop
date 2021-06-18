@@ -9,6 +9,7 @@ const  NewReleases=({state,addToCart,})=> {
     const[typeItem,setTypeItem]=useState("all")
     const[priceItem,setPriceItem]=useState(["all"])
     const[productItem,setProductItem]=useState([])
+    const[searchItem,setSearchItem]=useState("")
 
   useEffect(() => {
     const newProducts = [...state]
@@ -25,9 +26,12 @@ const  NewReleases=({state,addToCart,})=> {
       })
       .filter((product) =>
       typeItem === "all" ? product : product.type === typeItem
+      )
+      .filter((product) =>
+      product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
       );
       setProductItem(newProducts);
-  }, [typeItem, priceItem,state]);
+  }, [typeItem,priceItem,state,searchItem]);
 
 
     return (
@@ -45,6 +49,7 @@ const  NewReleases=({state,addToCart,})=> {
                 <option value="mostPrise" >Most Prise</option>
                 <option value="lowPrise">Low Prise</option>
             </select>
+            <input placeholder="Search..." onChange={event=>{setSearchItem(event.target.value.replace(/\s+/g, ''))}}/>
             <div className={style.sale}>
             {productItem.map((product) => (
                     <div className={style.component} key={product.id}>

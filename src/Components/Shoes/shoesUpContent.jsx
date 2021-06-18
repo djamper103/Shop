@@ -1,8 +1,9 @@
 import React from 'react'
-import style from './NewRealeasesUpContent.module.css'
+import style from './shoesUpContent.module.css'
 import nike from "../../Common/Image/nike.jpg";
 
-const NewRealeasesUpContent=()=>{
+const ShoesUpContent=()=>{
+    debugger
     return(
 
         <div className={style.Content}>
@@ -20,4 +21,4 @@ const NewRealeasesUpContent=()=>{
         </div>
     )
 }
-export default NewRealeasesUpContent;
+export default ShoesUpContent;

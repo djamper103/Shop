@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route,Redirect} from "react-router-dom";
 import ManMain from "./Components/Man/ManMain";
 import WomanMain from "./Components/Woman/WomanMain";
-import NewRealeases from "./Components/NewRealeases/NewRealeases";
 import axios from 'axios'
 import Cart from "./Components/Cart/Cart";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,6 +19,7 @@ import ForgotPasswordContainer from "./Components/Login/ForgotPasswordContainer"
 import DashboardContainer from './Components/Login/DashNoardContainer'
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import Product from "./Components/MainPage/Content/Product/Product"
+import Shoes from "./Components/Shoes/Shoes"
 
 
 
@@ -115,8 +115,8 @@ function App({loading,}) {
                 <div className='Maincontent'>
                     <Route exact path='/Shop' render={() => <MainPage state={state} addToCart={addToCart}/>}/>
                     <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart}/>}/>
-                    <Route exact path='/Woman' render={() => <WomanMain/>}/>
-                    <Route exact path='/NewRealeases' render={() => <NewRealeases/>}/>
+                    <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart}/>}/>
+                    <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart}/>}/>
                     <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart}/>}/>
                     <Container
                         className="d-flex align-items-center justify-content-center"

@@ -17,9 +17,9 @@ const Header = ({cart,loading,priceCount}) => {
 
             <div className={style.HeaderMain}>
                 <NavLink to='/Shop'>Home</NavLink>
-                <NavLink to='/NewRealeases'>New Releases</NavLink>
                 <NavLink to='/Man'>Man</NavLink>
                 <NavLink to='/Woman'>Woman</NavLink>
+                <NavLink to='/Shoes'>Shoes</NavLink>
             </div>
 
             <div className={style.Login}>

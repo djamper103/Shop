@@ -1,9 +1,12 @@
 import React,{useEffect, useState}  from 'react'
-import style from './ManMain.module.css'
+import style from './Shoes.module.css'
+import ShoesUpContent from "./shoesUpContent"
 
 
 
-const ManMain=({addToCart})=>{
+
+const Shoes=({addToCart})=>{
+
     const [state] = useState([
         {
             id: 'Кросовки Staff white&red',
@@ -71,24 +74,16 @@ const ManMain=({addToCart})=>{
       setProductItem(newProducts);
   }, [typeItem,priceItem,state,searchItem]);
 
-    useEffect(() => {
-        const newProducts = [...state]
-          .filter((product) =>
-          product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
-          );
-          setProductItem(newProducts);
-      }, [searchItem,state]);
-    
-
     
     return(
 
         <div className={style.Content}>
-            <img src="https://static.staff-clothes.com/uploads/media/default/0001/89/610dad00ed074fab8bdce984fd3821c6.jpeg"/>
-        <div>
-            <div>
 
-            <select name="select" onChange={event=>{setTypeItem(event.target.value)}}>
+            <div>
+                {/* <ShoesUpContent/> */}
+                </div> 
+
+                <select name="select" onChange={event=>{setTypeItem(event.target.value)}}>
                 <option value="all" selected>All</option>
                 <option value="shoes" >Shoes</option>
                 <option value="pants">Pants</option>
@@ -101,8 +96,7 @@ const ManMain=({addToCart})=>{
                 <option value="lowPrise">Low Prise</option>
             </select>
             <input placeholder="Search..." onChange={event=>{setSearchItem(event.target.value.replace(/\s+/g, ''))}}/>
-
-            </div>
+        <div>
         {
         productItem.map((product) => (
                     <div className={style.component} key={product.id}>
@@ -114,8 +108,10 @@ const ManMain=({addToCart})=>{
                     </div>
                     ))
                 }
+                </div>
+        
         </div>
-        </div>
+        
     )
 }
-export default ManMain;
+export default Shoes;
