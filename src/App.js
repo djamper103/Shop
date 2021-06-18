@@ -130,8 +130,8 @@ function App({loading,}) {
                                 <Route exact path='/Cart'
                                        render={() =>loading?
                                         <Redirect to="/login"/>:
-                                           <Cart cart={cart} removeFromCart={removeFromCart}
-                                           increaseCart={increaseCart} decreaseCart={decreaseCart}
+                                           <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
+                                           increaseCart={increaseCart} decreaseCart={decreaseCart} 
                                            />}/>
                                 <Route path="/signup" component={SignupContainer} />
                                 <Route path="/Login" component={LoginContainer} />

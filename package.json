@@ -41,7 +41,7 @@
     "start": "set PORT=3003 && react-scripts start",
     "build": "react-scripts build",
     "server": "json-server --watch db.json",
-    "serverCart": "server --watch cartServer.js",
+    "serverCart": "cartServer.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
