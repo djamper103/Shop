@@ -1,7 +1,7 @@
 const cors = require("cors");
 const express = require("express");
 const stripe = require("stripe")("sk_test_51J12GCE9ORF0ZMb0vxnIJyLqn1ey3JKp7cChwt81RT4CtFKywIsNyr80gmQfrqvS5IQCbFtfpnmOQqPBPQJ8b27000vlNNmcA1");
-const uuid = require('uuidv4');
+const { uuidv4 } = require('uuid')
 
 const app = express();
 
@@ -18,21 +18,22 @@ app.post("/payment", cors(), async (req, res) => {
   let error;
   let status;
   try {
-    const { product, token } = req.body;
+    const { token, cart ,priceCount } = req.body;
+    debugger
 
     const customer = await stripe.customers.create({
       email: token.email,
       source: token.id
     });
 
-    const idempotency_key = uuid();
+    const idempotency_key = uuidv4;
     const charge = await stripe.charges.create(
       {
-        amount: product.price * 100,
+        amount: priceCount,
         currency: "usd",
         customer: customer.id,
         receipt_email: token.email,
-        description: `Purchased the ${product.name}`,
+        description: `Purchased the ${cart.id}`,
         shipping: {
           name: token.card.name,
           address: {
@@ -58,7 +59,4 @@ app.post("/payment", cors(), async (req, res) => {
   res.json({ error, status });
 });
 
-app.listen(process.env.PORT || 4000, () => {
-	console.log("Sever is listening on port 4000")
-})
-
+app.listen(4000);
