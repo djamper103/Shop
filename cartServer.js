@@ -19,7 +19,6 @@ app.post("/payment", cors(), async (req, res) => {
   let status;
   try {
     const { token, cart ,priceCount } = req.body;
-    debugger
 
     const customer = await stripe.customers.create({
       email: token.email,
@@ -33,7 +32,10 @@ app.post("/payment", cors(), async (req, res) => {
         currency: "usd",
         customer: customer.id,
         receipt_email: token.email,
-        description: `Purchased the ${cart.id}`,
+        description: `Purchased the ${cart}`,
+        metadata: {
+          "order_id": `Purchased the ${cart}`
+        },
         shipping: {
           name: token.card.name,
           address: {

@@ -10,11 +10,19 @@ export default function Cart ({cart,removeFromCart,increaseCart, decreaseCart,pr
 
 
 async function handleSubmit(token) {
-debugger
+    const newCart = cart.map(item=>{
+        for(const i in item){
+            if(i==="id"){
+                return item[i]
+            }
+        }
+    }).reduce((all,item)=>`${item}; `+all).toString()
+    debugger
     const response = await axios.post(
         "http://localhost:4000/payment",
-        { token, cart ,priceCount:((priceCount/28).toFixed(2)*100)}
+        { token,cart:newCart ,priceCount:((priceCount/28).toFixed(2)*100)}
     );
+    debugger
     const { status } = response.data;
     console.log("Response:", response.data);
     if (status === "success") {
