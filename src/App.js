@@ -36,7 +36,7 @@ function App({loading,}) {
     useEffect(()=>{
         if(cart.length>0){
             const res = cart.reduce((prev, product) => {
-                return prev + parseInt(product.price)
+                return prev + parseInt(product.priceCount)
             },0)
             setPriceCount(res)
             
@@ -53,7 +53,7 @@ function App({loading,}) {
             return item.id !== product.id
         })
         if(check){
-           setCart([...cart, {...product}])
+            setCart([...cart, {...product}])
         }else{
             alert("The product has been added to cart")
         
@@ -66,14 +66,15 @@ function App({loading,}) {
 
     const increaseCart = (product) =>{
             setCart(cart.map(item =>  item.id === product.id ?
-                {...item, count: item.count +1,price:item.price*(item.count+1)}
+                {...item, count: item.count +1,priceCount:item.price*(item.count+1)}
                 :item))       
         }
 
     const decreaseCart = (product) =>{
+        debugger
             setCart(cart.map(item =>  item.id === product.id ?item.count>1?
-                 {...item, count: item.count -1,price:item.price/item.count}
-                 :item:item))  
+                {...item, count: item.count -1,priceCount:item.priceCount-(item.priceCount/(item.count))}
+                :item:item))  
         }
 
     useEffect(() => {
