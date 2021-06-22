@@ -18,7 +18,7 @@ app.post("/payment", cors(), async (req, res) => {
   let error;
   let status;
   try {
-    const { token, cart ,priceCount } = req.body;
+    const { token, cart, priceCount } = req.body;
 
     const customer = await stripe.customers.create({
       email: token.email,

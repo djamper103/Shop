@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
-import { useAuth} from "./AuthContext";
+import { useAuth } from "./AuthContext";
 import { Link, useHistory } from "react-router-dom"
-import {Loading} from "../../Redux/Reducer/Login-reducer";
+import { Loading } from "../../Redux/Reducer/Login-reducer";
 
 
-export default function Dashboard({Loading}) {
+export default function Dashboard({ Loading }) {
     const [error, setError] = useState("")
     const { currentUser, logout } = useAuth()
     const history = useHistory()

@@ -1,12 +1,12 @@
 import style from './Header.module.css'
 import React from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import {
     FaShoppingCart
 } from "react-icons/all";
 
-const Header = ({cart,loading,priceCount}) => {
-   
+const Header = ({ cart, loading, priceCount }) => {
+
 
     return (
 
@@ -25,9 +25,9 @@ const Header = ({cart,loading,priceCount}) => {
             <div className={style.Login}>
 
                 <NavLink to={'/Cart'} className={style.cart}>
-                    <FaShoppingCart/><div className={style.cartLength}>{ loading?'0':cart>0?cart :'0'} Price: { loading?'0':priceCount?priceCount>0?priceCount :'0':'0'}</div></NavLink>
+                    <FaShoppingCart /><div className={style.cartLength}>{loading ? '0' : cart > 0 ? cart : '0'} Price: {loading ? '0' : priceCount ? priceCount > 0 ? priceCount : '0' : '0'}</div></NavLink>
                 {
-                    loading?<NavLink to={'/Login'}>Login</NavLink>:<NavLink to={'/Dashboard'}>Logout</NavLink>
+                    loading ? <NavLink to={'/Login'}>Login</NavLink> : <NavLink to={'/Dashboard'}>Logout</NavLink>
                 }
 
             </div>

@@ -1,7 +1,11 @@
-.Content{
-    grid-area: maincontent;
-    background-color: white;
-    background-position: center;
-    background-size: cover;
+.upImage img {
 
+    width: 100%;
+
+}
+.upImage{
+    display: block;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
 }

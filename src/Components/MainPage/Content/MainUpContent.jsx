@@ -3,12 +3,12 @@ import style from './MainUpContent.module.css'
 import CarouselBox from "../../../Common/Carousel/Carousel";
 
 
-const MainUpContent=()=>{
-    return(
+const MainUpContent = () => {
+    return (
 
         <div className={style.Content}>
 
-            <CarouselBox/>
+            <CarouselBox />
 
         </div>
     )

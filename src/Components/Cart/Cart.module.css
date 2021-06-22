@@ -1,20 +1,9 @@
-.cart{
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    padding: 1em;
+.container{
+    display: flex;
 }
-.cart h3{
-    justify-content: center;
+.product{
+    display: flex;
+    flex:50%;
 }
-.cart button{
-    background-color: black;
-    color: white;
-    border: 0;
-    width: 200px;
-    height: 50px;
-}
-.cart button:hover {
-    background-color: rgba(29, 29, 29, 0.89);
-    outline: none;
-}
+
+
