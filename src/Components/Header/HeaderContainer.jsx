@@ -1,13 +1,13 @@
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import * as React from "react";
 import Header from "./Header";
 
 
-let mapSatetoProps = (state,{priceCount}) => {
-    
+let mapSatetoProps = (state, { priceCount }) => {
+
     return {
-        loading:state.LoginPage.loading,
-        priceCount:priceCount
+        loading: state.LoginPage.loading,
+        priceCount: priceCount
     }
 }
 

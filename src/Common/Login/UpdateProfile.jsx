@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth} from "./AuthContext";
+import { useAuth } from "./AuthContext";
 import { Link, useHistory } from "react-router-dom"
 
 
 
-export default function UpdateProfile({Loading,loading}) {
+export default function UpdateProfile({ Loading, loading }) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()

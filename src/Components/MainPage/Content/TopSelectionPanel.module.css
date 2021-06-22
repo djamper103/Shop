@@ -1,21 +1,22 @@
-.Jackets img{
+.Jackets img {
     position: relative;
     top: 40px;
     left: 430px;
 }
-.Hoodies img{
+
+.Hoodies img {
     position: relative;
     top: -260px;
     left: 1040px;
 }
-.Pants img{
 
+.Pants img {
     position: relative;
     top: -215px;
     left: 430px;
 }
-.Shoes img{
 
+.Shoes img {
     position: relative;
     top: -515px;
     left: 1040px;

@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom"
-import {useAuth} from "./AuthContext";
+import { useAuth } from "./AuthContext";
 
 
-export default function Signup({Loading,loading}){
+export default function Signup({ Loading, loading }) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
@@ -50,7 +50,7 @@ export default function Signup({Loading,loading}){
                             <Form.Label>Password Confirmation</Form.Label>
                             <Form.Control type="password" ref={passwordConfirmRef} required />
                         </Form.Group>
-                        <Button  className="w-100" type="submit">
+                        <Button className="w-100" type="submit">
                             Sign Up
                         </Button>
                     </Form>

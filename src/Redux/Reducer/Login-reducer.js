@@ -1,8 +1,8 @@
-const LOADING='LOADING'
+const LOADING = 'LOADING'
 
 
 let intialState = {
-    loading:true,
+    loading: true,
 
 }
 
@@ -10,7 +10,7 @@ const Login_reducer = (state = intialState, action) => {
     switch (action.type) {
         case LOADING: {
             return {
-                ...state,loading:action.item
+                ...state, loading: action.item
             }
         }
 
@@ -22,7 +22,7 @@ const Login_reducer = (state = intialState, action) => {
 export default Login_reducer;
 
 export const Loading = (item) => {
-    
+
     return {
         type: LOADING,
         item

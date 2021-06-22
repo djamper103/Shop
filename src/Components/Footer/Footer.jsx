@@ -1,6 +1,6 @@
 import React from "react"
 import style from './Footer.module.css'
-import {IconContext} from "react-icons";
+import { IconContext } from "react-icons";
 import {
     AiFillFacebook,
     AiFillInstagram, AiFillYoutube, AiOutlineMail, BiMap,
@@ -13,7 +13,7 @@ const Footer = () => {
 
     return (
         <div className={style.Footer}>
-            <IconContext.Provider value={{size: "25px"}}>
+            <IconContext.Provider value={{ size: "25px" }}>
                 <div className={style.Container}>
                     <div className={style.AboutUs}>
                         <h3>About Us</h3>
@@ -26,10 +26,10 @@ const Footer = () => {
                             consequat.</p>
 
                         <div className={style.Links}>
-                            <a href="https://ru-ru.facebook.com/react/"><AiFillFacebook/></a>
-                            <a href="https://twitter.com/reactjs"><GrTwitter/></a>
-                            <a href="https://www.instagram.com/reactjsofficial/"><AiFillInstagram/></a>
-                            <a href="https://www.youtube.com"><AiFillYoutube/></a>
+                            <a href="https://ru-ru.facebook.com/react/"><AiFillFacebook /></a>
+                            <a href="https://twitter.com/reactjs"><GrTwitter /></a>
+                            <a href="https://www.instagram.com/reactjsofficial/"><AiFillInstagram /></a>
+                            <a href="https://www.youtube.com"><AiFillYoutube /></a>
                         </div>
                     </div>
 
@@ -47,13 +47,13 @@ const Footer = () => {
 
                     <div className={style.Contact}>
                         <h3>Contact Info</h3>
-                        <a href="https://www.google.com/maps/place/Нью-Йорк,+США/data=!4m2!3m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62?sa=X&ved=2ahUKEwj3zPmTx6vvAhXnURUIHSg_DRQQ8gEwIHoECC0QAQ"><BiMap/>
+                        <a href="https://www.google.com/maps/place/Нью-Йорк,+США/data=!4m2!3m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62?sa=X&ved=2ahUKEwj3zPmTx6vvAhXnURUIHSg_DRQQ8gEwIHoECC0QAQ"><BiMap />
                             &nbsp;  340 Main Street
-                            Los Angeles,<br/> &nbsp; CA 90291
+                            Los Angeles,<br /> &nbsp; CA 90291
                             United States
                         </a>
-                        <a href="https://uk-ua.facebook.com/facebook"><HiOutlinePhone/> &nbsp;  +1 234 567 8900</a>
-                        <a href="https://www.google.com/intl/en/gmail/about/"><AiOutlineMail/> &nbsp;  google@gmail.com</a>
+                        <a href="https://uk-ua.facebook.com/facebook"><HiOutlinePhone /> &nbsp;  +1 234 567 8900</a>
+                        <a href="https://www.google.com/intl/en/gmail/about/"><AiOutlineMail /> &nbsp;  google@gmail.com</a>
                     </div>
 
                 </div>

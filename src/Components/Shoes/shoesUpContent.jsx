@@ -2,14 +2,14 @@ import React from 'react'
 import style from './shoesUpContent.module.css'
 import nike from "../../Common/Image/nike.jpg";
 
-const ShoesUpContent=()=>{
+const ShoesUpContent = () => {
     debugger
-    return(
+    return (
 
         <div className={style.Content}>
 
             <div>
-                <img src={nike}/>
+                <img src={nike} />
             </div>
             <div className={style.Mens}>Men's Shoe</div>
             <div className={style.Nike270}>Nike Air Edge 270</div>

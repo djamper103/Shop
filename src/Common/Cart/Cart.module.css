@@ -1,20 +1,28 @@
-.cart{
+.container{
     display: grid;
-    align-items: center;
-    justify-items: center;
-    padding: 1em;
+    grid-template-areas:
+    'Header'
+    'maincontent'
+    'footer';
+grid-template-rows: 0.2fr auto 0.2fr;
 }
-.cart h3{
-    justify-content: center;
+.container h3{
+    grid-area:'Header';
+    margin: 150px;
+
+
 }
-.cart button{
-    background-color: black;
-    color: white;
-    border: 0;
-    width: 200px;
-    height: 50px;
+.product{
+    grid-area:'maincontent';
+    display: block;
+    text-align: center;
+    letter-spacing: 1px;
+
 }
-.cart button:hover {
-    background-color: rgba(29, 29, 29, 0.89);
-    outline: none;
+.product p{
+   margin-top:20px ;
+    font-size: 20px;
 }
+
+
+
