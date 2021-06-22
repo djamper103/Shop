@@ -7,16 +7,16 @@ import {Route,Redirect} from "react-router-dom";
 import ManMain from "./Components/Man/ManMain";
 import WomanMain from "./Components/Woman/WomanMain";
 import axios from 'axios'
-import Cart from "./Components/Cart/Cart";
+import Cart from "./Common/Cart/Cart";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from "react-bootstrap"
-import {AuthProvider, useAuth} from "./Components/Login/AuthContext";
-import PrivateRoute from "./Components/Login/PrivateRouter";
-import LoginContainer from "./Components/Login/LoginContainer";
-import UpdateProfileContainer from "./Components/Login/UpdateProfileContainer";
-import SignupContainer from "./Components/Login/SignupContainer";
-import ForgotPasswordContainer from "./Components/Login/ForgotPasswordContainer";
-import DashboardContainer from './Components/Login/DashNoardContainer'
+import {AuthProvider, useAuth} from "./Common/Login/AuthContext";
+import PrivateRoute from "./Common/Login/PrivateRouter";
+import LoginContainer from "./Common/Login/LoginContainer";
+import UpdateProfileContainer from "./Common/Login/UpdateProfileContainer";
+import SignupContainer from "./Common/Login/SignupContainer";
+import ForgotPasswordContainer from "./Common/Login/ForgotPasswordContainer";
+import DashboardContainer from './Common/Login/DashNoardContainer'
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import Product from "./Components/MainPage/Content/Product/Product"
 import Shoes from "./Components/Shoes/Shoes"
@@ -135,7 +135,7 @@ function App({loading,}) {
                                            increaseCart={increaseCart} decreaseCart={decreaseCart} 
                                            />}/>
                                 <Route path="/signup" component={SignupContainer} />
-                                <Route path="/Login" component={LoginContainer} />
+                                <Route path="/Login" component={LoginContainer}  />
 
                             </div>
                     </Container>

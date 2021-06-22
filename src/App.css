@@ -2,9 +2,9 @@
 .Content{
   display:grid;
   grid-template-areas:
-          'Header Header Header'
-          'maincontent maincontent maincontent'
-          'footer footer footer';
+          'Header'
+          'maincontent'
+          'footer';
   grid-template-rows: 0.2fr auto 0.8fr;
 background-color:  white;
 

@@ -6,7 +6,7 @@ import {Loading} from "../../Redux/Reducer/Login-reducer";
 
 let mapSatetoProps = (state) => {
     return {
-        loading:state.LoginPage.loadingz
+        loading:state.LoginPage.loading
     }
 }
 
