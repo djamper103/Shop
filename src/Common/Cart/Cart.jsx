@@ -8,13 +8,14 @@ import { toast } from "react-toastify";
 
 export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart, priceCount }) {
 
-    // const [state,setState]=useState()
-    // useEffect(()=>{
-    //     setState()
-    // },[cart])
+    const [state,setState]=useState([...cart])
+    useEffect(() => {
+        setState([...cart])
+    }, [state])
+
 
     async function handleSubmit(token) {
-        const newCart = cart.map(item => {
+        const newCart = state.map(item => {
             for (const i in item) {
                 if (i === "id") {
                     return item[i]
@@ -40,9 +41,9 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
         <div className={style.container}>
             <h3>Корзина</h3>
             {
-                cart.length > 0 ?
+                state.length > 0 ?
                     <div className={style.product}>
-                        {cart.map(product =>
+                        {state.map(product =>
                             <div key={product.id}>
                                 <div className={style.component} key={product.id} >
                                     <img src={product.image} alt='' />
@@ -52,6 +53,7 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                             {
                                 product.size.split(" ").map(item => <button key={item} onClick={() => 
                                     product.chosenSize=item
+                                    
                                    
                                 }>{item}</button>)
                             }
