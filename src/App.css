@@ -9,3 +9,15 @@
 background-color:  white;
 
 }
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+a:hover { 
+
+  cursor: pointer !important;
+
+}
