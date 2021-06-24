@@ -1,0 +1,9 @@
+.Content{
+    grid-area: header;
+}
+.Content img {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-style: none;
+}

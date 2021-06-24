@@ -4,5 +4,14 @@
     background-position: center;
     background-size: cover;
     margin: 0 auto;
+    display:grid;
+    grid-template-areas:
+            'header'
+            'upContent'
+            'sale'
+            'main';
+    grid-template-rows: 0.2fr 0.2fr 0.1fr auto;
+  background-color:  white;
+  
 }
 

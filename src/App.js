@@ -118,7 +118,9 @@ function App({ loading, }) {
                     <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} />} />
                     <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} />} />
                     <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} />} />
-                    <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />
+                    {state.length>0?<Route path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />:
+                    <Route exact path='/Shop' render={() => <MainPage state={state} addToCart={addToCart} />} />}
+                    
                 
                     
                     

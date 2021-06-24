@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 export default function TopSelectionPanel() {
     return (
-        <div className={style.Color}>
+        <div className={style.topSelect}>
 
             <div className={style.Jackets}><NavLink to='/Jackets'><img src="https://static.staff-clothes.com/uploads/media/default/0001/90/ad2caa7a85ec4ff2b5d8b7b983989809.jpeg" /></NavLink></div>
             <div className={style.Hoodies}><NavLink to='/Hoodies'> <img src="https://static.staff-clothes.com/uploads/media/default/0001/86/e709aed4ed7d4ff9bdcf7058848c6f02.jpeg" /></NavLink></div>
