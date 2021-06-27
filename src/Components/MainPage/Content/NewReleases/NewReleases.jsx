@@ -29,12 +29,9 @@ const NewReleases = ({ state, addToCart, }) => {
             )
             .filter((product) =>
                 product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
-            ).filter((product) =>
-            product.sale==="false"? product : 0
-        );
+            );
         setProductItem(newProducts);
     }, [typeItem, priceItem, state, searchItem]);
-
 
 
     return (
@@ -60,7 +57,15 @@ const NewReleases = ({ state, addToCart, }) => {
                             <img src={product.image} alt={product.id} title={product.id} />
                             <div className={style.product}>{product.id}</div>
                         </NavLink>
-                        <div className={style.size}>{product.size}</div>
+                        <div className={style.size}>
+                        {
+                                product.size.split(" ").map(item => <button key={item} onClick={() => 
+                                    product.chosenSize=item
+                                    
+                                
+                                }>{item}</button>)
+                            }
+                        </div>
                         <div className={style.price}><p>{product.price} грн.</p></div>
                         <button onClick={() => addToCart(product)}>Add to Cart</button>
                     </div>

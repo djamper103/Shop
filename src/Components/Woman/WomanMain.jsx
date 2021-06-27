@@ -99,7 +99,15 @@ const WomanMain = ({ addToCart }) => {
                         <div className={style.component} key={product.id}>
                             <img src={product.image} alt={product.id} title={product.id} />
                             <div className={style.product}>{product.id}</div>
-                            <div className={style.size}>{product.size}</div>
+                            <div className={style.size}>
+                            {
+                                product.size.split(" ").map(item => <button key={item} onClick={() => 
+                                    product.chosenSize=item
+                                    
+                                
+                                }>{item}</button>)
+                            }
+                        </div>
                             <div className={style.price}>{product.salePrice} грн.<p>{product.price} грн.</p></div>
                             <button onClick={() => addToCart(product)}>Add to Cart</button>
                         </div>

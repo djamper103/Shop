@@ -1,24 +1,49 @@
 import React, { useState,useEffect } from "react";
 import style from "./Sale.module.css";
 import { NavLink } from "react-router-dom";
+import axios from 'axios'
 
-export default function Sale({state, addToCart,}) {
 
-    const [productItem, setProductItem] = useState([])
+export default function Sale({ addToCart,}) {
+
+    const [state, setState] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [fetching, setFetching] = useState(true)
+   
+
     useEffect(() => {
-        const newProducts = [...state]
-            .filter((product) =>
-                product.sale==="true"? product : 0
-            );
-        setProductItem(newProducts);
-    }, [state,]);
+        if (fetching) {
+            axios.get(`http://localhost:3002/Sale?_limit=4&_page=${currentPage}`)
+                .then(response => {
+                    setState([...state, ...response.data])
+                    setCurrentPage(prevState => prevState + 1)
+        
+                })
+                .finally(() => setFetching(false))
+        }
+    }, [fetching])
 
+    useEffect(() => {
+
+        document.addEventListener('scroll', scrollHandler)
+
+        return function () {
+            document.removeEventListener('scroll', scrollHandler)
+        }
+    }, [])
+
+    const scrollHandler = (e) => {
+        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
+            setFetching(true)
+        }
+
+    }
 
     return (
         <div className={style.main}>
             <h3>Sale</h3>
             <div className={style.sale}>
-                {productItem.map((product) => (
+                {state.map((product) => (
                     <div className={style.component} key={product.id}>
                         <NavLink to={`/Product/${product.id}`}>
                             <img src={product.image} alt={product.id} title={product.id} />
