@@ -29,9 +29,12 @@ const NewReleases = ({ state, addToCart, }) => {
             )
             .filter((product) =>
                 product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
-            );
+            ).filter((product) =>
+            product.sale==="false"? product : 0
+        );
         setProductItem(newProducts);
     }, [typeItem, priceItem, state, searchItem]);
+
 
 
     return (
@@ -53,7 +56,7 @@ const NewReleases = ({ state, addToCart, }) => {
             <div className={style.sale}>
                 {productItem.map((product) => (
                     <div className={style.component} key={product.id}>
-                        <NavLink to={`/Product/${product.id}`}>
+                        <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
                             <img src={product.image} alt={product.id} title={product.id} />
                             <div className={style.product}>{product.id}</div>
                         </NavLink>

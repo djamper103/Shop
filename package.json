@@ -40,9 +40,9 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "set PORT=3003 && react-scripts start",
+    "start": "set PORT=3001 && react-scripts start",
     "build": "react-scripts build",
-    "server": "json-server --watch db.json",
+    "server": "json-server --watch db.json --port 3002",
     "serverCart": "node cartServer.js",
     "eject": "react-scripts eject"
   },

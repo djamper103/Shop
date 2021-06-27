@@ -1,60 +1,49 @@
 import React, { useEffect, useState } from 'react'
 import style from './Shoes.module.css'
 import ShoesUpContent from "./shoesUpContent"
-
+import axios from 'axios'
 
 
 
 const Shoes = ({ addToCart }) => {
 
-    const [state] = useState([
-        {
-            id: 'Кросовки Staff white&red',
-            size: '40 41 41 43 44 45',
-            price: '1150',
-            priceCount: "1150",
-            salePrice: '990',
-            image: "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
-            count: 1,
-            type: "shoes"
-        },
-        {
-            id: 'Штаны Staff cargo kil brown',
-            size: 'MXL',
-            price: '810',
-            priceCount: "810",
-            salePrice: '570',
-            image: "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/91/c09a552a72aa4f3bbc4db2dec836503a.jpeg",
-            count: 1,
-            type: "pants"
-        },
-        {
-            id: 'Поло Staff graphite &amp; white',
-            size: 'XS S M L XL XXL',
-            price: '450',
-            priceCount: "450",
-            salePrice: '340',
-            image: "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
-            count: 1,
-            type: "polo"
-        },
-        {
-            id: 'Сумка через плечо Staff navy',
-            size: 'Универсальный',
-            price: '280',
-            priceCount: "280",
-            salePrice: '400',
-            image: "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-            count: 1,
-            type: "bag"
-        },
+    const [state, setState] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [fetching, setFetching] = useState(true)
 
 
-    ])
     const [typeItem, setTypeItem] = useState("all")
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
     const [searchItem, setSearchItem] = useState("")
+
+    useEffect(() => {
+        if (fetching) {
+            axios.get('http://localhost:3000/shopItemWoman?_limit=4&_page=${currentPage}')
+                .then(response => {
+                    setState([...state, ...response.data])
+                    setCurrentPage(prevState => prevState + 1)
+        
+                })
+                .finally(() => setFetching(false))
+        }
+    }, [fetching])
+
+    useEffect(() => {
+
+        document.addEventListener('scroll', scrollHandler)
+
+        return function () {
+            document.removeEventListener('scroll', scrollHandler)
+        }
+    }, [])
+
+    const scrollHandler = (e) => {
+        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
+            setFetching(true)
+        }
+
+    }
 
     useEffect(() => {
         const newProducts = [...state]
