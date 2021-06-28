@@ -82,8 +82,7 @@ const ManMain = ({ addToCart }) => {
             <div className={style.upImage}>
             <img src="https://static.staff-clothes.com/uploads/media/default/0001/89/610dad00ed074fab8bdce984fd3821c6.jpeg" />
             </div>
-            <div>
-                <div>
+                <div className={style.select} >
 
                     <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
                         <option value="all" selected>All</option>
@@ -100,6 +99,7 @@ const ManMain = ({ addToCart }) => {
                     <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
 
                 </div>
+                <div className={style.maincontent}>
                 {
                     productItem.map((product) => (
                         <div className={style.component} key={product.id}>
@@ -119,8 +119,8 @@ const ManMain = ({ addToCart }) => {
                         </div>
                     ))
                 }
+                </div>
             </div>
-        </div>
     )
 }
 export default ManMain;

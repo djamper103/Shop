@@ -13,7 +13,7 @@ const MainPage = ({ state, addToCart, removeFromCart }) => {
         <div className={style.Maincontent}>
 
             <MainUpContent />
-            <TopSelectionPanel />
+            {/* <TopSelectionPanel /> */}
             <Sale state={state} addToCart={addToCart} />
             <NewReleases state={state} addToCart={addToCart} />
         </div>

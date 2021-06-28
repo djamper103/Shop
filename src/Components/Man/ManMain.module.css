@@ -1,11 +1,37 @@
+.Content{
+    display: grid;
+    grid-template-areas:
+          'header'
+          'footer'
+          'maincontent';
+  grid-template-rows: 0.2fr  0.1fr auto;
+}
 .upImage img {
-
+    grid-area: header;
     width: 100%;
+    margin-bottom: 50px;
 
 }
-.upImage{
-    display: block;
-    margin: auto;
-    align-items: center;
+.maincontent{
+    grid-area: maincontent;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+}
+.product img{
+    object-fit: cover;
+    margin-left: 20px;
+
+}
+.product{
+        max-width: 100%;
+    height: 350px;
+}
+
+.select{
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    
 }
