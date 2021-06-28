@@ -3,7 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "./AuthContext";
 import { Link, useHistory } from "react-router-dom"
 
-export default function Login({ Loading, loading }) {
+export default function Login({loading,setLoading}) {
 
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -16,14 +16,14 @@ export default function Login({ Loading, loading }) {
 
         try {
             setError("")
-            Loading(true)
+            setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
             history.push("/Shop")
         } catch {
             setError("Failed to log in")
         }
 
-        Loading(false)
+        setLoading(false)
     }
 
     return (

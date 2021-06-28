@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import style from './Shoes.module.css'
 import ShoesUpContent from "./shoesUpContent"
 import axios from 'axios'
-
+import Modal from "../../Common/Cart/Modal"
 
 
 const Shoes = ({ addToCart }) => {
@@ -10,6 +10,8 @@ const Shoes = ({ addToCart }) => {
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [fetching, setFetching] = useState(true)
+
+    const [modalActive,setModalActive]=useState(true)
 
 
     const [typeItem, setTypeItem] = useState("all")
@@ -75,7 +77,8 @@ const Shoes = ({ addToCart }) => {
             <div>
                 {/* <ShoesUpContent/> */}
             </div>
-
+            <Modal active={modalActive} setActive={setModalActive}/>
+          <button onClick={()=>setModalActive(true)}>Модальное окно</button>
             <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
                 <option value="all" selected>All</option>
                 <option value="shoes" >Shoes</option>

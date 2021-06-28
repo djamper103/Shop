@@ -4,13 +4,14 @@ import { Link, useHistory } from "react-router-dom"
 import { useAuth } from "./AuthContext";
 
 
-export default function Signup({ Loading, loading }) {
+export default function Signup({ setLoading, loading }) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
     const { signup } = useAuth()
     const [error, setError] = useState("")
     const history = useHistory()
+    debugger
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -21,14 +22,14 @@ export default function Signup({ Loading, loading }) {
 
         try {
             setError("")
-            Loading(true)
+            setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
             history.push("/Login")
         } catch {
             setError("Failed to create an account")
         }
 
-        Loading(false)
+        setLoading(false)
     }
 
     return (
@@ -40,7 +41,7 @@ export default function Signup({ Loading, loading }) {
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
                             <Form.Label>Email</Form.Label>
-                            <Form.Control type="email" ref={emailRef} required />
+                            {/* <Form.Control type="email" ref={emailRef} required /> */}
                         </Form.Group>
                         <Form.Group id="password">
                             <Form.Label>Password</Form.Label>
