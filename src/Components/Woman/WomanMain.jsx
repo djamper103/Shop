@@ -19,7 +19,7 @@ const WomanMain = ({ addToCart }) => {
     
     useEffect(() => {
         if (fetching) {
-            axios.get(`http://localhost:3002/shopItemWoman?_limit=4&_page=${currentPage}`)
+            axios.get(`http://localhost:3000/shopItemWoman?_limit=4&_page=${currentPage}`)
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)
