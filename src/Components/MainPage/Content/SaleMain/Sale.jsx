@@ -42,6 +42,7 @@ export default function Sale({ addToCart,}) {
     return (
         <div className={style.main}>
             <h3>Sale</h3>
+            <div className={style.maincontent}>
             <div className={style.sale}>
                 {state.map((product) => (
                     <div className={style.component} key={product.id}>
@@ -63,6 +64,7 @@ export default function Sale({ addToCart,}) {
                     </div>
                 ))
                 }
+            </div>
             </div>
         </div>
 

@@ -1,23 +1,10 @@
-.Jackets img {
-    position: relative;
-    top: 40px;
-    left: 430px;
+.topSelect{
+    grid-area: upContent;
+    display: flex;
 }
-
-.Hoodies img {
-    position: relative;
-    top: -260px;
-    left: 1040px;
-}
-
-.Pants img {
-    position: relative;
-    top: -215px;
-    left: 430px;
-}
-
-.Shoes img {
-    position: relative;
-    top: -515px;
-    left: 1040px;
+.topSelect img {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-style: none;
 }

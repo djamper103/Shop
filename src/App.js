@@ -29,7 +29,7 @@ function App() {
     const [totalCount, setTotalCount] = useState(0)
     const [cart, setCart] = useState([])
     const [priceCount, setPriceCount] = useState(0)
-    const [loading,setLoading]=useState(false)
+    const [loadingg,setLoadingg]=useState(false)
 
 
 
@@ -109,9 +109,9 @@ function App() {
 
 
     return (
-        <AuthProvider loading={loading} setLoading={setLoading}>
+        <AuthProvider loadingg={loadingg} setLoadingg={setLoadingg}>
             <div className='Content'>
-                <Header cart={cart.length} priceCount={priceCount} loading={loading}
+                <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}
                 />
                 <div className='Maincontent'> 
                     <Route exact path='/Shop'  render={() => <MainPage state={state} addToCart={addToCart} />} />
@@ -119,26 +119,27 @@ function App() {
                     <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} />} />
                     <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} />} />
                     <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />
-                    {/* <Route exact path='/AuthProvider' render={() => <AuthProvider loading={loading} setLoading={setLoading} />} />
-                 */}
+                 
+                
                     
                     <Container
                         className="d-flex align-items-center justify-content-center "
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
 
-                        <Route exact path='/Login' render={() => <Login loading={loading} setLoading={setLoading} />} />
-                        <Route exact path='/Dashboard' render={() => <Dashboard loading={loading} setLoading={setLoading} />} />
-                        <Route exact path='/update-profile' render={() => <UpdateProfile loading={loading} setLoading={setLoading} />} />
-                        <Route exact path='/forgot-password' render={() => <ForgotPassword loading={loading} setLoading={setLoading} />} />
-                        <Route exact path='/signup' render={() => <Signup loading={loading} setLoading={setLoading} />} />
+                        <Route exact path='/Login' render={() => <Login />} />
+                        <Route exact path='/Dashboard' render={() => <Dashboard />} />
+                        <Route exact path='/update-profile' render={() => <UpdateProfile />} />
+                        <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
+                        <Route exact path='/signup' render={() => <Signup />} />
 
                             <Route exact path='/Cart'
-                                render={() => loading ?
-                                    <Redirect to="/login" /> :
+                                render={() => loadingg ?
                                     <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
                                         increaseCart={increaseCart} decreaseCart={decreaseCart}
-                                    />} />
+                                    />:
+                                    <Redirect to="/login" /> 
+                                } />
                  
                         </div>
                     </Container>

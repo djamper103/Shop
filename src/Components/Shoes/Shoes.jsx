@@ -80,14 +80,14 @@ const Shoes = ({ addToCart }) => {
             <Modal active={modalActive} setActive={setModalActive}/>
           <button onClick={()=>setModalActive(true)}>Модальное окно</button>
             <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
-                <option value="all" selected>All</option>
+                <option defaultValue="all" >All</option>
                 <option value="shoes" >Shoes</option>
                 <option value="pants">Pants</option>
                 <option value="polo" >Polo</option>
                 <option value="bag">Bag</option>
             </select>
             <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
-                <option value="all" selected>All</option>
+                <option defaultValue="all" >All</option>
                 <option value="mostPrise" >Most Prise</option>
                 <option value="lowPrise">Low Prise</option>
             </select>

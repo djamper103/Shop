@@ -5,9 +5,9 @@ import {
     FaShoppingCart
 } from "react-icons/all";
 
-const Header = ({ cart, loading, priceCount }) => {
+const Header = ({ cart, loadingg, priceCount }) => {
 
-
+debugger
     return (
 
         <div className={style.Header}>
@@ -25,9 +25,9 @@ const Header = ({ cart, loading, priceCount }) => {
             <div className={style.Login}>
 
                 <NavLink to={'/Cart'} className={style.cart}>
-                    <FaShoppingCart /><div className={style.cartLength}>{loading ? '0' : cart > 0 ? cart : '0'} Price: {loading ? '0' : priceCount ? priceCount > 0 ? priceCount : '0' : '0'}</div></NavLink>
+                    <FaShoppingCart /><div className={style.cartLength}>{loadingg ? cart.length > 0 ? cart : '0':'0' } Price: {loadingg ? '0' : priceCount ? priceCount > 0 ? priceCount : '0' : '0'}</div></NavLink>
                 {
-                    loading ?  <NavLink to={'/Dashboard'}>Logout</NavLink>:<NavLink to={'/Login'}>Login</NavLink>
+                    loadingg ?  <NavLink to={'/Dashboard'}>Logout</NavLink>:<NavLink to={'/Login'}>Login</NavLink> 
                 }
 
             </div>

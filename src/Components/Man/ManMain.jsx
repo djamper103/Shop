@@ -85,14 +85,14 @@ const ManMain = ({ addToCart }) => {
                 <div className={style.select} >
 
                     <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
-                        <option value="all" selected>All</option>
+                        <option defaultValue="all" >All</option>
                         <option value="shoes" >Shoes</option>
                         <option value="pants">Pants</option>
                         <option value="polo" >Polo</option>
                         <option value="bag">Bag</option>
                     </select>
                     <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
-                        <option value="all" selected>All</option>
+                        <option defaultValue="all" >All</option>
                         <option value="mostPrise" >Most Prise</option>
                         <option value="lowPrise">Low Prise</option>
                     </select>
@@ -100,6 +100,7 @@ const ManMain = ({ addToCart }) => {
 
                 </div>
                 <div className={style.maincontent}>
+                <div className={style.product}>
                 {
                     productItem.map((product) => (
                         <div className={style.component} key={product.id}>
@@ -119,6 +120,7 @@ const ManMain = ({ addToCart }) => {
                         </div>
                     ))
                 }
+                </div>
                 </div>
             </div>
     )
