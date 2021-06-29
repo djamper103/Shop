@@ -15,14 +15,12 @@ export default function ForgotPassword({ loading,setLoading}) {
         try {
             setMessage("")
             setError("")
-            setLoading(true)
             await resetPassword(emailRef.current.value)
             setMessage("Check your inbox for further instructions")
         } catch {
             setError("Failed to reset password")
         }
 
-        setLoading(false)
     }
 
     return (

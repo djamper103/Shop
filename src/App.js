@@ -29,7 +29,7 @@ function App() {
     const [totalCount, setTotalCount] = useState(0)
     const [cart, setCart] = useState([])
     const [priceCount, setPriceCount] = useState(0)
-    const [loading,setLoading]=useState(true)
+    const [loading,setLoading]=useState(false)
 
 
 
@@ -109,7 +109,7 @@ function App() {
 
 
     return (
-        <AuthProvider>
+        <AuthProvider loading={loading} setLoading={setLoading}>
             <div className='Content'>
                 <Header cart={cart.length} priceCount={priceCount} loading={loading}
                 />
@@ -119,8 +119,8 @@ function App() {
                     <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} />} />
                     <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} />} />
                     <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />
-                    <Route exact path='/AuthProvider' render={() => <AuthProvider loading={loading} setLoading={setLoading} />} />
-                
+                    {/* <Route exact path='/AuthProvider' render={() => <AuthProvider loading={loading} setLoading={setLoading} />} />
+                 */}
                     
                     <Container
                         className="d-flex align-items-center justify-content-center "

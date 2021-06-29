@@ -17,10 +17,12 @@ export function AuthProvider({ children,loading, setLoading }) {
   }
 
   function login(email, password) {
+    setLoading(true)
     return auth.signInWithEmailAndPassword(email, password)
   }
 
   function logout() {
+    setLoading(false)
     return auth.signOut()
   }
 
@@ -39,7 +41,6 @@ export function AuthProvider({ children,loading, setLoading }) {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
-      setLoading(false)
     })
 
     return unsubscribe

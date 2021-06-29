@@ -27,7 +27,7 @@ const Header = ({ cart, loading, priceCount }) => {
                 <NavLink to={'/Cart'} className={style.cart}>
                     <FaShoppingCart /><div className={style.cartLength}>{loading ? '0' : cart > 0 ? cart : '0'} Price: {loading ? '0' : priceCount ? priceCount > 0 ? priceCount : '0' : '0'}</div></NavLink>
                 {
-                    loading ? <NavLink to={'/Login'}>Login</NavLink> : <NavLink to={'/Dashboard'}>Logout</NavLink>
+                    loading ?  <NavLink to={'/Dashboard'}>Logout</NavLink>:<NavLink to={'/Login'}>Login</NavLink>
                 }
 
             </div>
