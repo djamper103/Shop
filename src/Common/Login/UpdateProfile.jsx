@@ -5,7 +5,7 @@ import { Link, useHistory } from "react-router-dom"
 
 
 
-export default function UpdateProfile({ Loading, loading }) {
+export default function UpdateProfile({setLoading,loading} ) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
@@ -20,7 +20,7 @@ export default function UpdateProfile({ Loading, loading }) {
         }
 
         const promises = []
-        Loading(true)
+        setLoading(true)
         setError("")
 
         if (emailRef.current.value !== currentUser.email) {
@@ -38,7 +38,7 @@ export default function UpdateProfile({ Loading, loading }) {
                 setError("Failed to update account")
             })
             .finally(() => {
-                Loading(false)
+                setLoading(false)
             })
     }
 
@@ -55,7 +55,7 @@ export default function UpdateProfile({ Loading, loading }) {
                                 type="email"
                                 ref={emailRef}
                                 required
-                                defaultValue={currentUser.email}
+                                // defaultValue={currentUser.email}
                             />
                         </Form.Group>
                         <Form.Group id="password">
@@ -74,14 +74,14 @@ export default function UpdateProfile({ Loading, loading }) {
                                 placeholder="Leave blank to keep the same"
                             />
                         </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">
+                        <Button disabled={setLoading} className="w-100" type="submit">
                             Update
                         </Button>
                     </Form>
                 </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2">
-                <Link to="/">Cancel</Link>
+                <Link to="/Shop">Cancel</Link>
             </div>
         </>
     )

@@ -11,25 +11,25 @@ import Cart from "./Common/Cart/Cart";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container} from "react-bootstrap"
 import {AuthProvider, useAuth} from "./Common/Login/AuthContext";
-import PrivateRoute from "./Common/Login/PrivateRouter";
-import LoginContainer from "./Common/Login/LoginContainer";
-import UpdateProfileContainer from "./Common/Login/UpdateProfileContainer";
-import SignupContainer from "./Common/Login/SignupContainer";
-import ForgotPasswordContainer from "./Common/Login/ForgotPasswordContainer";
-import DashboardContainer from './Common/Login/DashNoardContainer'
-import HeaderContainer from "./Components/Header/HeaderContainer";
+import Login from "./Common/Login/Login";
+import UpdateProfile from "./Common/Login/UpdateProfile";
+import Signup from "./Common/Login/Signup";
+import ForgotPassword from "./Common/Login/ForgotPassword";
+import Dashboard from './Common/Login/DashBoard'
+import Header from "./Components/Header/Header";
 import Product from "./Components/MainPage/Content/Product/Product"
 import Shoes from "./Components/Shoes/Shoes"
 
 
 
-function App({ loading, }) {
+function App() {
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [fetching, setFetching] = useState(true)
     const [totalCount, setTotalCount] = useState(0)
     const [cart, setCart] = useState([])
     const [priceCount, setPriceCount] = useState(0)
+    const [loading,setLoading]=useState(false)
 
 
 
@@ -79,7 +79,7 @@ function App({ loading, }) {
 
     useEffect(() => {
         if (fetching) {
-            axios.get('http://localhost:3000/shopItem?_limit=4&_page=${currentPage}')
+            axios.get(`http://localhost:3000/shopItem?_limit=4&_page=${currentPage}`)
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)
@@ -109,41 +109,42 @@ function App({ loading, }) {
 
 
     return (
-        <AuthProvider>
+        <AuthProvider  loading={loading} setLoading={setLoading}>
             <div className='Content'>
-                <HeaderContainer cart={cart.length} priceCount={priceCount}
+                <Header cart={cart.length} priceCount={priceCount} loading={loading}
                 />
-                <div className='Maincontent'>
-                    <Route exact path='/Shop' render={() => <MainPage state={state} addToCart={addToCart} />} />
+                <div className='Maincontent'> 
+                    <Route exact path='/Shop'  render={() => <MainPage state={state} addToCart={addToCart} />} />
                     <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} />} />
                     <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} />} />
                     <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} />} />
-                    {state.length>0?<Route path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />:
-                    <Route exact path='/Shop' render={() => <MainPage state={state} addToCart={addToCart} />} />}
-                    
+                    <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />
+                 
                 
-                    
                     
                     <Container
                         className="d-flex align-items-center justify-content-center "
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
-                            <PrivateRoute exact path="/Dashboard" component={DashboardContainer} />
-                            <PrivateRoute path="/update-profile" component={UpdateProfileContainer} />
-                            <PrivateRoute Route path="/forgot-password" component={ForgotPasswordContainer} />
+
+                        <Route exact path='/Login' render={() => <Login loading={loading} setLoading={setLoading} />} />
+                        <Route exact path='/Dashboard' render={() => <Dashboard loading={loading} setLoading={setLoading} />} />
+                        <Route exact path='/update-profile' render={() => <UpdateProfile loading={loading} setLoading={setLoading} />} />
+                        <Route exact path='/forgot-password' render={() => <ForgotPassword loading={loading} setLoading={setLoading} />} />
+                        <Route exact path='/signup' render={() => <Signup loading={loading} setLoading={setLoading} />} />
+
                             <Route exact path='/Cart'
                                 render={() => loading ?
                                     <Redirect to="/login" /> :
                                     <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
                                         increaseCart={increaseCart} decreaseCart={decreaseCart}
                                     />} />
-                            <Route path="/signup" component={SignupContainer} />
-                            <Route path="/Login" component={LoginContainer} />
-
+                 
                         </div>
                     </Container>
                     
                 </div>
+                
                 <Footer />
             </div>
         </AuthProvider>

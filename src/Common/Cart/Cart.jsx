@@ -17,6 +17,7 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
     async function handleSubmit(token) {
         const newCart = state.map(item => {
             for (const i in item) {
+                debugger
                 if (i === "id") {
                     return item[i]
                 }

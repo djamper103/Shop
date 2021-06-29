@@ -2,3 +2,22 @@
     grid-area:sale;
     display: flex;
 }
+.maincontent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 100%;
+    margin: 50px;
+}
+
+.product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+
+.product {
+    max-width: 300px;
+    max-height: 350px;
+}

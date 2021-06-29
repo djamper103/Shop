@@ -3,7 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "./AuthContext";
 import { Link } from "react-router-dom"
 
-export default function ForgotPassword({ Loading, loading }) {
+export default function ForgotPassword({ loading,setLoading}) {
     const emailRef = useRef()
     const { resetPassword } = useAuth()
     const [error, setError] = useState("")
@@ -15,14 +15,14 @@ export default function ForgotPassword({ Loading, loading }) {
         try {
             setMessage("")
             setError("")
-            Loading(true)
+            setLoading(true)
             await resetPassword(emailRef.current.value)
             setMessage("Check your inbox for further instructions")
         } catch {
             setError("Failed to reset password")
         }
 
-        Loading(false)
+        setLoading(false)
     }
 
     return (
@@ -37,7 +37,7 @@ export default function ForgotPassword({ Loading, loading }) {
                             <Form.Label>Email</Form.Label>
                             <Form.Control type="email" ref={emailRef} required />
                         </Form.Group>
-                        <Button disabled={loading} className="w-100" type="submit">
+                        <Button disabled={setLoading} className="w-100" type="submit">
                             Reset Password
                         </Button>
                     </Form>

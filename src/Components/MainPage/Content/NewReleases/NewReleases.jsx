@@ -38,31 +38,41 @@ const NewReleases = ({ state, addToCart, }) => {
         <div className={style.main}>
             <h3>New Releases</h3>
             <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
-                <option value="all" selected>All</option>
+                <option defaultValue="all" >All</option>
                 <option value="shoes" >Shoes</option>
                 <option value="pants">Pants</option>
                 <option value="polo" >Polo</option>
                 <option value="bag">Bag</option>
             </select>
             <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
-                <option value="all" selected>All</option>
+                <option defaultValue="all" >All</option>
                 <option value="mostPrise" >Most Prise</option>
                 <option value="lowPrise">Low Prise</option>
             </select>
             <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
-            <div className={style.sale}>
+            <div className={style.maincontent}>
+            <div className={style.product}>
                 {productItem.map((product) => (
                     <div className={style.component} key={product.id}>
-                        <NavLink to={`/Product/${product.id}`}>
+                        <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
                             <img src={product.image} alt={product.id} title={product.id} />
                             <div className={style.product}>{product.id}</div>
                         </NavLink>
-                        <div className={style.size}>{product.size}</div>
+                        <div className={style.size}>
+                        {
+                                product.size.split(" ").map(item => <button key={item} onClick={() => 
+                                    product.chosenSize=item
+                                    
+                                
+                                }>{item}</button>)
+                            }
+                        </div>
                         <div className={style.price}><p>{product.price} грн.</p></div>
                         <button onClick={() => addToCart(product)}>Add to Cart</button>
                     </div>
                 ))
                 }
+            </div>
             </div>
 
         </div>

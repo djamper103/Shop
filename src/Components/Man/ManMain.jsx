@@ -1,57 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import style from './ManMain.module.css'
-
+import axios from 'axios'
 
 
 const ManMain = ({ addToCart }) => {
-    const [state] = useState([
-        {
-            id: 'Кросовки Staff white&red',
-            size: '40 41 41 43 44 45',
-            price: '1150',
-            priceCount: "1150",
-            salePrice: '990',
-            image: "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
-            count: 1,
-            type: "shoes"
-        },
-        {
-            id: 'Штаны Staff cargo kil brown',
-            size: 'MXL',
-            price: '810',
-            priceCount: "810",
-            salePrice: '570',
-            image: "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/91/c09a552a72aa4f3bbc4db2dec836503a.jpeg",
-            count: 1,
-            type: "pants"
-        },
-        {
-            id: 'Поло Staff graphite &amp; white',
-            size: 'XS S M L XL XXL',
-            price: '450',
-            priceCount: "450",
-            salePrice: '340',
-            image: "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
-            count: 1,
-            type: "polo"
-        },
-        {
-            id: 'Сумка через плечо Staff navy',
-            size: 'Универсальный',
-            price: '280',
-            priceCount: "280",
-            salePrice: '400',
-            image: "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-            count: 1,
-            type: "bag"
-        },
 
-
-    ])
+    const [state, setState] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [fetching, setFetching] = useState(true)
+   
     const [typeItem, setTypeItem] = useState("all")
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
     const [searchItem, setSearchItem] = useState("")
+
+
+    useEffect(() => {
+        if (fetching) {
+            axios.get(`http://localhost:3000/shopItemMan?_limit=4&_page=${currentPage}`)
+                .then(response => {
+                    setState([...state, ...response.data])
+                    setCurrentPage(prevState => prevState + 1)
+        
+                })
+                .finally(() => setFetching(false))
+        }
+    }, [fetching])
+
+    useEffect(() => {
+
+        document.addEventListener('scroll', scrollHandler)
+
+        return function () {
+            document.removeEventListener('scroll', scrollHandler)
+        }
+    }, [])
+
+    const scrollHandler = (e) => {
+        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
+            setFetching(true)
+        }
+
+    }
+
 
     useEffect(() => {
         const newProducts = [...state]
@@ -91,37 +82,47 @@ const ManMain = ({ addToCart }) => {
             <div className={style.upImage}>
             <img src="https://static.staff-clothes.com/uploads/media/default/0001/89/610dad00ed074fab8bdce984fd3821c6.jpeg" />
             </div>
-            <div>
-                <div>
+                <div className={style.select} >
 
                     <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
-                        <option value="all" selected>All</option>
+                        <option defaultValue="all" >All</option>
                         <option value="shoes" >Shoes</option>
                         <option value="pants">Pants</option>
                         <option value="polo" >Polo</option>
                         <option value="bag">Bag</option>
                     </select>
                     <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
-                        <option value="all" selected>All</option>
+                        <option defaultValue="all" >All</option>
                         <option value="mostPrise" >Most Prise</option>
                         <option value="lowPrise">Low Prise</option>
                     </select>
                     <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
 
                 </div>
+                <div className={style.maincontent}>
+                <div className={style.product}>
                 {
                     productItem.map((product) => (
                         <div className={style.component} key={product.id}>
                             <img src={product.image} alt={product.id} title={product.id} />
                             <div className={style.product}>{product.id}</div>
-                            <div className={style.size}>{product.size}</div>
+                            <div className={style.size}>
+                            {
+                                product.size.split(" ").map(item => <button key={item} onClick={() => 
+                                    product.chosenSize=item
+                                    
+                                
+                                }>{item}</button>)
+                            }
+                        </div>
                             <div className={style.price}>{product.salePrice} грн.<p>{product.price} грн.</p></div>
                             <button onClick={() => addToCart(product)}>Add to Cart</button>
                         </div>
                     ))
                 }
+                </div>
+                </div>
             </div>
-        </div>
     )
 }
 export default ManMain;

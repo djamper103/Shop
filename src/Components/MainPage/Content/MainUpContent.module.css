@@ -1,9 +1,3 @@
 .Content{
-    grid-area: header;
-}
-.Content img {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    border-style: none;
+    margin-bottom: 500px;
 }

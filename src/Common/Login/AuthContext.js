@@ -5,58 +5,59 @@ import { auth } from "../../firebase";
 const AuthContext = React.createContext()
 
 export function useAuth() {
-    return useContext(AuthContext)
+  return useContext(AuthContext)
 }
 
-export function AuthProvider({ Loading, loading, children }) {
-    const [currentUser, setCurrentUser] = useState()
+export function AuthProvider({ children,loading, setLoading }) {
+  const [currentUser, setCurrentUser] = useState()
 
-    function signup(email, password) {
-        return auth.createUserWithEmailAndPassword(email, password)
-    }
 
-    function login(email, password) {
-        return auth.signInWithEmailAndPassword(email, password)
-    }
+  function signup(email, password) {
+    return auth.createUserWithEmailAndPassword(email, password)
+  }
 
-    function logout() {
-        return auth.signOut()
-    }
+  function login(email, password) {
+    return auth.signInWithEmailAndPassword(email, password)
+  }
 
-    function resetPassword(email) {
-        return auth.sendPasswordResetEmail(email)
-    }
+  function logout() {
+    return auth.signOut()
+  }
 
-    function updateEmail(email) {
-        return currentUser.updateEmail(email)
-    }
+  function resetPassword(email) {
+    return auth.sendPasswordResetEmail(email)
+  }
 
-    function updatePassword(password) {
-        return currentUser.updatePassword(password)
-    }
+  function updateEmail(email) {
+    return currentUser.updateEmail(email)
+  }
 
-    useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user => {
-            setCurrentUser(user)
-            Loading(false)
-        })
+  function updatePassword(password) {
+    return currentUser.updatePassword(password)
+  }
 
-        return unsubscribe
-    }, [])
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      setCurrentUser(user)
+      setLoading(false)
+    })
 
-    const value = {
-        currentUser,
-        login,
-        signup,
-        logout,
-        resetPassword,
-        updateEmail,
-        updatePassword
-    }
+    return unsubscribe
+  }, [])
 
-    return (
-        <AuthContext.Provider value={value}>
-            {!loading && children}
-        </AuthContext.Provider>
-    )
+  const value = {
+    currentUser,
+    login,
+    signup,
+    logout,
+    resetPassword,
+    updateEmail,
+    updatePassword
+  }
+
+  return (
+    <AuthContext.Provider value={value}>
+      {!loading && children}
+    </AuthContext.Provider>
+  )
 }
