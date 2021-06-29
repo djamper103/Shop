@@ -7,7 +7,7 @@ import {
 
 const Header = ({ cart, loadingg, priceCount }) => {
 
-debugger
+
     return (
 
         <div className={style.Header}>
