@@ -21,16 +21,6 @@
       "type":"polo"
   },
   {
-      "id": "Сумка через плечо Staff navy",
-      "size": "Универсальный",
-      "price": "280",
-      "priceCount": "280",
-      "salePrice": "400",
-      "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-      "count": "1",
-      "type":"bag"
-  },
-  {
     "id": "Кросовки Staff white&red",
     "size": "40 41 41 43 44 45",
     "price": "1150",
@@ -61,16 +51,6 @@
   "type":"polo"
 },
 {
-  "id": "Сумка через плечо Staff navy",
-  "size": "Универсальный",
-  "price": "280",
-  "priceCount": "280",
-  "salePrice": "400",
-  "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-  "count": "1",
-  "type":"bag"
-},
-{
 "id": "Кросовки Staff white&red",
 "size": "40 41 41 43 44 45",
 "price": "1150",
@@ -102,16 +82,6 @@
   "type":"polo"
 },
 {
-  "id": "Сумка через плечо Staff navy",
-  "size": "Универсальный",
-  "price": "280",
-  "priceCount": "280",
-  "salePrice": "400",
-  "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-  "count": "1",
-  "type":"bag"
-},
-{
 "id": "Кросовки Staff white&red",
 "size": "40 41 41 43 44 45",
 "price": "1150",
@@ -141,16 +111,6 @@
   "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
   "count": "1",
   "type":"polo"
-},
-{
-  "id": "Сумка через плечо Staff navy",
-  "size": "Универсальный",
-  "price": "280",
-  "priceCount": "280",
-  "salePrice": "400",
-  "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-  "count": "1",
-  "type":"bag"
 },
 {
 "id": "Кросовки Staff white&red",
@@ -166,16 +126,6 @@
 
   ],
   "shopItemMan": [
-    {
-      "id": "Сумка через плечо Staff navy",
-      "size": "Универсальный",
-      "price": "280",
-      "priceCount": "280",
-      "salePrice": "400",
-      "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-      "count": "1",
-      "type":"bag"
-  },
   {
     
       "id": "Штаны Staff cargo kil brown",
@@ -207,16 +157,6 @@
   "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
   "count": "1",
   "type":"polo"
-},
-{
-  "id": "Сумка через плечо Staff navy",
-  "size": "Универсальный",
-  "price": "280",
-  "priceCount": "280",
-  "salePrice": "400",
-  "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-  "count": "1",
-  "type":"bag"
 },
 {
 
@@ -252,16 +192,6 @@
 }
 ],
 "shopItemWoman": [
-  {
-    "id": "Сумка через плечо Staff navy",
-    "size": "Универсальный",
-    "price": "280",
-    "priceCount": "280",
-    "salePrice": "400",
-    "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-    "count": "1",
-    "type":"bag"
-},
 {
   
     "id": "Штаны Staff cargo kil brown",
@@ -293,16 +223,6 @@
 "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
 "count": "1",
 "type":"polo"
-},
-{
-"id": "Сумка через плечо Staff navy",
-"size": "Универсальный",
-"price": "280",
-"priceCount": "280",
-"salePrice": "400",
-"image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/88/c872241566a84fd6ac52f866cbbf2151.jpeg",
-"count": "1",
-"type":"bag"
 },
 {
 

@@ -25,7 +25,7 @@ debugger
             <div className={style.Login}>
 
                 <NavLink to={'/Cart'} className={style.cart}>
-                    <FaShoppingCart /><div className={style.cartLength}>{loadingg ? cart.length > 0 ? cart : '0':'0' } Price: {loadingg ? '0' : priceCount ? priceCount > 0 ? priceCount : '0' : '0'}</div></NavLink>
+                    <FaShoppingCart /><div className={style.cartLength}>{loadingg ? cart > 0 ? cart : '0':'0' } Price: {loadingg ?priceCount ? priceCount > 0 ? priceCount: '0'  : '0' : '0'}</div></NavLink>
                 {
                     loadingg ?  <NavLink to={'/Dashboard'}>Logout</NavLink>:<NavLink to={'/Login'}>Login</NavLink> 
                 }
