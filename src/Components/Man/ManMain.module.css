@@ -73,6 +73,9 @@ a:hover{
 .size button:hover{
     color: #bf1650;
 }
+
+
+
 .price{
     display: flex;
     justify-content: center;

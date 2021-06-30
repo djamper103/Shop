@@ -36,46 +36,59 @@ const NewReleases = ({ state, addToCart, }) => {
 
     return (
         <div className={style.main}>
-            <h3>New Releases</h3>
-            <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
-                <option defaultValue="all" >All</option>
-                <option value="shoes" >Shoes</option>
-                <option value="pants">Pants</option>
-                <option value="polo" >Polo</option>
-                <option value="bag">Bag</option>
-            </select>
-            <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
-                <option defaultValue="all" >All</option>
-                <option value="mostPrise" >Most Prise</option>
-                <option value="lowPrise">Low Prise</option>
-            </select>
-            <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
-            <div className={style.maincontent}>
-            <div className={style.product}>
-                {productItem.map((product) => (
-                    <div className={style.component} key={product.id}>
-                        <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
-                            <img src={product.image} alt={product.id} title={product.id} />
-                            <div className={style.product}>{product.id}</div>
-                        </NavLink>
-                        <div className={style.size}>
-                        {
-                                product.size.split(" ").map(item => <button key={item} onClick={() => 
-                                    product.chosenSize=item
-                                    
-                                
-                                }>{item}</button>)
-                            }
-                        </div>
-                        <div className={style.price}><p>{product.price} грн.</p></div>
-                        <button onClick={() => addToCart(product)}>Add to Cart</button>
-                    </div>
-                ))
-                }
-            </div>
-            </div>
-
+        <div className={style.Content}>
+         <div  className={style.header}>
+         <h3>New Releases</h3>
         </div>
+            
+            <div className={style.select} >
+
+<select name="select" onChange={event => { setTypeItem(event.target.value) }}>
+    <option defaultValue="all" >All</option>
+    <option value="shoes" >Shoes</option>
+    <option value="pants">Pants</option>
+    <option value="polo" >Polo</option>
+    <option value="bag">Bag</option>
+</select>
+<select name="select" onChange={event => { setPriceItem(event.target.value) }}>
+    <option defaultValue="all" >All</option>
+    <option value="mostPrise" >Most Prise</option>
+    <option value="lowPrise">Low Prise</option>
+</select>
+<input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
+
+</div>
+<div className={style.maincontent}>
+<div className={style.product}>
+{
+productItem.map((product) => (
+    <div className={style.component} key={product.id}>
+    <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
+        <img src={product.image} alt={product.id} title={product.id} />
+        <div className={style.productId}>{product.id}</div>
+        </NavLink>
+        <div className={style.size}>
+        {
+            product.size.split(" ").map(item => <button key={item} onClick={() => 
+                product.chosenSize=item
+                
+            
+            }>{item}</button>)
+        }
+    </div>
+        <div className={style.price}>
+        {/* {product.salePrice} грн. */}
+        <p>{product.price}</p>грн.</div>
+        <div  className={style.addToCart}>
+        <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
+        </div>
+    </div>
+))
+}
+</div>
+</div>
+</div>
+</div>
 
     )
 }

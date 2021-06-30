@@ -41,16 +41,18 @@ export default function Sale({ addToCart,}) {
 
     return (
         <div className={style.main}>
+        <div  className={style.header}>
             <h3>Sale</h3>
-            <div className={style.maincontent}>
-            <div className={style.sale}>
-                {state.map((product) => (
-                    <div className={style.component} key={product.id}>
-                        <NavLink to={`/Product/${product.id}`}>
+        </div>
+        <div className={style.Content}>
+                {
+                    state.map((product) => (
+                        <div className={style.component} key={product.id}>
+                        <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
                             <img src={product.image} alt={product.id} title={product.id} />
-                            <div className={style.product}>{product.id}</div>
-                        </NavLink>
-                        <div className={style.size}>
+                            <div className={style.productId}>{product.id}</div>
+                            </NavLink>
+                            <div className={style.size}>
                             {
                                 product.size.split(" ").map(item => <button key={item} onClick={() => 
                                     product.chosenSize=item
@@ -59,14 +61,18 @@ export default function Sale({ addToCart,}) {
                                 }>{item}</button>)
                             }
                         </div>
-                        <div className={style.price}>{product.salePrice} грн.<p>{product.price} грн.</p></div>
-                        <button onClick={() => addToCart(product)}>Add to Cart</button>
-                    </div>
-                ))
+                            <div className={style.price}>
+                            {product.salePrice} грн.
+                            <p>{product.price}</p>грн.</div>
+                            <div  className={style.addToCart}>
+                            <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
+                            </div>
+                        </div>
+                    ))
                 }
-            </div>
-            </div>
-        </div>
+                </div>
+                </div>
+        
 
     )
 }

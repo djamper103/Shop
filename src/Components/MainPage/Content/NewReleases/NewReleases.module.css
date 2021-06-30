@@ -1,22 +1,144 @@
 .main{
     grid-area:main;
 }
-.maincontent {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    height: 100%;
-    margin: 50px;
+.Content {
+    display: grid;
+    grid-template-areas: 'header' 'select' 'maincontent';
+    grid-template-rows:auto auto auto;
+    letter-spacing: 1px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: #bf1650;
+    text-decoration: none;
 }
 
-.product img {
+.header{
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    margin: 90px 0px 50px;
+}
+.header h3{
+    font-size: 34px;
+}
+.select {
+    grid-area: select;
+    display: flex;
+    justify-content: center;
+}
+
+.maincontent {
+    grid-area: maincontent;
+
+}
+.product{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.component img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
+    border-radius: 3px;
 }
 
-.product {
-    max-width: 300px;
+.component {
+    max-width: 285px;
     max-height: 350px;
+    margin: 50px;
+    margin-bottom:220px;
+    justify-content: center;
+    align-items: center;
 }
+.productId{
+      display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 18px;
+    font-family: 'Montserrat', sans-serif;
+     font-size: 19px;
+     font-weight: 540;
+     height: 50px;
+}
+.size{
+    display: flex;
+    justify-content: center;
+
+}
+.size button{
+    margin: 3px;
+    border-radius: 3px;
+    
+}
+.size button:hover{
+    color: #bf1650;
+}
+
+
+
+.price{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+
+
+.addToCart {
+    display: flex;
+    justify-content: center;
+}
+
+  span button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    max-height: 40px;
+    max-width: 130px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  span button:before,
+  span button:after{
+    position: absolute;
+    content: "Add to Cart";
+    height: 40px;
+    width: 130px;
+    display: flex;
+    top:-2px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  span button:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  span button:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  span button:hover{
+      
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+  
+  
