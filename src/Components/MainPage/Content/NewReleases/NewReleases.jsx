@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./NewReleases.module.css";
-import _ from "lodash"
+
 
 
 

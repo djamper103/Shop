@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import style from './ManMain.module.css'
 import axios from 'axios'
+import { NavLink } from "react-router-dom";
 
 
 const ManMain = ({ addToCart }) => {
@@ -17,7 +18,7 @@ const ManMain = ({ addToCart }) => {
 
     useEffect(() => {
         if (fetching) {
-            axios.get(`http://localhost:3000/shopItemMan?_limit=4&_page=${currentPage}`)
+            axios.get(`http://localhost:3000/shopItemMan?_limit=8&_page=${currentPage}`)
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)
@@ -104,8 +105,10 @@ const ManMain = ({ addToCart }) => {
                 {
                     productItem.map((product) => (
                         <div className={style.component} key={product.id}>
+                        <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
                             <img src={product.image} alt={product.id} title={product.id} />
-                            <div className={style.product}>{product.id}</div>
+                            <div className={style.productId}>{product.id}</div>
+                            </NavLink>
                             <div className={style.size}>
                             {
                                 product.size.split(" ").map(item => <button key={item} onClick={() => 
@@ -115,8 +118,12 @@ const ManMain = ({ addToCart }) => {
                                 }>{item}</button>)
                             }
                         </div>
-                            <div className={style.price}>{product.salePrice} грн.<p>{product.price} грн.</p></div>
-                            <button onClick={() => addToCart(product)}>Add to Cart</button>
+                            <div className={style.price}>
+                            {/* {product.salePrice} грн. */}
+                            <p>{product.price}</p>грн.</div>
+                            <div  className={style.addToCart}>
+                            <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
+                            </div>
                         </div>
                     ))
                 }

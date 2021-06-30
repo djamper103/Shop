@@ -132,7 +132,6 @@
       "size": "M X L",
       "price": "810",
       "priceCount": "810",
-      "salePrice": "570",
       "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/91/c09a552a72aa4f3bbc4db2dec836503a.jpeg",
       "count": "1",
       "type":"pants"
@@ -143,7 +142,6 @@
     "size": "40 41 41 43 44 45",
     "price": "1150",
     "priceCount": "1150",
-    "salePrice": "990",
     "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
     "count": "1",
     "type":"shoes"
@@ -153,7 +151,6 @@
   "size": "XS S M L XL XXL",
   "price": "450",
   "priceCount": "450",
-  "salePrice": "340",
   "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
   "count": "1",
   "type":"polo"
@@ -164,7 +161,6 @@
   "size": "M X L",
   "price": "810",
   "priceCount": "810",
-  "salePrice": "570",
   "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/91/c09a552a72aa4f3bbc4db2dec836503a.jpeg",
   "count": "1",
   "type":"pants"
@@ -175,7 +171,6 @@
 "size": "40 41 41 43 44 45",
 "price": "1150",
 "priceCount": "1150",
-"salePrice": "990",
 "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
 "count": "1",
 "type":"shoes"
@@ -185,10 +180,29 @@
 "size": "XS S M L XL XXL",
 "price": "450",
 "priceCount": "450",
-"salePrice": "340",
 "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
 "count": "1",
 "type":"polo"
+},
+{
+    
+  "id": "Штаны Staff cargo kil brown",
+  "size": "M X L",
+  "price": "810",
+  "priceCount": "810",
+  "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/91/c09a552a72aa4f3bbc4db2dec836503a.jpeg",
+  "count": "1",
+  "type":"pants"
+},
+
+{
+"id": "Кросовки Staff white&red",
+"size": "40 41 41 43 44 45",
+"price": "1150",
+"priceCount": "1150",
+"image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
+"count": "1",
+"type":"shoes"
 }
 ],
 "shopItemWoman": [
@@ -255,6 +269,28 @@
 "image": "https://static.staff-clothes.com/media/cache/image_product_desktop_catalog/image_product/0001/90/987e1ee97c4f4f1bb2db96765bddb9c7.jpeg",
 "count": "1",
 "type":"polo"
+},
+{
+    
+  "id": "Штаны Staff cargo kil brown",
+  "size": "M X L",
+  "price": "810",
+  "priceCount": "810",
+  "salePrice": "570",
+  "image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/91/c09a552a72aa4f3bbc4db2dec836503a.jpeg",
+  "count": "1",
+  "type":"pants"
+},
+
+{
+"id": "Кросовки Staff white&red",
+"size": "40 41 41 43 44 45",
+"price": "1150",
+"priceCount": "1150",
+"salePrice": "990",
+"image": "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
+"count": "1",
+"type":"shoes"
 }
 ],
  "Sale": [
