@@ -4,6 +4,8 @@ import style from './Cart.module.css'
 import StripeCheckout from 'react-stripe-checkout';
 import axios from "axios"
 import { toast } from "react-toastify";
+import { NavLink } from "react-router-dom";
+import {Container} from "react-bootstrap"
 
 
 export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart, priceCount }) {
@@ -27,7 +29,7 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
             "http://localhost:4000/payment",
             { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) }
         );
-        debugger
+
         const { status } = response.data;
         console.log("Response:", response.data);
         if (status === "success") {
@@ -38,17 +40,25 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
     }
 
     return (
-        <div className={style.container}>
+        <div className={style.main}>
+         <div  className={style.header}>
             <h3>Корзина</h3>
+        </div>
+        <div className={style.Content}>
             {
                 state.length > 0 ?
+                <div className={style.mainContent}>
                     <div className={style.product}>
                         {state.map(product =>
                             <div key={product.id}>
                                 <div className={style.component} key={product.id} >
-                                    <img src={product.image} alt='' />
-                                    <div className={style.product}>{product.id}</div>
-                                    <div className={style.size}>Chosen Size:{product.chosenSize}</div>
+                                <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
+                            <img src={product.image} alt={product.id} title={product.id} />
+                            <div className={style.productId}>{product.id}</div>
+                            </NavLink>
+                                    <div className={style.chosenSize}>Chosen Size: {product.chosenSize?product.chosenSize
+                                    :"Size not selected"}
+                                    </div>
                                     <div className={style.size}>
                             {
                                 product.size.split(" ").map(item => <button key={item} onClick={() => 
@@ -58,31 +68,44 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                                 }>{item}</button>)
                             }
                         </div>
-                                    <div className={style.price}>{product.price}</div>
+                                    <div className={style.price}><p>{product.price}</p>грн.</div>
+                                    <div className={style.increase}>
                                     <button onClick={() => decreaseCart(product)} >-</button>
                                     <span>{product.count}</span>
                                     <button onClick={() => increaseCart(product)}>+</button>
                                     <button onClick={() => removeFromCart(product)}>X</button>
+                                    </div>
                                 </div>
                             </div>
+                            
                         )
                         }
+                        
+                    </div>
+                    <div className={style.stripe}>
                         <StripeCheckout
                             stripeKey="pk_test_51J12GCE9ORF0ZMb0UFA5Q0mkv6CRJvWLTA4jmDp2stqCIsvZWb0oUgdi3Y9tf7IV31RRkFWirBy24V9rcoEXZmp0008sZHH7AK"
                             token={handleSubmit}
                             billingAddress
                             shippingAddress
                         />
-                    </div>
-
+                        </div>
+</div>
                     :
-                    
-                     <div className={style.product}>
-                        <img src={cartImg} />
-                        <p>В корзине нет товаров</p>
-                    </div>
+                    <Container
+                        className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
+                        style={{ minHeight: "80vh" }}>
+                        <div className="w-100" style={{ maxWidth: "400px" }}>
+                        <div className={style.noProduct}>
+                                <img src={cartImg} /> 
+                            <p >В корзине нет товаров</p>
+                            
+                        </div>
+                        </div>
+                    </Container>
+                  
             }
-
+</div>
         </div>
     )
 

@@ -119,10 +119,16 @@ function App() {
                     <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} />} />
                     <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />
                  
-                
+                    <Route exact path='/Cart'
+                                render={() => loadingg ?
+                                    <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
+                                        increaseCart={increaseCart} decreaseCart={decreaseCart}
+                                    />:
+                                    <Redirect to="/login" /> 
+                                } />
                     
                     <Container
-                        className="d-flex align-items-center justify-content-center "
+                        className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
 
@@ -132,13 +138,7 @@ function App() {
                         <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
                         <Route exact path='/signup' render={() => <Signup />} />
 
-                            <Route exact path='/Cart'
-                                render={() => loadingg ?
-                                    <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
-                                        increaseCart={increaseCart} decreaseCart={decreaseCart}
-                                    />:
-                                    <Redirect to="/login" /> 
-                                } />
+                           
                  
                         </div>
                     </Container>

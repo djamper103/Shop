@@ -3,19 +3,17 @@ import { NavLink } from "react-router-dom";
 import style from "./NewReleases.module.css";
 
 
-
-
 const NewReleases = ({ state, addToCart, }) => {
     const [typeItem, setTypeItem] = useState("all")
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
     const [searchItem, setSearchItem] = useState("")
 
+
     useEffect(() => {
         const newProducts = [...state]
             .sort((a, b) => {
                 if (priceItem === "mostPrise") {
-                    debugger
                     return b.price - a.price
                 } else if
                     (priceItem === "lowPrise") {
@@ -31,7 +29,7 @@ const NewReleases = ({ state, addToCart, }) => {
                 product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
             );
         setProductItem(newProducts);
-    }, [typeItem, priceItem, state, searchItem]);
+    }, [typeItem, priceItem, productItem, searchItem]);
 
 
     return (
@@ -44,14 +42,14 @@ const NewReleases = ({ state, addToCart, }) => {
             <div className={style.select} >
 
 <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
-    <option defaultValue="all" >All</option>
+    <option value="all" >All</option>
     <option value="shoes" >Shoes</option>
     <option value="pants">Pants</option>
     <option value="polo" >Polo</option>
     <option value="bag">Bag</option>
 </select>
 <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
-    <option defaultValue="all" >All</option>
+    <option value="all" >All</option>
     <option value="mostPrise" >Most Prise</option>
     <option value="lowPrise">Low Prise</option>
 </select>
@@ -77,7 +75,6 @@ productItem.map((product) => (
         }
     </div>
         <div className={style.price}>
-        {/* {product.salePrice} грн. */}
         <p>{product.price}</p>грн.</div>
         <div  className={style.addToCart}>
         <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
