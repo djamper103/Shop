@@ -71,7 +71,9 @@ const NewReleases = ({ state, addToCart, }) => {
 productItem.map((product) => (
     <div className={style.component} key={product.id}>
     <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
-        <img src={product.image} alt={product.id} title={product.id} />
+    <div className={style.image}>
+                            <img src={product.image} alt={product.id} title={product.id} />
+                            </div>
         <div className={style.productId}>{product.id}</div>
         </NavLink>
         <div className={style.size}>

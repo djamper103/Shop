@@ -33,7 +33,7 @@ const ManMain = ({ addToCart }) => {
 
     useEffect(() => {
         if (fetching) {
-            axios.get(`http://localhost:3000/shopItemMan?_limit=8&_page=${currentPage}`)
+            axios.get(`http://localhost:3000/shopItemMan?_limit=4&_page=${currentPage}`)
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)
@@ -121,7 +121,9 @@ const ManMain = ({ addToCart }) => {
                     productItem.map((product) => (
                         <div className={style.component} key={product.id}>
                         <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
+                        <div className={style.image}>
                             <img src={product.image} alt={product.id} title={product.id} />
+                            </div>
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
                             <div className={style.size}>
@@ -134,7 +136,6 @@ const ManMain = ({ addToCart }) => {
                             }
                         </div>
                             <div className={style.price}>
-                            {/* {product.salePrice} грн. */}
                             <p>{product.price}</p>грн.</div>
                             <div  className={style.addToCart}>
                             <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>

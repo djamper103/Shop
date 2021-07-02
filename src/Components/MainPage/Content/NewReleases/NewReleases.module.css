@@ -33,25 +33,36 @@ a:hover{
 
 .maincontent {
     grid-area: maincontent;
-
 }
 .product{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    margin: 0px 300px;
 }
 .component img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 3px;
+    max-width: 285px;
+    max-height: 350px;
+    transition: all 0.5s;
+    min-height: 350px;
+   
 }
-
+.component img:hover {
+    transform: scale(1.05);
+}
+.image{
+    overflow: hidden;
+    max-width: 285px;
+    max-height: 350px;
+}
 .component {
     max-width: 285px;
     max-height: 350px;
-    margin: 50px;
+    margin:  60px 10px;
     margin-bottom:220px;
     justify-content: center;
     align-items: center;
@@ -60,7 +71,7 @@ a:hover{
       display: flex;
     justify-content: center;
     text-align: center;
-    margin: 18px;
+    margin: 20px 3px 20px;
     font-family: 'Montserrat', sans-serif;
      font-size: 19px;
      font-weight: 540;
@@ -97,6 +108,9 @@ a:hover{
     display: flex;
     justify-content: center;
     width: 100%;
+}
+.addToCart button{
+    margin-bottom: 400px;
 }
 
 .addToCart span button{

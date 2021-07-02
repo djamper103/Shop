@@ -48,10 +48,14 @@ export default function Sale({ addToCart,}) {
                 {
                     state.map((product) => (
                         <div className={style.component} key={product.id}>
+                        
                         <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
+                        <div className={style.image}>
                             <img src={product.image} alt={product.id} title={product.id} />
+                            </div>
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
+                            
                             <div className={style.size}>
                             {
                                 product.size.split(" ").map(item => <button key={item} onClick={() => 

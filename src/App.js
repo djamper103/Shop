@@ -132,7 +132,7 @@ function App() {
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
 
-                        <Route exact path='/Login' render={() => <Login />} />
+                        <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
                         <Route exact path='/Dashboard' render={() => <Dashboard />} />
                         <Route exact path='/update-profile' render={() => <UpdateProfile />} />
                         <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
