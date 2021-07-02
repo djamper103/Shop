@@ -13,7 +13,7 @@ export default function Sale({ addToCart,}) {
 
     useEffect(() => {
         if (fetching) {
-            axios.get(`http://localhost:3000/Sale?_limit=4&_page=${currentPage}`)
+            axios.get(`http://localhost:3000/sale?_limit=4&_page=${currentPage}`)
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)
@@ -63,7 +63,7 @@ export default function Sale({ addToCart,}) {
                         </div>
                             <div className={style.price}>
                             {product.salePrice} грн.
-                            <p>{product.price}</p>грн.</div>
+                            <span>{product.price} грн.</span></div>
                             <div  className={style.addToCart}>
                             <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
                             </div>

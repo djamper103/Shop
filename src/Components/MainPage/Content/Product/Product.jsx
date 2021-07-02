@@ -19,7 +19,7 @@ export default function Product({ state, addToCart }) {
         })
         setProoducts(product)
 
-
+        debugger
     }, [state])
 
 
@@ -30,6 +30,7 @@ export default function Product({ state, addToCart }) {
                     <img src={product.image} alt={product.id} title={product.id} />
                     <div className={style.product}>{product.id}</div>
                     <div className={style.size}>{product.size}</div>
+                     <div className={style.size}>{product.specification}</div>
                     <div className={style.price}>{product.salePrice} грн.<p>{product.price} грн.</p></div>
                     <button onClick={() => addToCart(product)}>Add to Cart</button>
                 </div>

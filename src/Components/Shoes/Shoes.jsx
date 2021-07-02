@@ -11,9 +11,7 @@ const Shoes = ({ addToCart }) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [fetching, setFetching] = useState(true)
 
-    const [modalActive,setModalActive]=useState(true)
-
-
+    const [typeGender, setGender] = useState("all")
     const [typeItem, setTypeItem] = useState("all")
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
@@ -61,6 +59,9 @@ const Shoes = ({ addToCart }) => {
                 }
             })
             .filter((product) =>
+                typeGender === "all" ? product : product.gender === typeGender
+            )
+            .filter((product) =>
                 typeItem === "all" ? product : product.type === typeItem
             )
             .filter((product) =>
@@ -78,14 +79,12 @@ const Shoes = ({ addToCart }) => {
                 {/* <ShoesUpContent/> */}
             </div>
             <div className={style.select} >
-
-<select name="select" onChange={event => { setTypeItem(event.target.value) }}>
-    <option defaultValue="all" >All</option>
-    <option value="shoes" >Shoes</option>
-    <option value="pants">Pants</option>
-    <option value="polo" >Polo</option>
-    <option value="bag">Bag</option>
+<select name="select" onChange={event => { setGender(event.target.value) }}>
+    <option value="all" >All</option>
+    <option value="male" >Male</option>
+    <option value="female">Female</option>
 </select>
+
 <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
     <option defaultValue="all" >All</option>
     <option value="mostPrise" >Most Prise</option>

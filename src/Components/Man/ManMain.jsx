@@ -5,6 +5,21 @@ import { NavLink } from "react-router-dom";
 
 
 const ManMain = ({ addToCart }) => {
+    // {
+    //     id: "Кросовки Staff white&red",
+    //     size: "40 41 42 43 44 45",
+    //     price: "1150",
+    //     priceCount: "1150",
+    //     salePrice: "990",
+    //     image: "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
+    //     imageSlide1:"",
+    //     imageSlide2:"",
+    //     imageSlide3:"",
+    //     count: "1",
+    //     type:"shoes",
+    //     gender:"male",
+    //     specification:"Классический дизайн с большими накладными карманами позволят взять все необходимое с собой "
+    // }
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -86,11 +101,11 @@ const ManMain = ({ addToCart }) => {
                 <div className={style.select} >
 
                     <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
-                        <option defaultValue="all" >All</option>
-                        <option value="shoes" >Shoes</option>
-                        <option value="pants">Pants</option>
-                        <option value="polo" >Polo</option>
-                        <option value="bag">Bag</option>
+                    <option value="all" >All</option>
+    <option value="shorts">Shorts</option> 
+    <option value="pants">Pants</option>
+    <option value="polo" >Polo</option>
+    <option value="shoes" >Shoes</option>
                     </select>
                     <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
                         <option defaultValue="all" >All</option>

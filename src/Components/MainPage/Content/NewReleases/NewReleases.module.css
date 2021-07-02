@@ -96,15 +96,17 @@ a:hover{
 .addToCart {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
-  span button{
+.addToCart span button{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 19px;
-    max-height: 40px;
-    max-width: 130px;
+    max-height: 100%;
+    max-width: 100%;
+        padding: 5px;
     border-radius: 5px;
     letter-spacing: 1px;
     transform-style: preserve-3d;
@@ -113,30 +115,28 @@ a:hover{
     font-family: 'Montserrat', sans-serif;
     
   }
-  span button:before,
-  span button:after{
-    position: absolute;
+  .addToCart span button:before,
+  .addToCart span button:after{
     content: "Add to Cart";
-    height: 40px;
-    width: 130px;
+    height: 108%;
+    width: 104%;
     display: flex;
-    top:-2px;
     align-items: center;
     justify-content: center;
     border: 3px solid black;
     box-sizing: border-box;
     border-radius: 5px;
   }
-  span button:before{
+  .addToCart span button:before{
     color: #fff;
     background: #000;
     transform: rotateY(0deg) translateZ(25px);
   }
-  span button:after{
+  .addToCart span button:after{
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
   }
-  span button:hover{
+  .addToCart span button:hover{
       
     transform: translateZ(-25px) rotateX(-90deg);
   }

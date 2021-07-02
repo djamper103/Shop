@@ -88,7 +88,17 @@ a:hover{
     font-size: 19px;
     font-weight: 400;
     margin-top: 15px;
+    color: red;
+    margin-bottom: 20px;
 }
+
+.price span {
+    margin-left: 10px;
+    font-weight: 200;
+    color: #999999;
+    text-decoration: line-through;
+}
+
 
 
 

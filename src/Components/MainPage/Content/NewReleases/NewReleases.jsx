@@ -5,6 +5,7 @@ import style from "./NewReleases.module.css";
 
 const NewReleases = ({ state, addToCart, }) => {
     const [typeItem, setTypeItem] = useState("all")
+    const [typeGender, setGender] = useState("all")
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
     const [searchItem, setSearchItem] = useState("")
@@ -23,6 +24,9 @@ const NewReleases = ({ state, addToCart, }) => {
                 }
             })
             .filter((product) =>
+                typeGender === "all" ? product : product.gender === typeGender
+            )
+            .filter((product) =>
                 typeItem === "all" ? product : product.type === typeItem
             )
             .filter((product) =>
@@ -40,13 +44,18 @@ const NewReleases = ({ state, addToCart, }) => {
         </div>
             
             <div className={style.select} >
+<select name="select" onChange={event => { setGender(event.target.value) }}>
+    <option value="all" >All</option>
+    <option value="male" >Male</option>
+    <option value="female">Female</option>
+</select>
 
 <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
     <option value="all" >All</option>
-    <option value="shoes" >Shoes</option>
+    <option value="shorts">Shorts</option> 
     <option value="pants">Pants</option>
     <option value="polo" >Polo</option>
-    <option value="bag">Bag</option>
+    <option value="shoes" >Shoes</option>
 </select>
 <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
     <option value="all" >All</option>

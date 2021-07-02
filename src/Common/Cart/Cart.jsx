@@ -4,8 +4,9 @@ import style from './Cart.module.css'
 import StripeCheckout from 'react-stripe-checkout';
 import axios from "axios"
 import { toast } from "react-toastify";
-import { NavLink } from "react-router-dom";
+import { NavLink,useHistory } from "react-router-dom";
 import {Container} from "react-bootstrap"
+
 
 
 export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart, priceCount }) {
@@ -38,6 +39,13 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
             toast("Something went wrong", { type: "error" });
         }
     }
+
+    const history = useHistory();
+
+    function gotoHome() {
+        history.push("/Shop");
+    }
+
 
     return (
         <div className={style.main}>
@@ -93,13 +101,15 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
 </div>
                     :
                     <Container
-                        className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
+                        className="d-flex align-items-center justify-content-center  "
                         style={{ minHeight: "80vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
                         <div className={style.noProduct}>
                                 <img src={cartImg} /> 
                             <p >В корзине нет товаров</p>
-                            
+                            <div className={style.noProductButton}>
+                            <span><button onClick={gotoHome}>ПЕРЕЙТИ В КАТАЛОГ</button> </span>
+                            </div>
                         </div>
                         </div>
                     </Container>

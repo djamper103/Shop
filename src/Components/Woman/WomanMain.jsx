@@ -80,11 +80,11 @@ const WomanMain = ({ addToCart }) => {
             setTypeItem(event.target.value);
           }}
         >
-          <option defaultValue="all">All</option>
-          <option value="shoes">Shoes</option>
-          <option value="pants">Pants</option>
-          <option value="polo">Polo</option>
-          <option value="bag">Bag</option>
+    <option value="all" >All</option>
+    <option value="shorts">Shorts</option> 
+    <option value="pants">Pants</option>
+    <option value="polo" >Polo</option>
+    <option value="shoes" >Shoes</option>
         </select>
         <select
           name="select"
