@@ -133,11 +133,11 @@ a:hover{
 .size button{
     margin: 0px 3px;
     border-radius: 3px;
-
+    background-color: white;
 }
 .size button:hover{
     color: #bf1650;
-    background-color: white;
+    background-color: rgb(195, 192, 192);
 }
 .chosenSize{
     display: flex;
@@ -213,7 +213,98 @@ margin: 30px;
     transform: translateZ(-25px) rotateX(-90deg);
   }
   
+  .favoritesandCart{
+      display: flex;
+      justify-content: center;
+
+  }
+
+
+.removeFromFavorites span button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+.removeFromFavorites span button:before,
+.removeFromFavorites span button:after{
+    content: "ОЧИСТИТЬ ИЗБРАННОЕ";
+    height: 104%;
+    width: 102%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+.removeFromFavorites span button:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  .removeFromFavorites span button:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  .removeFromFavorites span button:hover{
+      
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+
+
   
+.addToCart span button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 19px;
+    max-height: 100%;
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+.addToCart span button:before,
+.addToCart span button:after{
+    content: "ДОБАВИТЬ В КОРЗИНУ";
+    height: 104%;
+    width: 102%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+.addToCart span button:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  .addToCart span button:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  .addToCart span button:hover{
+      
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
 
 
 

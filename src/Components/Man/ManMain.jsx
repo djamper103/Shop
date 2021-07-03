@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react'
 import style from './ManMain.module.css'
 import axios from 'axios'
 import { NavLink } from "react-router-dom";
+import {
+    BsHeart
+  } from "react-icons/all";
 
-
-const ManMain = ({ addToCart }) => {
+const ManMain = ({ addToCart,addFavorites }) => {
     // {
     //     id: "Кросовки Staff white&red",
     //     size: "40 41 42 43 44 45",
@@ -128,6 +130,7 @@ const ManMain = ({ addToCart }) => {
                             </div>
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
+                            <div  className={style.favorites}><span><BsHeart onClick={() =>  addFavorites(product)}/></span></div>
                             <div className={style.size}>
                             {
                                 product.size.split(" ").map(item => <button key={item} onClick={() => 

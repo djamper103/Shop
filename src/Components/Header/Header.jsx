@@ -2,7 +2,8 @@ import style from './Header.module.css'
 import React from "react";
 import { NavLink } from "react-router-dom";
 import {
-    FaShoppingCart
+    FaShoppingCart,
+    BsHeart
 } from "react-icons/all";
 
 const Header = ({ cart, loadingg, priceCount }) => {
@@ -26,6 +27,9 @@ const Header = ({ cart, loadingg, priceCount }) => {
 
                 <NavLink to={'/Cart'} className={style.cart}>
                     <FaShoppingCart /><div className={style.cartLength}>{loadingg ? cart > 0 ? cart : '0':'0' } Price: {loadingg ?priceCount ? priceCount > 0 ? priceCount: '0'  : '0' : '0'}</div></NavLink>
+                    
+                    <NavLink to={'/Favorites'}> <BsHeart/></NavLink>
+                
                 {
                     loadingg ?  <NavLink to={'/Dashboard'}>Logout</NavLink>:<NavLink to={'/Login'}>Login</NavLink> 
                 }

@@ -3,9 +3,12 @@ import style from './Shoes.module.css'
 import ShoesUpContent from "./shoesUpContent"
 import axios from 'axios'
 import { NavLink } from "react-router-dom";
+import {
+  BsHeart
+} from "react-icons/all";
 
 
-const Shoes = ({ addToCart }) => {
+const Shoes = ({ addToCart,addFavorites,}) => {
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -110,6 +113,8 @@ productItem.map((product) => (
                             </div>
                 <div className={style.productId}>{product.id}</div>
               </NavLink>
+            
+              <div  className={style.favorites}><span><BsHeart onClick={() =>  addFavorites(product)}/></span></div>
         <div className={style.size}>
         {
             product.size.split(" ").map(item => <button key={item} onClick={() => 
@@ -123,6 +128,7 @@ productItem.map((product) => (
         <p>{product.price}</p>грн.</div>
         <div  className={style.addToCart}>
         <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
+        
         </div>
     </div>
 ))

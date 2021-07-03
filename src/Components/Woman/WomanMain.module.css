@@ -84,8 +84,8 @@ a:hover{
 }
 .size button:hover{
     color: #bf1650;
+    background-color: white;
 }
-
 
 
 .price{
@@ -102,6 +102,28 @@ a:hover{
 .addToCart {
     display: flex;
     justify-content: center;
+}
+
+.favorites{
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    top:-424px;
+    left: 250px;
+    display: flex;
+    width: 31px;
+    height: 31px;
+    border-radius:15px;
+    background-color: white;
+
+}
+.favorites span:active{
+    color: red;
+    transition: 0s;
+}
+.favorites span:hover{
+    color: red;
+    transition: 0s;
 }
 
   span button{

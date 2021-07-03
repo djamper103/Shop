@@ -19,17 +19,17 @@ import Dashboard from './Common/Login/DashBoard'
 import Header from "./Components/Header/Header";
 import Product from "./Components/MainPage/Content/Product/Product"
 import Shoes from "./Components/Shoes/Shoes"
-import ShoesProduct from "./Components/Shoes/shoesProduct"
-import WomanProduct from "./Components/Woman/womanProduct"
-import ManProduct from "./Components/Man/manProduct"
+import Favorites from "./Common/Favorites/Favorites"
 
 
 function App() {
     const [state, setState] = useState([])
+    const [stateAll, setStateAll] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [fetching, setFetching] = useState(true)
     const [totalCount, setTotalCount] = useState(0)
     const [cart, setCart] = useState([])
+    const [favorites, setFavorites] = useState([])
     const [priceCount, setPriceCount] = useState(0)
     const [loadingg,setLoadingg]=useState(false)
 
@@ -51,11 +51,25 @@ function App() {
 
 
     const addToCart = (product) => {
+        debugger
         const check = cart.every(item => {
             return item.id !== product.id
         })
+        debugger
         if (check) {
             setCart([...cart, { ...product }])
+        } else {
+            alert("The product has been added to cart")
+
+        }
+    }
+
+    const addFavorites = (product) => {
+        const check = favorites.every(item => {
+            return item.id !== product.id
+        })
+        if (check) {
+            setFavorites([...favorites, { ...product }])
         } else {
             alert("The product has been added to cart")
 
@@ -65,6 +79,10 @@ function App() {
     const removeFromCart = (productToRemove) => {
         setCart(cart.filter(product => product !== productToRemove))
     }
+    const removeFromFavorites = (productToRemove) => {
+        setFavorites(favorites.filter(product => product !== productToRemove))
+    }
+
 
     const increaseCart = (product) => {
         setCart(cart.map(item => item.id === product.id ?
@@ -89,6 +107,15 @@ function App() {
                 .finally(() => setFetching(false))
         }
     }, [fetching])
+
+
+    useEffect(() => {
+            axios.get(`http://localhost:3000/shopItem`)
+                .then(response => {
+                    setStateAll([...state, ...response.data])
+                   
+                })
+    }, [])
 
     useEffect(() => {
 
@@ -115,15 +142,14 @@ function App() {
                 <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}
                 />
                 <div className='Maincontent'> 
-                    <Route exact path='/Shop'  render={() => <MainPage state={state} addToCart={addToCart} />} />
-                    <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} />} />
-                    <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} />} />
-                    <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} />} />
-                    <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />
-                    <Route exact path='/ShoesProduct/:id' render={() => <ShoesProduct addToCart={addToCart} />} />
-                    <Route exact path='/WomanProduct/:id' render={() => <WomanProduct addToCart={addToCart} />} />
-                    <Route exact path='/ManProduct/:id' render={() => <ManProduct addToCart={addToCart} />} />
-                 
+                    <Route exact path='/Shop'  render={() => <MainPage state={state} addToCart={addToCart} addFavorites={addFavorites}/>} />
+                    <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} />} addFavorites={addFavorites}/>
+                    <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} addFavorites={addFavorites}/>} />
+                    <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} addFavorites={addFavorites} />} />
+                    <Route exact path='/Product/:id' render={() => <Product state={stateAll} addToCart={addToCart} />} />
+                    <Route exact path='/Favorites' render={() => <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}
+                     addToCart={addToCart}/>} />
+
                     <Route exact path='/Cart'
                                 render={() => loadingg ?
                                     <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}

@@ -7,15 +7,15 @@ import MainUpContent from "./Content/MainUpContent";
 
 
 
-const MainPage = ({ state, addToCart, removeFromCart }) => {
+const MainPage = ({ state, addToCart, addFavorites }) => {
 
     return (
         <div className={style.Maincontent}>
 
             <MainUpContent />
             {/* <TopSelectionPanel /> */}
-            <Sale state={state} addToCart={addToCart} />
-            <NewReleases state={state} addToCart={addToCart} />
+            <Sale state={state} addToCart={addToCart} addFavorites={addFavorites}/>
+            <NewReleases state={state} addToCart={addToCart} addFavorites={addFavorites}/>
         </div>
     )
 }

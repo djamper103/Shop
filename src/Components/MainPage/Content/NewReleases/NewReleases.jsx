@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./NewReleases.module.css";
+import {
+    BsHeart
+  } from "react-icons/all";
 
-
-const NewReleases = ({ state, addToCart, }) => {
+const NewReleases = ({ state, addToCart,addFavorites }) => {
     const [typeItem, setTypeItem] = useState("all")
     const [typeGender, setGender] = useState("all")
     const [priceItem, setPriceItem] = useState(["all"])
@@ -78,6 +80,7 @@ productItem.map((product) => (
                             </div>
         <div className={style.productId}>{product.id}</div>
         </NavLink>
+        <div  className={style.favorites}><span><BsHeart onClick={() =>  addFavorites(product)}/></span></div>
         <div className={style.size}>
         {
             product.size.split(" ").map(item => <button key={item} onClick={() => 

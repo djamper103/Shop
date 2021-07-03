@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import style from "./WomanMain.module.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import {
+  BsHeart
+} from "react-icons/all";
 
-const WomanMain = ({ addToCart }) => {
+const WomanMain = ({ addToCart,addFavorites }) => {
   
   const [state, setState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -115,7 +118,9 @@ const WomanMain = ({ addToCart }) => {
                             <img src={product.image} alt={product.id} title={product.id} />
                             </div>
                 <div className={style.productId}>{product.id}</div>
+                
               </NavLink>
+              <div  className={style.favorites}><span><BsHeart onClick={() =>  addFavorites(product)}/></span></div>
               <div className={style.size}>
                 {product.size.split(" ").map((item) => (
                   <button
