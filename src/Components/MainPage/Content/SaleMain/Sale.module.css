@@ -85,7 +85,7 @@ a:hover{
 .size button{
 
     border-radius: 3px;
-    
+    margin: 3px;
 }
 .size button:hover{
     color: #bf1650;

@@ -1,14 +1,25 @@
-  import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import style from "./Product.module.css"
+import style from "./manProduct.module.css"
+import axios from 'axios'
 
-export default function Product({ state, addToCart }) {
+export default function ManProduct({ addToCart }) {
  
-
+    const [state, setState] = useState([])
     const [products, setProoducts] = useState([])
     const { id } = useParams()
 
+    useEffect(() => {
     
+          axios.get(
+              `http://localhost:3000/shopItemMan`
+            )
+            .then((response) => {
+              setState([...state, ...response.data]);
+            })
+
+      }, []);
+
     useEffect(() => {
 
         const product = state.filter(item => {

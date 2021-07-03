@@ -19,7 +19,9 @@ import Dashboard from './Common/Login/DashBoard'
 import Header from "./Components/Header/Header";
 import Product from "./Components/MainPage/Content/Product/Product"
 import Shoes from "./Components/Shoes/Shoes"
-
+import ShoesProduct from "./Components/Shoes/shoesProduct"
+import WomanProduct from "./Components/Woman/womanProduct"
+import ManProduct from "./Components/Man/manProduct"
 
 
 function App() {
@@ -78,7 +80,7 @@ function App() {
 
     useEffect(() => {
         if (fetching) {
-            axios.get(`http://localhost:3000/shopItem?_limit=4&_page=${currentPage}`)
+            axios.get(`http://localhost:3000/shopItem?_limit=8&_page=${currentPage}`)
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)
@@ -118,6 +120,9 @@ function App() {
                     <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} />} />
                     <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} />} />
                     <Route exact path='/Product/:id' render={() => <Product state={state} addToCart={addToCart} />} />
+                    <Route exact path='/ShoesProduct/:id' render={() => <ShoesProduct addToCart={addToCart} />} />
+                    <Route exact path='/WomanProduct/:id' render={() => <WomanProduct addToCart={addToCart} />} />
+                    <Route exact path='/ManProduct/:id' render={() => <ManProduct addToCart={addToCart} />} />
                  
                     <Route exact path='/Cart'
                                 render={() => loadingg ?

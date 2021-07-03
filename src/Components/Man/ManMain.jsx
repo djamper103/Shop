@@ -33,7 +33,7 @@ const ManMain = ({ addToCart }) => {
 
     useEffect(() => {
         if (fetching) {
-            axios.get(`http://localhost:3000/shopItemMan?_limit=4&_page=${currentPage}`)
+            axios.get(`http://localhost:3000/shopItemMan?_limit=8&_page=${currentPage}`)
                 .then(response => {
                     setState([...state, ...response.data])
                     setCurrentPage(prevState => prevState + 1)
@@ -102,9 +102,11 @@ const ManMain = ({ addToCart }) => {
 
                     <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
                     <option value="all" >All</option>
-    <option value="shorts">Shorts</option> 
-    <option value="pants">Pants</option>
     <option value="polo" >Polo</option>
+    <option value="hoody">Hoody</option>
+    <option value="jacket">Jacket</option>
+    <option value="pants">Pants</option>
+    <option value="shorts">Shorts</option>
     <option value="shoes" >Shoes</option>
                     </select>
                     <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
@@ -120,7 +122,7 @@ const ManMain = ({ addToCart }) => {
                 {
                     productItem.map((product) => (
                         <div className={style.component} key={product.id}>
-                        <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
+                        <NavLink to={state.length!=0?`/ManProduct/${product.id}`:'/Shop'}>
                         <div className={style.image}>
                             <img src={product.image} alt={product.id} title={product.id} />
                             </div>

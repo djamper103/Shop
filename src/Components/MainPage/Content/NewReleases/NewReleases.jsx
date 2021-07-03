@@ -52,9 +52,11 @@ const NewReleases = ({ state, addToCart, }) => {
 
 <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
     <option value="all" >All</option>
-    <option value="shorts">Shorts</option> 
-    <option value="pants">Pants</option>
     <option value="polo" >Polo</option>
+    <option value="hoody">Hoody</option>
+    <option value="jacket">Jacket</option>
+    <option value="pants">Pants</option>
+    <option value="shorts">Shorts</option>
     <option value="shoes" >Shoes</option>
 </select>
 <select name="select" onChange={event => { setPriceItem(event.target.value) }}>

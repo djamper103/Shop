@@ -61,7 +61,9 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                             <div key={product.id}>
                                 <div className={style.component} key={product.id} >
                                 <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
+                                <div className={style.image}>
                             <img src={product.image} alt={product.id} title={product.id} />
+                            </div>
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
                                     <div className={style.chosenSize}>Chosen Size: {product.chosenSize?product.chosenSize
@@ -81,7 +83,9 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                                     <button onClick={() => decreaseCart(product)} >-</button>
                                     <span>{product.count}</span>
                                     <button onClick={() => increaseCart(product)}>+</button>
+                                    <div className={style.removeFromCart}>
                                     <button onClick={() => removeFromCart(product)}>X</button>
+                                    </div>
                                     </div>
                                 </div>
                             </div>

@@ -18,7 +18,7 @@ const WomanMain = ({ addToCart }) => {
     if (fetching) {
       axios
         .get(
-          `http://localhost:3000/shopItemWoman?_limit=4&_page=${currentPage}`
+          `http://localhost:3000/shopItemWoman?_limit=8&_page=${currentPage}`
         )
         .then((response) => {
           setState([...state, ...response.data]);
@@ -81,10 +81,11 @@ const WomanMain = ({ addToCart }) => {
           }}
         >
     <option value="all" >All</option>
-    <option value="shorts">Shorts</option> 
-    <option value="pants">Pants</option>
     <option value="polo" >Polo</option>
-    <option value="shoes" >Shoes</option>
+    <option value="hoody">Hoody</option>
+    <option value="jacket">Jacket</option>
+    <option value="pants">Pants</option>
+    <option value="shorts">Shorts</option>
         </select>
         <select
           name="select"
@@ -108,7 +109,7 @@ const WomanMain = ({ addToCart }) => {
           {productItem.map((product) => (
             <div className={style.component} key={product.id}>
               <NavLink
-                to={state.length != 0 ? `/Product/${product.id}` : "/Shop"}
+                to={state.length != 0 ? `/WomanProduct/${product.id}` : "/Shop"}
               >
                 <div className={style.image}>
                             <img src={product.image} alt={product.id} title={product.id} />
