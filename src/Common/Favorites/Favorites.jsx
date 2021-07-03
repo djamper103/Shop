@@ -56,10 +56,10 @@ export default function Favorites({ favorites,removeFromFavorites,addToCart}) {
                                     <div className={style.price}><p>{product.price}</p>грн.</div>
                                     <div className={style.favoritesandCart}>
                                     <div className={style.removeFromFavorites}>
-                                    <span><button onClick={() => removeFromFavorites(product)}>Remove From Favorites</button></span>
+                                    <span><button onClick={() => removeFromFavorites(product)}>ОЧИСТИТЬ ИЗБРАННОЕ</button></span>
                                     </div>
                                     <div className={style.addToCart}>
-                                    <span><button onClick={() => addToCart(product)}>Add To Cart</button></span>
+                                    <span><button onClick={() => addToCart(product)}>ДОБАВИТЬ В КОРЗИНУ</button></span>
                                     </div>
                                     </div>
                                     </div>

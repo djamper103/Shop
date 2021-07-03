@@ -215,19 +215,24 @@ margin: 30px;
   
   .favoritesandCart{
       display: flex;
-      justify-content: center;
+justify-content: center;
 
   }
+  .favoritesandCart button{
+ margin: 5px;
+
+
+}
 
 
 .removeFromFavorites span button{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 19px;
+    font-size: 12px;
     max-height: 100%;
     max-width: 100%;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
     letter-spacing: 1px;
     transform-style: preserve-3d;
@@ -240,7 +245,7 @@ margin: 30px;
 .removeFromFavorites span button:after{
     content: "ОЧИСТИТЬ ИЗБРАННОЕ";
     height: 104%;
-    width: 102%;
+    width: 105%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,10 +273,10 @@ margin: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 19px;
+    font-size: 12px;
     max-height: 100%;
     max-width: 100%;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
     letter-spacing: 1px;
     transform-style: preserve-3d;
@@ -284,7 +289,7 @@ margin: 30px;
 .addToCart span button:after{
     content: "ДОБАВИТЬ В КОРЗИНУ";
     height: 104%;
-    width: 102%;
+    width: 105%;
     display: flex;
     align-items: center;
     justify-content: center;
