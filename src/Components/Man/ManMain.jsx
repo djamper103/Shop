@@ -8,7 +8,6 @@ import {
   } from "react-icons/all";
 
 const ManMain = ({ addToCart,addFavorites,removeFromFavorites }) => {
-debugger
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)

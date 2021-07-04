@@ -24,19 +24,31 @@ const Shoes = ({ addToCart,addFavorites,removeFromFavorites}) => {
     const [searchItem, setSearchItem] = useState("")
 
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     if (fetching) {
+    //         fetch(`/api/reminders`)
+    //         .then((response) =>response.json())
+    //         .then(res=>{
+    //           setState(res,state)
+    //         })
+    //         .finally(() => setFetching(false));
+    //     }
+    //   }, [fetching]);
+
+
+      useEffect(() => {
         if (fetching) {
-          axios
-            .get(
-              `http://localhost:3000/shopItemShoes?_limit=8&_page=${currentPage}`
-            )
-            .then((response) => {
-              setState([...state, ...response.data]);
-              setCurrentPage((prevState) => prevState + 1);
-            })
-            .finally(() => setFetching(false));
+          debugger
+            axios.get(`/api/reminders`)
+                .then(response => {
+                  debugger
+                    setState([...state, ...response.data])
+                    setCurrentPage(prevState => prevState + 1)
+                    debugger
+                })
+                .finally(() => setFetching(false))
         }
-      }, [fetching]);
+    }, [fetching])
     
       useEffect(() => {
         document.addEventListener("scroll", scrollHandler);
@@ -56,6 +68,8 @@ const Shoes = ({ addToCart,addFavorites,removeFromFavorites}) => {
         }
       };
 
+console.log(state)
+      debugger
     useEffect(() => {
         const newProducts = [...state]
             .sort((a, b) => {
