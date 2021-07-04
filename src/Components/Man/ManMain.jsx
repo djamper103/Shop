@@ -3,25 +3,12 @@ import style from './ManMain.module.css'
 import axios from 'axios'
 import { NavLink } from "react-router-dom";
 import {
-    BsHeart
+    BsHeart,
+    BsHeartFill
   } from "react-icons/all";
 
-const ManMain = ({ addToCart,addFavorites }) => {
-    // {
-    //     id: "Кросовки Staff white&red",
-    //     size: "40 41 42 43 44 45",
-    //     price: "1150",
-    //     priceCount: "1150",
-    //     salePrice: "990",
-    //     image: "https://static.staff-clothes.com/media/cache/image_product_mobile_product/image_product/0001/90/deb4c2dc1b384f279f5424def6921b72.jpeg",
-    //     imageSlide1:"",
-    //     imageSlide2:"",
-    //     imageSlide3:"",
-    //     count: "1",
-    //     type:"shoes",
-    //     gender:"male",
-    //     specification:"Классический дизайн с большими накладными карманами позволят взять все необходимое с собой "
-    // }
+const ManMain = ({ addToCart,addFavorites,removeFromFavorites }) => {
+debugger
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -130,7 +117,16 @@ const ManMain = ({ addToCart,addFavorites }) => {
                             </div>
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
-                            <div  className={style.favorites}><span><BsHeart onClick={() =>  addFavorites(product)}/></span></div>
+                            <div  className={style.favorites}><span>{product.favorites?<BsHeartFill onClick={() =>{
+                   removeFromFavorites(product)
+                {product.favorites=false}
+               
+              }  }/>:<BsHeart onClick={() =>{
+                addFavorites(product)
+                {product.favorites=true}
+                
+               
+              }  }/>}</span></div>
                             <div className={style.size}>
                             {
                                 product.size.split(" ").map(item => <button key={item} onClick={() => 

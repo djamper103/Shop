@@ -77,10 +77,11 @@ function App() {
     }
 
     const removeFromCart = (productToRemove) => {
-        setCart(cart.filter(product => product !== productToRemove))
+        setCart(cart.filter(product => product.id !== productToRemove.id))
     }
     const removeFromFavorites = (productToRemove) => {
-        setFavorites(favorites.filter(product => product !== productToRemove))
+        setFavorites(favorites.filter(product => product.id !== productToRemove.id))
+        
     }
 
 
@@ -142,11 +143,21 @@ function App() {
                 <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}
                 />
                 <div className='Maincontent'> 
-                    <Route exact path='/Shop'  render={() => <MainPage state={state} addToCart={addToCart} addFavorites={addFavorites}/>} />
-                    <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} />} addFavorites={addFavorites}/>
-                    <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} addFavorites={addFavorites}/>} />
-                    <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} addFavorites={addFavorites} />} />
-                    <Route exact path='/Product/:id' render={() => <Product state={stateAll} addToCart={addToCart} />} />
+                    <Route exact path='/Shop'  render={() => <MainPage state={state} addToCart={addToCart} addFavorites={addFavorites}
+ removeFromFavorites={removeFromFavorites}
+                    />} />
+                    <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} addFavorites={addFavorites} 
+                        removeFromFavorites={removeFromFavorites}
+                    />} />
+                    <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} addFavorites={addFavorites}
+                         removeFromFavorites={removeFromFavorites}
+                    />} />
+                    <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} addFavorites={addFavorites}
+                    removeFromFavorites={removeFromFavorites}
+                     />} />
+                    <Route exact path='/Product/:id' render={() => <Product state={stateAll} addToCart={addToCart}
+                     removeFromFavorites={removeFromFavorites}
+                     />} />
                     <Route exact path='/Favorites' render={() => <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}
                      addToCart={addToCart}/>} />
 

@@ -3,10 +3,11 @@ import style from "./Sale.module.css";
 import { NavLink } from "react-router-dom";
 import axios from 'axios'
 import {
-    BsHeart
+    BsHeart,
+    BsHeartFill
   } from "react-icons/all";
 
-export default function Sale({ addToCart,addFavorites}) {
+export default function Sale({ addToCart,addFavorites,removeFromFavorites}) {
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -57,7 +58,16 @@ export default function Sale({ addToCart,addFavorites}) {
                             </div>
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
-                            <div  className={style.favorites}><span><BsHeart onClick={() =>  addFavorites(product)}/></span></div>
+                            <div  className={style.favorites}><span>{product.favorites?<BsHeartFill onClick={() =>{
+                   removeFromFavorites(product)
+                {product.favorites=false}
+               
+              }  }/>:<BsHeart onClick={() =>{
+                addFavorites(product)
+                {product.favorites=true}
+                
+               
+              }  }/>}</span></div>
                             <div className={style.size}>
                             {
                                 product.size.split(" ").map(item => <button key={item} onClick={() => 

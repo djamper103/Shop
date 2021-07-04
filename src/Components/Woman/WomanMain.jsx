@@ -3,10 +3,11 @@ import style from "./WomanMain.module.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 import {
-  BsHeart
+  BsHeart,
+  BsHeartFill
 } from "react-icons/all";
 
-const WomanMain = ({ addToCart,addFavorites }) => {
+const WomanMain = ({ addToCart,addFavorites, removeFromFavorites }) => {
   
   const [state, setState] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -120,7 +121,16 @@ const WomanMain = ({ addToCart,addFavorites }) => {
                 <div className={style.productId}>{product.id}</div>
                 
               </NavLink>
-              <div  className={style.favorites}><span><BsHeart onClick={() =>  addFavorites(product)}/></span></div>
+              <div  className={style.favorites}><span>{product.favorites?<BsHeartFill onClick={() =>{
+                   removeFromFavorites(product)
+                {product.favorites=false}
+               
+              }  }/>:<BsHeart onClick={() =>{
+                addFavorites(product)
+                {product.favorites=true}
+                
+               
+              }  }/>}</span></div>
               <div className={style.size}>
                 {product.size.split(" ").map((item) => (
                   <button

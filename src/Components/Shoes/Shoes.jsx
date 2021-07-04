@@ -4,11 +4,14 @@ import ShoesUpContent from "./shoesUpContent"
 import axios from 'axios'
 import { NavLink } from "react-router-dom";
 import {
-  BsHeart
+  BsHeart,
+  BsHeartFill
 } from "react-icons/all";
 
 
-const Shoes = ({ addToCart,addFavorites,}) => {
+const Shoes = ({ addToCart,addFavorites,removeFromFavorites}) => {
+
+
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -19,6 +22,7 @@ const Shoes = ({ addToCart,addFavorites,}) => {
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
     const [searchItem, setSearchItem] = useState("")
+
 
     useEffect(() => {
         if (fetching) {
@@ -114,7 +118,16 @@ productItem.map((product) => (
                 <div className={style.productId}>{product.id}</div>
               </NavLink>
             
-              <div  className={style.favorites}><span><BsHeart onClick={() =>  addFavorites(product)}/></span></div>
+              <div  className={style.favorites}><span>{product.favorites?<BsHeartFill onClick={() =>{
+                   removeFromFavorites(product)
+                {product.favorites=false}
+               
+              }  }/>:<BsHeart onClick={() =>{
+                addFavorites(product)
+                {product.favorites=true}
+                
+               
+              }  }/>}</span></div>
         <div className={style.size}>
         {
             product.size.split(" ").map(item => <button key={item} onClick={() => 
@@ -124,10 +137,12 @@ productItem.map((product) => (
             }>{item}</button>)
         }
     </div>
+    
         <div className={style.price}>
         <p>{product.price}</p>грн.</div>
         <div  className={style.addToCart}>
         <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
+        
         
         </div>
     </div>
