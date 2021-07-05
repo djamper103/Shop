@@ -8,13 +8,13 @@ import MainUpContent from "./Content/MainUpContent";
 
 
 const MainPage = ({ state, addToCart, addFavorites, removeFromFavorites}) => {
-
+    
     return (
         <div className={style.Maincontent}>
 
             <MainUpContent />
             {/* <TopSelectionPanel /> */}
-            <Sale state={state} addToCart={addToCart} addFavorites={addFavorites}  removeFromFavorites={removeFromFavorites}/>
+            <Sale addToCart={addToCart} addFavorites={addFavorites}  removeFromFavorites={removeFromFavorites}/>
             <NewReleases state={state} addToCart={addToCart} addFavorites={addFavorites}  removeFromFavorites={removeFromFavorites}/>
         </div>
     )

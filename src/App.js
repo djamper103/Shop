@@ -9,8 +9,8 @@ import WomanMain from "./Components/Woman/WomanMain";
 import axios from 'axios'
 import Cart from "./Common/Cart/Cart";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container} from "react-bootstrap"
-import {AuthProvider, useAuth} from "./Common/Login/AuthContext";
+import { Container } from "react-bootstrap"
+import { AuthProvider, useAuth } from "./Common/Login/AuthContext";
 import Login from "./Common/Login/Login";
 import UpdateProfile from "./Common/Login/UpdateProfile";
 import Signup from "./Common/Login/Signup";
@@ -31,7 +31,7 @@ function App() {
     const [cart, setCart] = useState([])
     const [favorites, setFavorites] = useState([])
     const [priceCount, setPriceCount] = useState(0)
-    const [loadingg,setLoadingg]=useState(false)
+    const [loadingg, setLoadingg] = useState(false)
 
 
 
@@ -81,13 +81,13 @@ function App() {
     }
     const removeFromFavorites = (productToRemove) => {
         setFavorites(favorites.filter(product => product.id !== productToRemove.id))
-        
+
     }
 
 
     const increaseCart = (product) => {
         setCart(cart.map(item => item.id === product.id ?
-            { ...item, count: ++item.count, priceCount: item.price * item.count  }
+            { ...item, count: ++item.count, priceCount: item.price * item.count }
             : item))
     }
 
@@ -99,11 +99,11 @@ function App() {
 
     useEffect(() => {
         if (fetching) {
-            axios.get(`http://localhost:3000/shopItem?_limit=8&_page=${currentPage}`)
+            let limit = 8
+            axios.post(`/api/server/shopItem`, { currentPage, limit })
                 .then(response => {
-                    setState([...state, ...response.data])
+                    setState([...state, ...response.data.data])
                     setCurrentPage(prevState => prevState + 1)
-                    setTotalCount(response.headers['x-total-count'])
                 })
                 .finally(() => setFetching(false))
         }
@@ -111,11 +111,11 @@ function App() {
 
 
     useEffect(() => {
-            axios.get(`http://localhost:3000/shopItem`)
-                .then(response => {
-                    setStateAll([...state, ...response.data])
-                   
-                })
+        axios.get(`/api/server/shopItemAll`)
+            .then(response => {
+                setStateAll([...stateAll, ...response.data.data])
+            })
+
     }, [])
 
     useEffect(() => {
@@ -136,57 +136,56 @@ function App() {
 
 
 
-
     return (
         <AuthProvider loadingg={loadingg} setLoadingg={setLoadingg}>
             <div className='Content'>
                 <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}
                 />
-                <div className='Maincontent'> 
-                    <Route exact path='/Shop'  render={() => <MainPage state={state} addToCart={addToCart} addFavorites={addFavorites}
- removeFromFavorites={removeFromFavorites}
+                <div className='Maincontent'>
+                    <Route exact path='/Shop' render={() => <MainPage state={state}  addToCart={addToCart} addFavorites={addFavorites}
+                        removeFromFavorites={removeFromFavorites}
                     />} />
-                    <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} addFavorites={addFavorites} 
+                    <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} addFavorites={addFavorites}
                         removeFromFavorites={removeFromFavorites}
                     />} />
                     <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} addFavorites={addFavorites}
-                         removeFromFavorites={removeFromFavorites}
+                        removeFromFavorites={removeFromFavorites}
                     />} />
                     <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} addFavorites={addFavorites}
-                    removeFromFavorites={removeFromFavorites}
-                     />} />
+                        removeFromFavorites={removeFromFavorites}
+                    />} />
                     <Route exact path='/Product/:id' render={() => <Product state={stateAll} addToCart={addToCart}
-                     removeFromFavorites={removeFromFavorites}
-                     />} />
+                        removeFromFavorites={removeFromFavorites}
+                    />} />
                     <Route exact path='/Favorites' render={() => <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}
-                     addToCart={addToCart}/>} />
+                        addToCart={addToCart} />} />
 
                     <Route exact path='/Cart'
-                                render={() => loadingg ?
-                                    <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
-                                        increaseCart={increaseCart} decreaseCart={decreaseCart}
-                                    />:
-                                    <Redirect to="/login" /> 
-                                } />
-                    
+                        render={() => loadingg ?
+                            <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
+                                increaseCart={increaseCart} decreaseCart={decreaseCart}
+                            /> :
+                            <Redirect to="/login" />
+                        } />
+
                     <Container
                         className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
 
-                        <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
-                        <Route exact path='/Dashboard' render={() => <Dashboard />} />
-                        <Route exact path='/update-profile' render={() => <UpdateProfile />} />
-                        <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
-                        <Route exact path='/signup' render={() => <Signup />} />
+                            <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
+                            <Route exact path='/Dashboard' render={() => <Dashboard />} />
+                            <Route exact path='/update-profile' render={() => <UpdateProfile />} />
+                            <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
+                            <Route exact path='/signup' render={() => <Signup />} />
 
-                           
-                 
+
+
                         </div>
                     </Container>
-                    
+
                 </div>
-                
+
                 <Footer />
             </div>
         </AuthProvider>
