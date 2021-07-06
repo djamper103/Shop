@@ -12,8 +12,8 @@ export default function Sale({ addToCart, addFavorites, removeFromFavorites }) {
     const [state, setState] = useState([])
 
     useEffect(() => {
-        axios.get(`/api/server/sale`).then(response => {
-            debugger
+        axios.get(`/api/sale`).then(response => {
+          
             setState([...state, ...response.data.data])
         })
     }, [])

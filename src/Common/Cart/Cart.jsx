@@ -25,20 +25,26 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                 }
             }
         }).reduce((all, item) => `${item}; ` + all).toString()
-        debugger
-        const response = await axios.post(
-            "http://localhost:4000/payment",
-            { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) }
-        );
 
-        const { status } = response.data;
+
+        
+        // const response = await axios.post(
+        //     "/api/payment",
+        //     { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) }
+        // );
+
+        // const { status } = response.data;
+        axios.post(`/api/payment`, { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) })
+        .then(response => {
         console.log("Response:", response.data);
-        if (status === "success") {
+        if (response.status === "success") {
             toast("Success! Check email for details", { type: "success" });
         } else {
             toast("Something went wrong", { type: "error" });
         }
     }
+        )
+}
 
     const history = useHistory();
 

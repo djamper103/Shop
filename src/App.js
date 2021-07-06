@@ -51,11 +51,9 @@ function App() {
 
 
     const addToCart = (product) => {
-        debugger
         const check = cart.every(item => {
             return item.id !== product.id
         })
-        debugger
         if (check) {
             setCart([...cart, { ...product }])
         } else {
@@ -100,7 +98,7 @@ function App() {
     useEffect(() => {
         if (fetching) {
             let limit = 8
-            axios.post(`/api/server/shopItem`, { currentPage, limit })
+            axios.post(`/api/shopItem`, { currentPage, limit })
                 .then(response => {
                     setState([...state, ...response.data.data])
                     setCurrentPage(prevState => prevState + 1)
@@ -111,7 +109,7 @@ function App() {
 
 
     useEffect(() => {
-        axios.get(`/api/server/shopItemAll`)
+        axios.get(`/api/shopItemAll`)
             .then(response => {
                 setStateAll([...stateAll, ...response.data.data])
             })

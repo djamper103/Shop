@@ -21,7 +21,7 @@ const WomanMain = ({ addToCart, addFavorites, removeFromFavorites }) => {
   useEffect(() => {
     if (fetching) {
       let limit = 8
-      axios.post(`/api/server/woman`, { currentPage, limit })
+      axios.post(`/api/woman`, { currentPage, limit })
         .then(response => {
           debugger
           setState([...state, ...response.data.data])
@@ -112,7 +112,7 @@ const WomanMain = ({ addToCart, addFavorites, removeFromFavorites }) => {
           {productItem.map((product) => (
             <div className={style.component} key={product.id}>
               <NavLink
-                to={state.length !== 0 ? `/WomanProduct/${product.id}` : "/Shop"}
+                to={state.length !== 0 ? `/Product/${product.id}` : "/Shop"}
               >
                 <div className={style.image}>
                   <img src={product.image} alt={product.id} title={product.id} />
