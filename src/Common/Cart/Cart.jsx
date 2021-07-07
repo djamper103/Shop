@@ -28,13 +28,8 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
 
 
         
-        // const response = await axios.post(
-        //     "/api/payment",
-        //     { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) }
-        // );
 
-        // const { status } = response.data;
-        axios.post(`/api/payment`, { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) })
+        axios.post(`"http://localhost:4000/payment`, { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) })
         .then(response => {
         console.log("Response:", response.data);
         if (response.status === "success") {

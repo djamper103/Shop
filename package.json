@@ -33,6 +33,7 @@
     "react-stripe-checkout": "^2.6.3",
     "react-toastify": "^7.0.4",
     "rebase": "^0.3.0",
+    "recharts": "^2.0.9",
     "redux": "^4.1.0",
     "stripe": "^8.154.0",
     "uuid": "^8.3.2",
@@ -44,7 +45,7 @@
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "serverCart": "node cartServer.js",
+    "server": "node cartServer.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
