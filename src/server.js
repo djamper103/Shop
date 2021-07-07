@@ -1,4 +1,4 @@
-import { rest } from "lodash";
+
 import { createServer } from "miragejs"
 
 let json = require('./db.json');
@@ -6,7 +6,7 @@ let json = require('./db.json');
 
 const stripe = require("stripe")("sk_test_51J12GCE9ORF0ZMb0vxnIJyLqn1ey3JKp7cChwt81RT4CtFKywIsNyr80gmQfrqvS5IQCbFtfpnmOQqPBPQJ8b27000vlNNmcA1");
 const { uuidv4 } = require('uuid')
-
+const cors = require("cors");
 
 
 createServer({
@@ -63,14 +63,13 @@ createServer({
       let error;
       let status;
       try {
-        const { token, cart, priceCount } = res.requestBody
+        const { token, cart, priceCount } = JSON.parse(res.requestBody)
         debugger
-    
         const customer =stripe.customers.create({
           email: token.email,
           source: token.id
         });
-    
+    debugger
         const idempotency_key = uuidv4;
         const charge =stripe.charges.create(
           {
@@ -108,7 +107,8 @@ createServer({
     });
 
     this.passthrough('https://checkout.stripe.com/**');
-    this.passthrough('https://www.gstatic.com/firebasejs/**');
+    this.passthrough('http://checkout.stripe.com/**');
+    this.passthrough('http://www.gstatic.com/firebasejs/**');
   },
   
 })

@@ -19,33 +19,25 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
     async function handleSubmit(token) {
         const newCart = state.map(item => {
             for (const i in item) {
-
                 if (i === "id") {
                     return item[i]
                 }
             }
         }).reduce((all, item) => `${item}; ` + all).toString()
-
-
-        
-        // const response = await axios.post(
-        //     "/api/payment",
-        //     { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) }
-        // );
-
-        // const { status } = response.data;
-        axios.post(`/api/payment`, { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) })
-        .then(response => {
+        debugger
+        const response = await axios.post(
+            "/api/payment",
+            { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) }
+        );
+        debugger
+        const { status } = response.data;
         console.log("Response:", response.data);
-        if (response.status === "success") {
+        if (status === "success") {
             toast("Success! Check email for details", { type: "success" });
         } else {
             toast("Something went wrong", { type: "error" });
         }
     }
-        )
-}
-
     const history = useHistory();
 
     function gotoHome() {
