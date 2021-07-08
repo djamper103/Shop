@@ -1,22 +1,58 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./NewReleases.module.css";
+import axios from 'axios'
 import {
     BsHeart,
     BsHeartFill
 } from "react-icons/all";
 
-const NewReleases = ({ state, addToCart, addFavorites, removeFromFavorites,setPushingTheProduct }) => {
-    const [typeItem, setTypeItem] = useState("all")
+const NewReleases = ({  addToCart, addFavorites, removeFromFavorites,setPushingTheProduct }) => {
+
+    const [state, setState] = useState([])
+    const [currentPage, setCurrentPage] = useState(1)
+    const [fetching, setFetching] = useState(true)
     const [typeGender, setGender] = useState("all")
+    const [typeItem, setTypeItem] = useState("all")
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
     const [searchItem, setSearchItem] = useState("")
-    const [newProducts, setNewProducts] = useState([...state])
+
 
     useEffect(() => {
-        newProducts.sort((a, b) => {
+        if (fetching) {
+            let limit = 8
+            axios.post(`/api/shopItem`, { currentPage, limit })
+                .then(response => {
+                    setState([...state, ...response.data.data])
+                    setCurrentPage(prevState => prevState + 1)
+                })
+                .finally(() => setFetching(false))
+        }
+    }, [fetching])
+
+    useEffect(() => {
+        if(currentPage>1){
+            document.addEventListener('scroll', scrollHandler)
+            return function () {
+                document.removeEventListener('scroll', scrollHandler)
+            }
+        }
+    }, [currentPage])
+    
+    const scrollHandler = (e) => {
+        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
+            setFetching(true)
+        }
+
+    }
+
+
+    useEffect(() => {
+        const newProducts = [...state]
+            .sort((a, b) => {
                 if (priceItem === "mostPrise") {
+                    debugger
                     return b.price - a.price
                 } else if
                     (priceItem === "lowPrise") {
@@ -35,7 +71,8 @@ const NewReleases = ({ state, addToCart, addFavorites, removeFromFavorites,setPu
                 product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
             );
         setProductItem(newProducts);
-    }, [typeItem, priceItem, productItem, searchItem]);
+    }, [typeItem, priceItem, state, searchItem,typeGender]);
+
 
 
     return (

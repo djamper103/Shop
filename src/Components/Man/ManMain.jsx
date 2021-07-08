@@ -41,7 +41,7 @@ const ManMain = ({ addToCart, addFavorites, removeFromFavorites,setPushingThePro
             }
         }
     }, [currentPage])
-    
+
     const scrollHandler = (e) => {
         if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
             setFetching(true)
@@ -71,15 +71,6 @@ const ManMain = ({ addToCart, addFavorites, removeFromFavorites,setPushingThePro
             );
         setProductItem(newProducts);
     }, [typeItem, priceItem, state, searchItem]);
-
-    useEffect(() => {
-        const newProducts = [...state]
-            .filter((product) =>
-                product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
-            );
-        setProductItem(newProducts);
-    }, [searchItem, state]);
-
 
 
     return (
