@@ -38,7 +38,11 @@ a:hover{
     max-height: 200px;
     margin: 40px auto;
 }
-
+.selectGender:after{
+    width: 100px;
+    height: 200px;
+    background-color: blanchedalmond;
+}
 
 .maincontent {
     grid-area: maincontent;

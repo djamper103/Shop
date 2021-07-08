@@ -184,15 +184,15 @@
 }
 @media all and (max-width: 500px) {
     .Content {
-        width: 60%;
-        height: 60%;
+        width: 90%;
+        height: 90%;
     }  
     .Content img {
-        width: 50%;
+        width: 70%;
     }
     .nike270 {
         font-family: TradeGothic LT CondEighteen;
-        font-size: 10px;
+        font-size: 16px;
         text-transform: uppercase;
         color: #131212;
         margin: 0px 140px 0px;
@@ -201,18 +201,18 @@
     .theNike {
 
         font-family: Helvetica Neue;
-        font-size: 6px;
+        font-size: 12px;
         color: #131212;
         opacity: 0.5;
         margin: 0px 140px 0px;
-        width: 140px;
+        width: 290px;
     }
     
     .shoes {
         font-family: TradeGothic LT CondEighteen;
-        font-size: 6px;
+        font-size: 12px;
         text-transform: uppercase;
         color: #131212;
-        margin: -100px 140px 0px;
+        margin: -240px 140px 0px;
     }
 }
