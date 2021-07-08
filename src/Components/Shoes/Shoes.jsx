@@ -29,7 +29,6 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
       let limit = 8
       axios.post(`/api/shoes`, { currentPage, limit })
         .then(response => {
-          debugger
           setState([...state, ...response.data.data])
           setCurrentPage(prevState => prevState + 1)
         })
@@ -85,9 +84,10 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
 
     <div className={style.Content}>
 
-      <div>
-        {/* <ShoesUpContent/> */}
+      <div className={style.ShoesUpContent} >
+        <ShoesUpContent/>
       </div>
+      <div className={style.ShoesContent}>
       <div className={style.select} >
         <select name="select" onChange={event => { setGender(event.target.value) }}>
           <option value="all" >All</option>
@@ -148,6 +148,7 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
             ))
           }
         </div>
+      </div>
       </div>
     </div>
 

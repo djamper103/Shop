@@ -26,6 +26,7 @@ export default function Product({ state, addToCart,removeFromFavorites}) {
     return (
         <div>
             {products.map((product) => (
+                <div className={style.mainContent}>
                 <div className={style.component} key={product.id}>
                     <img src={product.image} alt={product.id} title={product.id} />
                     <div className={style.product}>{product.id}</div>
@@ -34,6 +35,7 @@ export default function Product({ state, addToCart,removeFromFavorites}) {
                      <div className={style.size}>{product.specification}</div>
                     <div className={style.price}>{product.salePrice} грн.<p>{product.price} грн.</p></div>
                     <button onClick={() => addToCart(product)}>Add to Cart</button>
+                </div>
                 </div>
             ))
             }

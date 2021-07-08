@@ -1,7 +1,20 @@
+
 .Content {
     display: grid;
-    grid-template-areas: 'header' 'select' 'maincontent';
-    grid-template-rows:auto auto auto;
+    grid-template-areas:
+    'ShoesUpContent'
+    'ShoesContent';
+    grid-template-columns: auto auto;
+}
+.ShoesUpContent{
+    grid-area: ShoesUpContent;
+}
+.ShoesContent{
+    grid-area: ShoesContent;
+    display: grid;
+    grid-template-areas:
+    'select' 'maincontent';
+    grid-template-rows:auto auto;
     letter-spacing: 1px;
 }
 a{
@@ -13,11 +26,6 @@ a:hover{
     text-decoration: none;
 }
 
-.upImage img {
-    grid-area: header;
-    width: 100%;
-    margin-bottom: 50px;
-}
 .select {
     grid-area: select;
     display: flex;
