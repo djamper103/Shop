@@ -32,8 +32,8 @@ function App() {
     const [favorites, setFavorites] = useState([])
     const [priceCount, setPriceCount] = useState(0)
     const [loadingg, setLoadingg] = useState(true)
-
-
+    const[pushingTheProduct,setPushingTheProduct]=useState(false)
+    let limit = 8
 
     useEffect(() => {
         if (cart.length > 0) {
@@ -97,7 +97,6 @@ function App() {
 
     useEffect(() => {
         if (fetching) {
-            let limit = 8
             axios.post(`/api/shopItem`, { currentPage, limit })
                 .then(response => {
                     setState([...state, ...response.data.data])
@@ -109,21 +108,25 @@ function App() {
 
 
     useEffect(() => {
-        axios.get(`/api/shopItemAll`)
+        if(!pushingTheProduct){
+            axios.get(`/api/shopItemAll`)
             .then(response => {
                 setStateAll([...stateAll, ...response.data.data])
             })
+        }
+        
 
-    }, [])
+    }, [pushingTheProduct])
 
     useEffect(() => {
+        if(currentPage>1){
+            document.addEventListener('scroll', scrollHandler)
 
-        document.addEventListener('scroll', scrollHandler)
-
-        return function () {
-            document.removeEventListener('scroll', scrollHandler)
+            return function () {
+                document.removeEventListener('scroll', scrollHandler)
+            }
         }
-    }, [])
+    }, [currentPage])
 
     const scrollHandler = (e) => {
         if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
@@ -141,22 +144,22 @@ function App() {
                 />
                 <div className='Maincontent'>
                     <Route exact path='/Shop' render={() => <MainPage state={state}  addToCart={addToCart} addFavorites={addFavorites}
-                        removeFromFavorites={removeFromFavorites}
+                        removeFromFavorites={removeFromFavorites} setPushingTheProduct={setPushingTheProduct}
                     />} />
                     <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} addFavorites={addFavorites}
-                        removeFromFavorites={removeFromFavorites}
+                        removeFromFavorites={removeFromFavorites} setPushingTheProduct={setPushingTheProduct}
                     />} />
                     <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} addFavorites={addFavorites}
-                        removeFromFavorites={removeFromFavorites}
+                        removeFromFavorites={removeFromFavorites} setPushingTheProduct={setPushingTheProduct}
                     />} />
                     <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} addFavorites={addFavorites}
-                        removeFromFavorites={removeFromFavorites}
+                        removeFromFavorites={removeFromFavorites} setPushingTheProduct={setPushingTheProduct}
                     />} />
-                    <Route exact path='/Product/:id' render={() => <Product state={stateAll} addToCart={addToCart}
+                    <Route exact path='/Product/:id' render={() =><Product state={stateAll} addToCart={addToCart} addFavorites={addFavorites}
                         removeFromFavorites={removeFromFavorites}
                     />} />
                     <Route exact path='/Favorites' render={() => <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}
-                        addToCart={addToCart} />} />
+                        addToCart={addToCart} />} setPushingTheProduct={setPushingTheProduct}/>
 
                     <Route exact path='/Cart'
                         render={() => loadingg ?
@@ -170,14 +173,14 @@ function App() {
                         className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
-
+                       
                             {/* <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
                             <Route exact path='/Dashboard' render={() => <Dashboard />} />
                             <Route exact path='/update-profile' render={() => <UpdateProfile />} />
                             <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
                             <Route exact path='/signup' render={() => <Signup />} /> */}
 
-
+                        
 
                         </div>
                     </Container>
@@ -186,7 +189,8 @@ function App() {
 
                 <Footer />
             </div>
-        // </AuthProvider>
+         
+    
     );
 }
 

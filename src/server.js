@@ -116,6 +116,9 @@ createServer({
     this.passthrough('/v1/charges/ch_1JASHWE9ORF0ZMb0lCzneoFm/refunds');
     this.passthrough('https://pay.stripe.com/**');
     this.passthrough('https://www.gstatic.com/firebasejs/**');
+    this.passthrough('shopper-b192d.firebaseapp.com');
+    this.passthrough('shopper-b192d.web.app');
+
   },
   
 })

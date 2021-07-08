@@ -6,17 +6,16 @@ import {
     BsHeartFill
 } from "react-icons/all";
 
-const NewReleases = ({ state, addToCart, addFavorites, removeFromFavorites }) => {
+const NewReleases = ({ state, addToCart, addFavorites, removeFromFavorites,setPushingTheProduct }) => {
     const [typeItem, setTypeItem] = useState("all")
     const [typeGender, setGender] = useState("all")
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
     const [searchItem, setSearchItem] = useState("")
-
+    const [newProducts, setNewProducts] = useState([...state])
 
     useEffect(() => {
-        const newProducts = [...state]
-            .sort((a, b) => {
+        newProducts.sort((a, b) => {
                 if (priceItem === "mostPrise") {
                     return b.price - a.price
                 } else if
@@ -75,22 +74,19 @@ const NewReleases = ({ state, addToCart, addFavorites, removeFromFavorites }) =>
                         {
                             productItem.map((product) => (
                                 <div className={style.component} key={product.id}>
-                                    <NavLink to={state.length != 0 ? `/Product/${product.id}` : '/Shop'}>
+                                    <NavLink to={state.length != 0 ? `/Product/${product.id}` : '/Shop'} onClick={()=>setPushingTheProduct(true)}>
                                         <div className={style.image}>
                                             <img src={product.image} alt={product.id} title={product.id} />
                                         </div>
                                         <div className={style.productId}>{product.id}</div>
                                     </NavLink>
-                                    <div className={style.favorites}><span>{product.favorites ? <BsHeartFill onClick={() => {
+                                    <div className={style.favorites}><div className={style.favorite}><span>{product.favorites ? <BsHeartFill onClick={() => {
                                         removeFromFavorites(product)
                                         { product.favorites = false }
-
                                     }} /> : <BsHeart onClick={() => {
                                         addFavorites(product)
                                         { product.favorites = true }
-
-
-                                    }} />}</span></div>
+                                    }} />}</span></div></div>
                                     <div className={style.size}>
                                         {
                                             product.size.split(" ").map(item => <button key={item} onClick={() =>
