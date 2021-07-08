@@ -110,13 +110,14 @@ createServer({
     
 
     this.passthrough('http://localhost:4000/**');
-    this.passthrough('https://stripe.com/**');
+    this.passthrough('https://www.gstatic.com/**');
     this.passthrough('https://api.stripe.com/**');
     this.passthrough('http://checkout.stripe.com/**');
     this.passthrough('https://checkout.stripe.com/**');
     this.passthrough('/v1/charges/ch_1JASHWE9ORF0ZMb0lCzneoFm/refunds');
     this.passthrough('https://pay.stripe.com/**');
     this.passthrough('https://www.gstatic.com/firebasejs/**');
+    
   },
   
 })

@@ -31,7 +31,7 @@ function App() {
     const [cart, setCart] = useState([])
     const [favorites, setFavorites] = useState([])
     const [priceCount, setPriceCount] = useState(0)
-    const [loadingg, setLoadingg] = useState(true)
+    const [loadingg, setLoadingg] = useState(false)
 
 
 
@@ -135,7 +135,7 @@ function App() {
 
 
     return (
-        // <AuthProvider loadingg={loadingg} setLoadingg={setLoadingg}>
+        <AuthProvider loadingg={loadingg} setLoadingg={setLoadingg}>
             <div className='Content'>
                 <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}
                 />
@@ -171,11 +171,11 @@ function App() {
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
 
-                            {/* <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
+                            <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
                             <Route exact path='/Dashboard' render={() => <Dashboard />} />
                             <Route exact path='/update-profile' render={() => <UpdateProfile />} />
                             <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
-                            <Route exact path='/signup' render={() => <Signup />} /> */}
+                            <Route exact path='/signup' render={() => <Signup />} />
 
 
 
@@ -186,7 +186,7 @@ function App() {
 
                 <Footer />
             </div>
-        // </AuthProvider>
+        </AuthProvider>
     );
 }
 
