@@ -85,70 +85,73 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
     <div className={style.Content}>
 
       <div className={style.ShoesUpContent} >
-        <ShoesUpContent/>
+        <ShoesUpContent />
       </div>
       <div className={style.ShoesContent}>
-      <div className={style.select} >
-        <select name="select" onChange={event => { setGender(event.target.value) }}>
-          <option value="all" >All</option>
-          <option value="male" >Male</option>
-          <option value="female">Female</option>
-        </select>
+        <div className={style.select} >
+          <div className={style.selectGender}>
+          <select name="select" onChange={event => { setGender(event.target.value) }}>
+            <option value="all" >All</option>
+            <option value="male" >Male</option>
+            <option value="female">Female</option>
+          </select>
+          </div>
 
-        <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
-          <option defaultValue="all" >All</option>
-          <option value="mostPrise" >Most Prise</option>
-          <option value="lowPrise">Low Prise</option>
-        </select>
-        <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
+          <div className={style.selectPrice}>
+          <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
+            <option defaultValue="all" >All</option>
+            <option value="mostPrise" >Most Prise</option>
+            <option value="lowPrise">Low Prise</option>
+          </select>
+          </div>
+          <div className={style.selectSearch}>
+          <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
+          </div>
 
-      </div>
-      <div className={style.maincontent}>
-        <div className={style.product}>
-          {
-            productItem.map((product) => (
-              <div className={style.component} key={product.id}>
-                <NavLink
-                  to={state.length != 0 ? `/Product/${product.id}` : "/Shop"}
-                >
-                  <div className={style.image}>
-                    <img src={product.image} alt={product.id} title={product.id} />
-                  </div>
-                  <div className={style.productId}>{product.id}</div>
-                </NavLink>
-
-                <div className={style.favorites}><span>{product.favorites ? <BsHeartFill onClick={() => {
-                  removeFromFavorites(product)
-                  { product.favorites = false }
-
-                }} /> : <BsHeart onClick={() => {
-                  addFavorites(product)
-                  { product.favorites = true }
-
-
-                }} />}</span></div>
-                <div className={style.size}>
-                  {
-                    product.size.split(" ").map(item => <button key={item} onClick={() =>
-                      product.chosenSize = item
-
-
-                    }>{item}</button>)
-                  }
-                </div>
-
-                <div className={style.price}>
-                  <p>{product.price}</p>грн.</div>
-                <div className={style.addToCart}>
-                  <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
-
-
-                </div>
-              </div>
-            ))
-          }
         </div>
-      </div>
+        <div className={style.maincontent}>
+          <div className={style.product}>
+            {
+              productItem.map((product) => (
+                <div className={style.component} key={product.id}>
+                  <NavLink
+                    to={state.length != 0 ? `/Product/${product.id}` : "/Shop"}
+                  >
+                    <div className={style.image}>
+                      <img src={product.image} alt={product.id} title={product.id} />
+                    </div>
+                    <div className={style.productId}>{product.id}</div>
+                  </NavLink>
+
+                  <div className={style.favorites}><div className={style.favorite}><span>{product.favorites ? <BsHeartFill onClick={() => {
+                    removeFromFavorites(product)
+                    { product.favorites = false }
+                  }} /> : <BsHeart onClick={() => {
+                    addFavorites(product)
+                    { product.favorites = true }
+                  }} />}</span></div></div>
+                  <div className={style.size}>
+                    {
+                      product.size.split(" ").map(item => <button key={item} onClick={() =>
+                        product.chosenSize = item
+
+
+                      }>{item}</button>)
+                    }
+                  </div>
+
+                  <div className={style.price}>
+                    <p>{product.price}</p>грн.</div>
+                  <div className={style.addToCart}>
+                    <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
+
+
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
       </div>
     </div>
 

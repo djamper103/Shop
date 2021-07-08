@@ -81,16 +81,13 @@ const NewReleases = ({ state, addToCart, addFavorites, removeFromFavorites }) =>
                                         </div>
                                         <div className={style.productId}>{product.id}</div>
                                     </NavLink>
-                                    <div className={style.favorites}><span>{product.favorites ? <BsHeartFill onClick={() => {
+                                    <div className={style.favorites}><div className={style.favorite}><span>{product.favorites ? <BsHeartFill onClick={() => {
                                         removeFromFavorites(product)
                                         { product.favorites = false }
-
                                     }} /> : <BsHeart onClick={() => {
                                         addFavorites(product)
                                         { product.favorites = true }
-
-
-                                    }} />}</span></div>
+                                    }} />}</span></div></div>
                                     <div className={style.size}>
                                         {
                                             product.size.split(" ").map(item => <button key={item} onClick={() =>

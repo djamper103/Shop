@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './shoesUpContent.module.css'
-import nike from "../../Common/Image/nike.jpg";
+import ShoesUpMainContent from './ShoesUpMainContent';
 
 const ShoesUpContent = () => {
    
@@ -8,13 +8,10 @@ const ShoesUpContent = () => {
 
         <div className={style.Content}>
 
-            <div className={style.upImg}>
-                <img src={nike} />
+            <div className={style.mainContent}>
+                <ShoesUpMainContent/>
             </div>
-            <div className={style.shoes}>Your Shoes</div>
-            <div className={style.nike270}>Nike Air Edge 270</div>
-            <div className={style.theNike}>The Nike Air Edge 270 takes the look of retro basketball and puts it through a modern lens.</div>
-            <div className={style.color}>
+            {/* <div className={style.color}>
                 <h3>Color</h3>
                 <div className={style.selectColor}>
                     <div className={style.gray}></div>
@@ -22,7 +19,7 @@ const ShoesUpContent = () => {
                     <div className={style.blue}></div>
                     <div className={style.yellow}></div>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }
