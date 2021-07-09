@@ -10,7 +10,7 @@ import {Container} from "react-bootstrap"
 
 
 export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart, priceCount }) {
-
+    const history = useHistory();
     const [state,setState]=useState([...cart])
     useEffect(() => {
         setState([...cart])
@@ -19,7 +19,6 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
     async function handleSubmit(token) {
         const newCart = state.map(item => {
             for (const i in item) {
-
                 if (i === "id") {
                     return item[i]
                 }
@@ -37,11 +36,9 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
         } else {
             toast("Something went wrong", { type: "error" });
         }
-    }
-        )
+    })
 }
-
-    const history = useHistory();
+    
 
     function gotoHome() {
         history.push("/Shop");

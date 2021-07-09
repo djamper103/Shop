@@ -6,7 +6,6 @@ let json = require('./db.json');
 
 const stripe = require("stripe")("sk_test_51J12GCE9ORF0ZMb0vxnIJyLqn1ey3JKp7cChwt81RT4CtFKywIsNyr80gmQfrqvS5IQCbFtfpnmOQqPBPQJ8b27000vlNNmcA1");
 
-
 // const cors = require("cors");
 // app.use(cors());
 
@@ -117,7 +116,9 @@ createServer({
     this.passthrough('/v1/charges/ch_1JASHWE9ORF0ZMb0lCzneoFm/refunds');
     this.passthrough('https://pay.stripe.com/**');
     this.passthrough('https://www.gstatic.com/firebasejs/**');
-    
+    this.passthrough('shopper-b192d.firebaseapp.com');
+    this.passthrough('shopper-b192d.web.app');
+
   },
   
 })

@@ -2,16 +2,10 @@ import React, { useEffect, useState } from 'react'
 import style from './Shoes.module.css'
 import ShoesUpContent from "./shoesUpContent"
 import axios from 'axios'
-import { NavLink } from "react-router-dom";
-import {
-  BsHeart,
-  BsHeartFill
-} from "react-icons/all";
+import Mapping from "../Mapping/Mapping"
 
 
-const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
-
-
+const Shoes = ({ addToCart, addFavorites, removeFromFavorites,setPushingTheProduct }) => {
 
   const [state, setState] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
@@ -37,12 +31,14 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
   }, [fetching])
 
   useEffect(() => {
-    document.addEventListener("scroll", scrollHandler);
+    if(currentPage>1){
+        document.addEventListener('scroll', scrollHandler)
 
-    return function () {
-      document.removeEventListener("scroll", scrollHandler);
-    };
-  }, []);
+        return function () {
+            document.removeEventListener('scroll', scrollHandler)
+        }
+    }
+}, [currentPage])
 
   const scrollHandler = (e) => {
     if (
@@ -110,47 +106,7 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
 
         </div>
         <div className={style.maincontent}>
-          <div className={style.product}>
-            {
-              productItem.map((product) => (
-                <div className={style.component} key={product.id}>
-                  <NavLink
-                    to={state.length != 0 ? `/Product/${product.id}` : "/Shop"}
-                  >
-                    <div className={style.image}>
-                      <img src={product.image} alt={product.id} title={product.id} />
-                    </div>
-                    <div className={style.productId}>{product.id}</div>
-                  </NavLink>
-
-                  <div className={style.favorites}><div className={style.favorite}><span>{product.favorites ? <BsHeartFill onClick={() => {
-                    removeFromFavorites(product)
-                    { product.favorites = false }
-                  }} /> : <BsHeart onClick={() => {
-                    addFavorites(product)
-                    { product.favorites = true }
-                  }} />}</span></div></div>
-                  <div className={style.size}>
-                    {
-                      product.size.split(" ").map(item => <button key={item} onClick={() =>
-                        product.chosenSize = item
-
-
-                      }>{item}</button>)
-                    }
-                  </div>
-
-                  <div className={style.price}>
-                    <p>{product.price}</p>грн.</div>
-                  <div className={style.addToCart}>
-                    <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
-
-
-                  </div>
-                </div>
-              ))
-            }
-          </div>
+          <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
         </div>
       </div>
     </div>

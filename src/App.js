@@ -24,15 +24,10 @@ import Favorites from "./Common/Favorites/Favorites"
 
 function App() {
     const [state, setState] = useState([])
-    const [stateAll, setStateAll] = useState([])
-    const [currentPage, setCurrentPage] = useState(1)
-    const [fetching, setFetching] = useState(true)
-    const [totalCount, setTotalCount] = useState(0)
     const [cart, setCart] = useState([])
     const [favorites, setFavorites] = useState([])
     const [priceCount, setPriceCount] = useState(0)
-    const [loadingg, setLoadingg] = useState(false)
-
+    const [loadingg, setLoadingg] = useState(true)
 
 
     useEffect(() => {
@@ -95,42 +90,12 @@ function App() {
             : item : item))
     }
 
-    useEffect(() => {
-        if (fetching) {
-            let limit = 8
-            axios.post(`/api/shopItem`, { currentPage, limit })
-                .then(response => {
-                    setState([...state, ...response.data.data])
-                    setCurrentPage(prevState => prevState + 1)
-                })
-                .finally(() => setFetching(false))
-        }
-    }, [fetching])
-
-
-    useEffect(() => {
-        axios.get(`/api/shopItemAll`)
+    useEffect(() => {     
+            axios.get(`/api/shopItemAll`)
             .then(response => {
-                setStateAll([...stateAll, ...response.data.data])
+                setState([...state, ...response.data.data])
             })
-
     }, [])
-
-    useEffect(() => {
-
-        document.addEventListener('scroll', scrollHandler)
-
-        return function () {
-            document.removeEventListener('scroll', scrollHandler)
-        }
-    }, [])
-
-    const scrollHandler = (e) => {
-        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
-            setFetching(true)
-        }
-
-    }
 
 
 
@@ -140,23 +105,23 @@ function App() {
                 <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}
                 />
                 <div className='Maincontent'>
-                    <Route exact path='/Shop' render={() => <MainPage state={state}  addToCart={addToCart} addFavorites={addFavorites}
-                        removeFromFavorites={removeFromFavorites}
+                    <Route exact path='/Shop' render={() => <MainPage  addToCart={addToCart} addFavorites={addFavorites}
+                        removeFromFavorites={removeFromFavorites}  
                     />} />
-                    <Route exact path='/Man' render={() => <ManMain state={state} addToCart={addToCart} addFavorites={addFavorites}
-                        removeFromFavorites={removeFromFavorites}
+                    <Route exact path='/Man' render={() => <ManMain addToCart={addToCart} addFavorites={addFavorites}
+                        removeFromFavorites={removeFromFavorites}  
                     />} />
-                    <Route exact path='/Woman' render={() => <WomanMain state={state} addToCart={addToCart} addFavorites={addFavorites}
-                        removeFromFavorites={removeFromFavorites}
+                    <Route exact path='/Woman' render={() => <WomanMain addToCart={addToCart} addFavorites={addFavorites}
+                        removeFromFavorites={removeFromFavorites}  
                     />} />
-                    <Route exact path='/Shoes' render={() => <Shoes state={state} addToCart={addToCart} addFavorites={addFavorites}
-                        removeFromFavorites={removeFromFavorites}
+                    <Route exact path='/Shoes' render={() => <Shoes addToCart={addToCart} addFavorites={addFavorites}
+                        removeFromFavorites={removeFromFavorites}  
                     />} />
-                    <Route exact path='/Product/:id' render={() => <Product state={stateAll} addToCart={addToCart}
+                    <Route exact path='/Product/:id' render={() =><Product state={state} addToCart={addToCart} addFavorites={addFavorites}
                         removeFromFavorites={removeFromFavorites}
                     />} />
                     <Route exact path='/Favorites' render={() => <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}
-                        addToCart={addToCart} />} />
+                        addToCart={addToCart} />}  />
 
                     <Route exact path='/Cart'
                         render={() => loadingg ?
@@ -170,14 +135,14 @@ function App() {
                         className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
-
+                       
                             <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
                             <Route exact path='/Dashboard' render={() => <Dashboard />} />
                             <Route exact path='/update-profile' render={() => <UpdateProfile />} />
                             <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
-                            <Route exact path='/signup' render={() => <Signup />} />
+                    <Route exact path='/signup' render={() => <Signup />} />
 
-
+                        
 
                         </div>
                     </Container>
@@ -186,7 +151,8 @@ function App() {
 
                 <Footer />
             </div>
-        </AuthProvider>
+         </AuthProvider>
+    
     );
 }
 

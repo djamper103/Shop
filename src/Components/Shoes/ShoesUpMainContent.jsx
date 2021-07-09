@@ -9,7 +9,7 @@ const ShoesUpMainContent = () => {
         <div className={style.Content}>
 
             <div className={style.upImg}>
-                <img src={nike} />
+                <img src={nike} alt=''/>
             </div>
             <div className={style.mainShoes}>
             <div className={style.shoes}>Your Shoes</div>
