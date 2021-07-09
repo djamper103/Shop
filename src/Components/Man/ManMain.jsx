@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import style from './ManMain.module.css'
 import axios from 'axios'
 import Mapping from "../Mapping/Mapping"
+import ItemFilter from "../Mapping/itemFilter"
 
 
 const ManMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
@@ -46,29 +47,9 @@ const ManMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
 
     }
 
-
     useEffect(() => {
-        const newProducts = [...state]
-            .sort((a, b) => {
-                if (priceItem === "mostPrise") {
-                    debugger
-                    return b.price - a.price
-                } else if
-                    (priceItem === "lowPrise") {
-                    return a.price - b.price
-                } else {
-                    return 0
-                }
-            })
-            .filter((product) =>
-                typeItem === "all" ? product : product.type === typeItem
-            )
-            .filter((product) =>
-                product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
-            );
-        setProductItem(newProducts);
+        setProductItem(ItemFilter(typeItem, priceItem, state, searchItem))
     }, [typeItem, priceItem, state, searchItem]);
-
 
     return (
 

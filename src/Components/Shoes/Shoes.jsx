@@ -3,20 +3,20 @@ import style from './Shoes.module.css'
 import ShoesUpContent from "./shoesUpContent"
 import axios from 'axios'
 import Mapping from "../Mapping/Mapping"
+import ItemFilter from "../Mapping/itemFilter"
 
 
-const Shoes = ({ addToCart, addFavorites, removeFromFavorites,setPushingTheProduct }) => {
 
-  const [state, setState] = useState([])
-  const [currentPage, setCurrentPage] = useState(1)
-  const [fetching, setFetching] = useState(true)
+const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
 
+  const [state, setState] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [fetching, setFetching] = useState(true);
   const [typeGender, setGender] = useState("all")
   const [typeItem, setTypeItem] = useState("all")
   const [priceItem, setPriceItem] = useState(["all"])
   const [productItem, setProductItem] = useState([])
   const [searchItem, setSearchItem] = useState("")
-
 
   useEffect(() => {
     if (fetching) {
@@ -31,14 +31,14 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites,setPushingTheProdu
   }, [fetching])
 
   useEffect(() => {
-    if(currentPage>1){
-        document.addEventListener('scroll', scrollHandler)
+    if (currentPage > 1) {
+      document.addEventListener('scroll', scrollHandler)
 
-        return function () {
-            document.removeEventListener('scroll', scrollHandler)
-        }
+      return function () {
+        document.removeEventListener('scroll', scrollHandler)
+      }
     }
-}, [currentPage])
+  }, [currentPage])
 
   const scrollHandler = (e) => {
     if (
@@ -51,35 +51,13 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites,setPushingTheProdu
   };
 
   useEffect(() => {
-    const newProducts = [...state]
-      .sort((a, b) => {
-        if (priceItem === "mostPrise") {
-          debugger
-          return b.price - a.price
-        } else if
-          (priceItem === "lowPrise") {
-          return a.price - b.price
-        } else {
-          return 0
-        }
-      })
-      .filter((product) =>
-        typeGender === "all" ? product : product.gender === typeGender
-      )
-      .filter((product) =>
-        typeItem === "all" ? product : product.type === typeItem
-      )
-      .filter((product) =>
-        product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
-      );
-    setProductItem(newProducts);
-  }, [typeItem, priceItem, state, searchItem]);
+    setProductItem(ItemFilter(typeItem, priceItem, state, searchItem,typeGender))
+}, [typeItem, priceItem, state, searchItem,typeGender]);
 
 
   return (
 
     <div className={style.Content}>
-
       <div className={style.ShoesUpContent} >
         <ShoesUpContent />
       </div>

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import style from "./NewReleases.module.css";
 import axios from 'axios'
 import Mapping from "../../../Mapping/Mapping"
+import ItemFilter from "../../../Mapping/itemFilter"
 
-const NewReleases = ({ addToCart, addFavorites, removeFromFavorites, }) => {
+const NewReleases = (addToCart, addFavorites, removeFromFavorites) => {
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -46,28 +46,7 @@ const NewReleases = ({ addToCart, addFavorites, removeFromFavorites, }) => {
 
 
     useEffect(() => {
-        const newProducts = [...state]
-            .sort((a, b) => {
-                if (priceItem === "mostPrise") {
-                    debugger
-                    return b.price - a.price
-                } else if
-                    (priceItem === "lowPrise") {
-                    return a.price - b.price
-                } else {
-                    return 0
-                }
-            })
-            .filter((product) =>
-                typeGender === "all" ? product : product.gender === typeGender
-            )
-            .filter((product) =>
-                typeItem === "all" ? product : product.type === typeItem
-            )
-            .filter((product) =>
-                product.id.toLowerCase().replace(/\s+/g, '').includes(searchItem.toLowerCase()) ? product : 0
-            );
-        setProductItem(newProducts);
+        setProductItem(ItemFilter(typeItem, priceItem, state, searchItem, typeGender))
     }, [typeItem, priceItem, state, searchItem, typeGender]);
 
 
