@@ -22,7 +22,6 @@ const ManMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
             let limit = 8
             axios.post(`/api/man`, { currentPage, limit })
                 .then(response => {
-                    debugger
                     setState([...state, ...response.data.data])
                     setCurrentPage(prevState => prevState + 1)
                 })

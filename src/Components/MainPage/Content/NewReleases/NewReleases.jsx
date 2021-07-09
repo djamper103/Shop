@@ -4,7 +4,7 @@ import axios from 'axios'
 import Mapping from "../../../Mapping/Mapping"
 import ItemFilter from "../../../Mapping/itemFilter"
 
-const NewReleases = (addToCart, addFavorites, removeFromFavorites) => {
+const NewReleases = ({addToCart, addFavorites, removeFromFavorites, }) => {
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
@@ -83,7 +83,7 @@ const NewReleases = (addToCart, addFavorites, removeFromFavorites) => {
 
                 </div>
                 <div className={style.maincontent}>
-                    <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
+                <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
                 </div>
             </div>
         </div>

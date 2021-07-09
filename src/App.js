@@ -140,7 +140,7 @@ function App() {
                             <Route exact path='/Dashboard' render={() => <Dashboard />} />
                             <Route exact path='/update-profile' render={() => <UpdateProfile />} />
                             <Route exact path='/forgot-password' render={() => <ForgotPassword />} />
-                    <Route exact path='/signup' render={() => <Signup />} />
+                            <Route exact path='/signup' render={() => <Signup />} />
 
                         
 
