@@ -21,3 +21,10 @@ a:hover {
   cursor: pointer !important;
 
 }
+button{
+
+  border: none;
+  background: transparent;
+}
+
+

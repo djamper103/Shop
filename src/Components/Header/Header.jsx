@@ -30,7 +30,7 @@ const Header = ({ cart, loadingg, priceCount }) => {
                 </NavLink>
                     
                 <NavLink to={'/Cart'} className={style.cart}>
-                <div>Price: {loadingg ?priceCount ? priceCount > 0 ? priceCount: '0'  : '0' : '0'}</div>
+                <div className={style.price}>Price: {loadingg ?priceCount ? priceCount > 0 ? priceCount: '0'  : '0' : '0'}</div>
                 </NavLink>
                     <NavLink to={'/Favorites'}> <BsHeart/></NavLink>     
                 {

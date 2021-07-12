@@ -7,13 +7,24 @@
 
 .specification {
     grid-area: specification;
+    margin: 20px 0;
 }
+.specification h3{
+    display: flex;
+    justify-content: center;
+}
+.specificationMain{
+    max-width: 570px;
+    margin: 0 auto;
+}
+
+
 
 .mainContent {
     grid-area: mainContent;
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .rightContent {
@@ -122,6 +133,7 @@
 }
 .size {
     display: flex;
+    margin: 10px 0;
 }
 
 .size button {
@@ -140,7 +152,7 @@
 
 .chosenSize {
     display: flex;
-    margin: 5px 0 20px;
+    margin: 15px 0 20px;
 }
 .chosenSize p {
     font-size: 13px;
@@ -152,10 +164,18 @@
 .chosenSize span {
    margin: -3.7px 4px;
 }
-
-
-
-
+.delivery{
+    display: flex;
+    margin: 30px 0;
+}
+.delivery span{
+    padding-bottom: 3px;
+    margin-left: 10px;
+    border-bottom: 2px solid #000;
+}
+.delivery a:hover{
+ color: black;
+}
 
 .addToCart {
     display: flex;

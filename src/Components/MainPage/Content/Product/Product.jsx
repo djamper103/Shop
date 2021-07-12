@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, NavLink } from "react-router-dom"
 import style from "./Product.module.css"
-import { BsHeart, BsHeartFill } from "react-icons/all";
+import { BsHeart, BsHeartFill,GrDeliver } from "react-icons/all";
 
 
 export default function Product({ state, addToCart, removeFromFavorites, addFavorites }) {
@@ -26,6 +26,7 @@ export default function Product({ state, addToCart, removeFromFavorites, addFavo
     })
     setnewState([...a])
   }
+
 
 
   return (
@@ -71,9 +72,20 @@ export default function Product({ state, addToCart, removeFromFavorites, addFavo
                 <div className={style.addToCartProduct}>
                   <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
                 </div>
+                <div className={style.delivery}>
+                <NavLink to='/delivery'><GrDeliver/><span>Доставка,оплата,возврат </span></NavLink>
+                </div>
+
               </div>
+  
             </div>
-            <div className={style.specification}>{product.specification}</div>
+            <div className={style.specification}>
+              <h3>Описание</h3>
+              <div className={style.specificationMain}>
+              {product.specification}
+              </div>
+              {product.specification.replace('.')}
+              </div>
           </div>
         ))
       }
