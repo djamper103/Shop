@@ -4,7 +4,7 @@ import axios from 'axios'
 import Mapping from "../../../Mapping/Mapping"
 import ItemFilter from "../../../Mapping/itemFilter"
 
-const NewReleases = (addToCart, addFavorites, removeFromFavorites) => {
+const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
 
     const [state, setState] = useState([])
     const [currentPage, setCurrentPage] = useState(1)

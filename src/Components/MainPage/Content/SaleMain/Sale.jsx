@@ -12,7 +12,5 @@ export default function Sale({ addToCart, addFavorites, removeFromFavorites, }) 
                 <Mapping addToCart={addToCart} addFavorites={addFavorites}removeFromFavorites={removeFromFavorites} sale={true} />
             </div>
         </div>
-
-
     )
 }
