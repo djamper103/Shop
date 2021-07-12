@@ -59,10 +59,11 @@
     border-radius: 3px;
     
 }
-.size button:hover{
+.size button:hover {
     color: #bf1650;
-    background-color: white;
-}
+    background-color: #eaeaead2;
+  }
+  
 
 
 

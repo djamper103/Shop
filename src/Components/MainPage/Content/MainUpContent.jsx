@@ -5,11 +5,8 @@ import CarouselBox from "../../../Common/Carousel/Carousel";
 
 const MainUpContent = () => {
     return (
-
         <div className={style.Content}>
-
             <CarouselBox />
-
         </div>
     )
 }
