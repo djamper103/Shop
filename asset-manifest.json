@@ -1,28 +1,28 @@
 {
   "files": {
-    "main.css": "/Shop/static/css/main.a2a1e2ec.chunk.css",
-    "main.js": "/Shop/static/js/main.3fd29f34.chunk.js",
-    "main.js.map": "/Shop/static/js/main.3fd29f34.chunk.js.map",
-    "runtime-main.js": "/Shop/static/js/runtime-main.83b6d930.js",
-    "runtime-main.js.map": "/Shop/static/js/runtime-main.83b6d930.js.map",
+    "main.css": "/Shop/static/css/main.ef931df7.chunk.css",
+    "main.js": "/Shop/static/js/main.a97ac618.chunk.js",
+    "main.js.map": "/Shop/static/js/main.a97ac618.chunk.js.map",
+    "runtime-main.js": "/Shop/static/js/runtime-main.e007e3e6.js",
+    "runtime-main.js.map": "/Shop/static/js/runtime-main.e007e3e6.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/Shop/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.0e328f6c.chunk.js": "/Shop/static/js/2.0e328f6c.chunk.js",
-    "static/js/2.0e328f6c.chunk.js.map": "/Shop/static/js/2.0e328f6c.chunk.js.map",
-    "static/js/3.2e0ae96a.chunk.js": "/Shop/static/js/3.2e0ae96a.chunk.js",
-    "static/js/3.2e0ae96a.chunk.js.map": "/Shop/static/js/3.2e0ae96a.chunk.js.map",
+    "static/js/2.476509b6.chunk.js": "/Shop/static/js/2.476509b6.chunk.js",
+    "static/js/2.476509b6.chunk.js.map": "/Shop/static/js/2.476509b6.chunk.js.map",
+    "static/js/3.a14dac6e.chunk.js": "/Shop/static/js/3.a14dac6e.chunk.js",
+    "static/js/3.a14dac6e.chunk.js.map": "/Shop/static/js/3.a14dac6e.chunk.js.map",
     "index.html": "/Shop/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/Shop/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.a2a1e2ec.chunk.css.map": "/Shop/static/css/main.a2a1e2ec.chunk.css.map",
-    "static/js/2.0e328f6c.chunk.js.LICENSE.txt": "/Shop/static/js/2.0e328f6c.chunk.js.LICENSE.txt",
+    "static/css/main.ef931df7.chunk.css.map": "/Shop/static/css/main.ef931df7.chunk.css.map",
+    "static/js/2.476509b6.chunk.js.LICENSE.txt": "/Shop/static/js/2.476509b6.chunk.js.LICENSE.txt",
     "static/media/cart.eb77fe90.svg": "/Shop/static/media/cart.eb77fe90.svg",
     "static/media/favoriets.4f3384d4.svg": "/Shop/static/media/favoriets.4f3384d4.svg",
     "static/media/nike.fb903274.jpg": "/Shop/static/media/nike.fb903274.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.83b6d930.js",
+    "static/js/runtime-main.e007e3e6.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.0e328f6c.chunk.js",
-    "static/css/main.a2a1e2ec.chunk.css",
-    "static/js/main.3fd29f34.chunk.js"
+    "static/js/2.476509b6.chunk.js",
+    "static/css/main.ef931df7.chunk.css",
+    "static/js/main.a97ac618.chunk.js"
   ]
 }
