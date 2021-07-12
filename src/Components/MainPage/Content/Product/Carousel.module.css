@@ -1,0 +1,14 @@
+.transition img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.transition{
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 700px;
+    transition: all 0.5s;
+    object-fit: cover;
+}
