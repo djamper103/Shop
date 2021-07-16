@@ -14,7 +14,7 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
     const [state,setState]=useState([...cart])
     useEffect(() => {
         setState([...cart])
-    }, [state])
+    }, [cart])
 
     async function handleSubmit(token) {
         const newCart = state.map(item => {
