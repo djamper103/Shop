@@ -12,13 +12,16 @@
 .specification h3{
     display: flex;
     justify-content: center;
+    margin: 50px 0px;
 }
 .specificationMain{
     max-width: 570px;
     margin: 0 auto;
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1.5px;
 }
-
-
 
 .mainContent {
     grid-area: mainContent;
@@ -30,27 +33,39 @@
 .rightContent {
     justify-content: center;
     margin-left: 50px;
-    max-width: 40%;
+    max-width: 50%;
 }
 
 .image {
     overflow: hidden;
-    max-width: 285px;
-    max-height: 350px;
-    margin-left: 100px;
+    display: flex;
 }
+.image1{
+    overflow: hidden;
+    justify-content: center;
+    margin-right: 15px;
 
-.component img {
-    object-fit: cover;
-    border-radius: 3px;
-    max-width: 285px;
-    max-height: 350px;
+}
+.image1 img{
+    display: block;
+    min-height: 140px;
+    min-width: 100px;
+    max-width: 140px;
+    max-height: 100px;
     transition: all 0.5s;
+    object-fit: cover;
+    margin-bottom: 10px;
+    opacity: 80%;
+    
+}
+.image1 img:hover{
+    transform: scale(1.05);
+    opacity: 100%;
+}
+.specificationMain p {
+    text-indent: 20px; /* Отступ первой строки в пикселах */
 }
 
-.component img:hover {
-    transform: scale(1.05);
-}
 
 .title {
     display: flex;
@@ -92,10 +107,8 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
-
-
 
 .price {
     display: flex;
@@ -122,7 +135,7 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    margin: 10px 0 20px;
+    margin: 10px 0 60px;
 }
 .sizeTitle{
   font-size: 13px;
@@ -138,7 +151,7 @@
 
 .size button {
     border-radius: 3px;
-    margin: 3px;
+    margin: 10px 3px ;
     background: transparent;
     outline: none;
     border: none;
@@ -162,11 +175,11 @@
     letter-spacing: 1.2px;
 }
 .chosenSize span {
-   margin: -3.7px 4px;
+   margin: -3.7px 6px;
 }
 .delivery{
     display: flex;
-    margin: 30px 0;
+    margin: 40px 0;
 }
 .delivery span{
     padding-bottom: 3px;
@@ -176,22 +189,8 @@
 .delivery a:hover{
  color: black;
 }
-
-.addToCart {
-    display: flex;
+.addToCartProduct button{
+   margin-left: 4px;
 }
 
-span button  {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 19px;
-    max-height: 40px;
-    max-width: 130px;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    transform-style: preserve-3d;
-    transform: translateZ(-25px);
-    transition: transform .25s;
-    font-family: 'Montserrat', sans-serif;
-}
+

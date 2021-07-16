@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useParams, NavLink } from "react-router-dom"
 import style from "./Product.module.css"
 import { BsHeart, BsHeartFill,GrDeliver } from "react-icons/all";
+import CarouselBoxProduct from "./Carousel";
 
 
 export default function Product({ state, addToCart, removeFromFavorites, addFavorites }) {
@@ -26,7 +27,7 @@ export default function Product({ state, addToCart, removeFromFavorites, addFavo
     })
     setnewState([...a])
   }
-
+  const b="awdawd.awdawdawd.awdawdawdw.awdawd"
 
 
   return (
@@ -35,8 +36,15 @@ export default function Product({ state, addToCart, removeFromFavorites, addFavo
         products.map((product) => (
           <div className={style.component} key={product.id}>
             <div className={style.mainContent}>
-              <div className={style.image}>
-                <img src={product.image} alt={product.id} title={product.id} />
+              <div className={style.image}> 
+                <div className={style.image1}>
+                  <img src={product.image} alt={product.id} title={product.id} />
+                  <img src={product.imageSlide1} alt={product.id} title={product.id} />
+                  <img src={product.imageSlide2} alt={product.id} title={product.id} />
+                </div>
+                <div className={style.CarouselBoxProduct}>
+                  <CarouselBoxProduct image1={product.image} image2={product.imageSlide1} image3={product.imageSlide2}/>
+                </div>
               </div>
               <div className={style.rightContent}>
                 <div className={style.title}>
@@ -82,9 +90,9 @@ export default function Product({ state, addToCart, removeFromFavorites, addFavo
             <div className={style.specification}>
               <h3>Описание</h3>
               <div className={style.specificationMain}>
-              {product.specification}
+              {product.specification.split(".").map(item=><p>{item}.</p>)}
               </div>
-              {product.specification.replace('.')}
+              
               </div>
           </div>
         ))

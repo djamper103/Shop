@@ -83,7 +83,7 @@ const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
 
                 </div>
                 <div className={style.maincontent}>
-                    <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
+                <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
                 </div>
             </div>
         </div>

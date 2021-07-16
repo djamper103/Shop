@@ -54,7 +54,9 @@ export default function Mapiing({ addToCart, addFavorites, removeFromFavorites, 
                             }
                         </div>
                         <div className={style.addToCart}>
-                            <span><button onClick={() => addToCart(product)}>Add to Cart</button></span>
+                            <span><button onClick={() =>{
+                                 addToCart(product)
+                            }}>Add to Cart</button></span>
                         </div>
                     </div>
                 ))
