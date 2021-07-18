@@ -12,7 +12,7 @@ export default function Favorites({ favorites,removeFromFavorites,addToCart,setP
     const [state,setState]=useState([...favorites])
     useEffect(() => {
         setState([...favorites])
-    }, [state])
+    }, [favorites])
 
     
     const history = useHistory();
@@ -42,17 +42,15 @@ export default function Favorites({ favorites,removeFromFavorites,addToCart,setP
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
                                     <div className={style.chosenSize}>Chosen Size: {product.chosenSize?product.chosenSize
-                                    :"Size not selected"}
+                                        :"Size not selected"}
                                     </div>
                                     <div className={style.size}>
-                            {
-                                product.size.split(" ").map(item => <button key={item} onClick={() => 
-                                    product.chosenSize=item
-                                    
-                                   
-                                }>{item}</button>)
-                            }
-                        </div>
+                                        {
+                                            product.size.split(" ").map(item => <button key={item} onClick={() => 
+                                            product.chosenSize=item
+                                            }>{item}</button>)
+                                        }
+                                    </div>
                                     <div className={style.price}><p>{product.price}</p>грн.</div>
                                     <div className={style.favoritesandCart}>
                                     <div className={style.removeFromFavorites}>

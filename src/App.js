@@ -126,7 +126,7 @@ function App() {
                     <Route exact path='/Cart'
                         render={() => loadingg ?
                             <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
-                                increaseCart={increaseCart} decreaseCart={decreaseCart}
+                                increaseCart={increaseCart} decreaseCart={decreaseCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites}
                             /> :
                             <Redirect to="/login" />
                         } />
