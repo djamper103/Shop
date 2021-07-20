@@ -13,7 +13,6 @@ export default function Login({cart}) {
   
     async function handleSubmit(e) {
       e.preventDefault()
-  
       try {
         setError("")
         setLoading(true)

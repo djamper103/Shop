@@ -174,4 +174,32 @@
     transform: translateZ(-25px) rotateX(-90deg);
   }
   
+
+@media all and (max-width: 500px){
+    .componentSale {
+        letter-spacing: 1px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0px auto;
+    }
+    
+    .product{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0px auto;
+    }
+    .component img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 3px;
+        max-width: 285px;
+        max-height: 350px;
+        transition: all 0.5s;
+        min-height: 350px;
+       
+    }
+}
   
