@@ -27,7 +27,7 @@ function App() {
     const [cart, setCart] = useState([])
     const [favorites, setFavorites] = useState([])
     const [priceCount, setPriceCount] = useState(0)
-    const [loadingg, setLoadingg] = useState(true)
+    const [loadingg, setLoadingg] = useState(false)
 
 
     useEffect(() => {
@@ -135,7 +135,6 @@ function App() {
                         className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
-                       
                             <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
                             <Route exact path='/Dashboard' render={() => <Dashboard />} />
                             <Route exact path='/update-profile' render={() => <UpdateProfile />} />

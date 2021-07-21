@@ -3,7 +3,6 @@ import cartImg from '../../Common/Image/cart.svg'
 import style from './Cart.module.css'
 import StripeCheckout from 'react-stripe-checkout';
 import axios from "axios"
-import { toast } from "react-toastify";
 import { NavLink,useHistory } from "react-router-dom";
 import {Container} from "react-bootstrap"
 import {BsHeart,BsHeartFill} from "react-icons/all";
@@ -30,9 +29,9 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
         .then(response => {
         console.log("Response:", response.data);
         if (response.status === "success") {
-            toast("Success! Check email for details", { type: "success" });
+            alert("Success! Check email for details", { type: "success" });
         } else {
-            toast("Something went wrong", { type: "error" });
+            alert("Something went wrong", { type: "error" });
         }
     })
 }
