@@ -102,8 +102,7 @@ function App() {
     return (
         <AuthProvider loadingg={loadingg} setLoadingg={setLoadingg}>
             <div className='Content'>
-                <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}
-                />
+                <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}/>
                 <div className='Maincontent'>
                     <Route exact path='/Shop' render={() => <MainPage  addToCart={addToCart} addFavorites={addFavorites}
                         removeFromFavorites={removeFromFavorites}  

@@ -25,7 +25,6 @@ a:hover{
     grid-area: select;
     display: flex;
     justify-content: center;
-    margin: 20px;
 }
 
 .maincontent {
@@ -180,4 +179,10 @@ a:hover{
     transform: translateZ(-25px) rotateX(-90deg);
   }
   
-  
+  @media screen and (max-width: 800px) {
+    .select {
+        grid-area: select;
+        display: block;
+        margin: 0 auto;
+    }
+}

@@ -63,7 +63,7 @@
     opacity: 100%;
 }
 .specificationMain p {
-    text-indent: 20px; /* Отступ первой строки в пикселах */
+    text-indent: 20px;
 }
 
 
@@ -191,6 +191,99 @@
 }
 .addToCartProduct button{
    margin-left: 4px;
+}
+
+@media all and (max-width:800px){
+    .rightContent {
+        justify-content: center;
+        margin-left: 50px;
+        max-width: 50%;
+    }
+    
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 15px;
+}
+
+.productId {
+    margin: 0;
+    font-family:  'Ubuntu', sans-serif;
+    font-size: 34px;
+    font-weight: 300;
+}
+.category{
+    position: relative;
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 50px;
+}
+
+.price {
+    display: flex;
+    font-size: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: red;
+    margin: 0px 0;
+}
+
+.price p {
+    color: black;
+}
+
+.price span {
+    margin-left: 10px;
+    font-weight: 200;
+    color: #999999;
+    text-decoration: line-through;
+}
+.bonuses{
+    position: relative;
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 10px 0 60px;
+}
+.sizeTitle{
+  font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+.size {
+    display: flex;
+    margin: 10px 0;
+}
+
+.chosenSize {
+    display: flex;
+    margin: 15px 0 20px;
+}
+.chosenSize p {
+    font-size: 13px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+.chosenSize span {
+   margin: -3.7px 6px;
+}
+.delivery{
+    display: flex;
+    margin: 40px 0;
+}
+.delivery span{
+    padding-bottom: 3px;
+    margin-left: 10px;
+    border-bottom: 2px solid #000;
+}
 }
 
 

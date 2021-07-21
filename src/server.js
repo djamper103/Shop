@@ -51,16 +51,15 @@ createServer({
       data:json.shopItemSale
     }))
 
-
-    
-
     this.passthrough('http://localhost:4000/**');
     this.passthrough('https://www.gstatic.com/**');
-    this.passthrough('https://api.stripe.com/**');
+    this.passthrough('https://api.stripe.com/v1/tokens');
     this.passthrough('http://checkout.stripe.com/**');
-    this.passthrough('https://checkout.stripe.com/**');
     this.passthrough('https://pay.stripe.com/**');
     this.passthrough('https://www.googleapis.com/identitytoolkit/**');
+    this.passthrough('chrome-extension://');
+    this.passthrough('https://q.stripe.com/**');
+    
   },
   
 })

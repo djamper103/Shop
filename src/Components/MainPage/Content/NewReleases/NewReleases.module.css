@@ -35,3 +35,10 @@ a:hover{
 .maincontent {
     grid-area: maincontent;
 }
+@media screen and (max-width: 800px) {
+    .select {
+        grid-area: select;
+        display: block;
+        margin: 0 auto;
+    }
+}

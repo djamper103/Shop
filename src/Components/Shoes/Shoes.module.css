@@ -2,13 +2,18 @@
 .Content {
     display: grid;
     grid-template-areas:
-    'ShoesUpContent'
+    'header'
     'ShoesContent';
     grid-template-columns: auto auto;
     justify-content: center;
 }
-.ShoesUpContent{
-    grid-area: ShoesUpContent;
+
+.upImage img {
+    grid-area: header;
+    display: inline-block;
+    width: 90%;
+    height: 90%;
+    margin-bottom: 50px;
 }
 .ShoesContent{
     grid-area: ShoesContent;
@@ -30,18 +35,7 @@ a:hover{
 .select {
     grid-area: select;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin: 20px;
-    background-color: blanchedalmond;
-    max-width: 600px;
-    max-height: 200px;
-    margin: 40px auto;
-}
-.selectGender:after{
-    width: 100px;
-    height: 200px;
-    background-color: blanchedalmond;
 }
 
 .maincontent {
@@ -201,4 +195,10 @@ a:hover{
     transform: translateZ(-25px) rotateX(-90deg);
   }
   
-  
+  @media screen and (max-width: 800px) {
+    .select {
+        grid-area: select;
+        display: block;
+        margin: 0 auto;
+    }
+}

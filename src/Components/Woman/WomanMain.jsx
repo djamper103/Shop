@@ -60,12 +60,7 @@ const WomanMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
         <img src="https://static.staff-clothes.com/uploads/media/default/0001/86/dd9b3f8e12324facb6c2b379a0e1abb9.jpeg" />
       </div>
       <div className={style.select}>
-        <select
-          name="select"
-          onChange={(event) => {
-            setTypeItem(event.target.value);
-          }}
-        >
+        <select name="select" onChange={(event) => { setTypeItem(event.target.value);}}>
           <option value="all" >All</option>
           <option value="polo" >Polo</option>
           <option value="hoody">Hoody</option>
@@ -73,22 +68,14 @@ const WomanMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
           <option value="pants">Pants</option>
           <option value="shorts">Shorts</option>
         </select>
-        <select
-          name="select"
-          onChange={(event) => {
-            setPriceItem(event.target.value);
-          }}
-        >
+        <select name="select" onChange={(event) => {setPriceItem(event.target.value); }}>
           <option defaultValue="all">All</option>
           <option value="mostPrise">Most Prise</option>
           <option value="lowPrise">Low Prise</option>
         </select>
-        <input
-          placeholder="Search..."
-          onChange={(event) => {
-            setSearchItem(event.target.value.replace(/\s+/g, ""));
-          }}
-        />
+        <div>
+                        <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
+                    </div>   
       </div>
       <div className={style.maincontent}>
         <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
