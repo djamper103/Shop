@@ -5,7 +5,6 @@
     justify-content: center;
     margin: 0px 200px;
 }
-
 .product{
     display: flex;
     flex-wrap: wrap;
@@ -63,11 +62,6 @@
     color: #bf1650;
     background-color: #eaeaead2;
   }
-  
-
-
-
-
 .price{
     display: flex;
     justify-content: center;
@@ -203,3 +197,16 @@
     }
 }
   
+@media screen and (max-width: 1600px) {
+    .componentSale {
+        letter-spacing: 1px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .product{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
