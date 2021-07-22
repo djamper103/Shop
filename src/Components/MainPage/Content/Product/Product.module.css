@@ -7,7 +7,7 @@
 
 .specification {
     grid-area: specification;
-    margin: 20px 0;
+    margin: 0 auto;
 }
 .specification h3{
     display: flex;
@@ -193,10 +193,60 @@
    margin-left: 4px;
 }
 
+@media all and (max-width:1000px){
+    .image1 img{
+        display: none;
+    }
+    .rightContent {
+        justify-content: center;
+        margin-left: 40px;
+        max-width: 50%;
+    }
+    
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 15px;
+}
+.productId {
+    margin: 0;
+    font-family:  'Ubuntu', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+.category{
+    position: relative;
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 40px;
+}
+
+.bonuses{
+    position: relative;
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 10px 0 40px;
+}
+.favorites {
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    margin: 8px 0 0 15px;
+}
+
+}
+
 @media all and (max-width:800px){
     .rightContent {
         justify-content: center;
-        margin-left: 50px;
+        margin-left: 20px;
         max-width: 50%;
     }
     
@@ -210,7 +260,7 @@
 .productId {
     margin: 0;
     font-family:  'Ubuntu', sans-serif;
-    font-size: 34px;
+    font-size: 21px;
     font-weight: 300;
 }
 .category{
@@ -219,71 +269,261 @@
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
-.price {
-    display: flex;
-    font-size: 20px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    color: red;
-    margin: 0px 0;
-}
 
-.price p {
-    color: black;
-}
-
-.price span {
-    margin-left: 10px;
-    font-weight: 200;
-    color: #999999;
-    text-decoration: line-through;
-}
 .bonuses{
     position: relative;
     color: #999;
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    margin: 10px 0 60px;
-}
-.sizeTitle{
-  font-size: 13px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-}
-.size {
-    display: flex;
-    margin: 10px 0;
+    margin: 10px 0 20px;
 }
 
-.chosenSize {
+.favorites {
+    justify-content: center;
+    align-items: center;
+    width: 30px;
     display: flex;
-    margin: 15px 0 20px;
+    height: 30px;
+    margin: -1px 0 0 0px;
 }
 .chosenSize p {
-    font-size: 13px;
+    font-size: 11px;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.2px;
 }
 .chosenSize span {
-   margin: -3.7px 6px;
+    font-size: 11px;
+    margin: -1px 5px;
 }
-.delivery{
+}
+@media all and (max-width:600px){
+    .rightContent {
+        justify-content: center;
+        margin-left: 10px;
+        max-width: 50%;
+    }
+    
+.title {
     display: flex;
-    margin: 40px 0;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 10px;
 }
-.delivery span{
-    padding-bottom: 3px;
-    margin-left: 10px;
-    border-bottom: 2px solid #000;
+
+.productId {
+    margin: 0;
+    font-family:  'Ubuntu', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
 }
+.category{
+    position: relative;
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
 }
+
+
+.bonuses{
+    position: relative;
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin: 10px 0 20px;
+}
+
+.favorites {
+    justify-content: center;
+    align-items: center;
+    width: 14px;
+    display: flex;
+    height: 14px;
+    margin: 6px -6px;
+}
+
+.sizeTitle{
+    font-size: 12px;
+  }
+  .size {
+      display: flex;
+      margin: 10px 0;
+  }
+  
+  .size button {
+      border-radius: 3px;
+      margin: 0px 3px ;
+      background: transparent;
+      outline: none;
+      border: none;
+  }
+  
+  .size button:hover {
+      color: #bf1650;
+      background-color: #eaeaead2;
+  }
+  
+  
+  .chosenSize {
+      margin: 0;
+  }
+  .chosenSize p {
+      font-size: 10px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+  }
+  .chosenSize span {
+     margin: 1px 0px;
+     font-size: 9px;
+  }
+  .delivery{
+      display: flex;
+      margin: 20px 0;
+      font-size: 12px;
+  }
+  .delivery span{
+      padding-bottom: 3px;
+      margin-left: 10px;
+      border-bottom: 2px solid #000;
+  }
+}
+@media all and (max-width:500px){
+    .rightContent {
+        width: 50%;
+        justify-content: center;
+        margin-left: 10px;
+        max-width: 50%;
+    }
+    
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.productId {
+    margin: 0;
+    font-family:  'Ubuntu', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+}
+.category{
+    margin-bottom: 10px;
+}
+
+.favorites {
+    width: 8px;
+    height: 8px;
+    margin: 4px 20px;
+}
+
+.sizeTitle{
+    font-size: 10px;
+  }
+  .size {
+      display: flex;
+      margin: 10px 0;
+  }
+  
+  .size button {
+font-size: 12px;
+  }
+
+  .chosenSize p {
+      font-size: 10px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+  }
+  .chosenSize span {
+     margin: -1px 6px;
+     font-size: 10px;
+  }
+
+}
+@media all and (max-width:400px){
+    .rightContent {
+        width: 40%;
+        justify-content: center;
+        margin-left: 10px;
+        max-width: 50%;
+    }
+    
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 10px;
+}
+
+.productId {
+    margin: 0;
+    font-family:  'Ubuntu', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.favorites {
+    width: 6px;
+    height: 6px;
+    margin: 4px 20px;
+}
+.category{
+    font-size: 7px;
+}
+.price {
+    display: flex;
+    font-size: 14px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: red;
+    margin: 0px 0;
+}
+.bonuses{
+    font-size: 8px;
+    margin-bottom: 10px;
+}
+.sizeTitle{
+    font-size: 8px;
+  }
+  .size {
+      display: flex;
+      margin: 10px 0;
+  }
+  
+  .size button {
+font-size: 10px;
+  }
+
+  .chosenSize p {
+      font-size: 7px;
+      font-family: 'Ubuntu', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+  }
+  .chosenSize span {
+     margin: -3px 6px;
+     font-size:8px;
+  }
+  .delivery{
+      display: flex;
+      margin: 20px 0;
+      font-size: 9px;
+  }
+}
+
 
 

@@ -12,4 +12,66 @@
     transition: all 0.5s;
     object-fit: cover;
 }
+@media all and (max-width:1200px){
+    .transition{
+        justify-content: center;
+        align-items: center;
+        max-width: 400px;
+        min-width: 400px;
+        max-height: 600px;
+        transition: all 0.5s;
+        object-fit: cover;
+    }
+}
+@media all and (max-width:1000px){
+    .transition{
+        justify-content: center;
+        align-items: center;
+        max-width: 350px;
+        min-width: 350px;
+        max-height: 500px;
+        transition: all 0.5s;
+        object-fit: cover;
+    }
+}
+@media all and (max-width:800px){
+    .transition{
+        justify-content: center;
+        align-items: center;
+        max-width: 300px;
+        min-width: 300px;
+        max-height: 400px;
+        transition: all 0.5s;
+        object-fit: cover;
+    }
+}
+@media all and (max-width:700px){
+    .transition{
+        justify-content: center;
+        align-items: center;
+        max-width: 290px;
+        min-width: 290px;
+        transition: all 0.5s;
+        object-fit: cover;
+    }
+}
+@media all and (max-width:600px){
+    .transition{
+        max-width: 200px;
+        min-width: 200px;
+        transition: all 0.5s;
+        object-fit: cover;
+    }
+}
+@media all and (max-width:400px){
+    .transition{
+        max-width: 160px;
+        min-width: 160px;
+        transition: all 0.5s;
+        object-fit: cover;
+    }
+}
+
+
+
 
