@@ -42,8 +42,7 @@ const WomanMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
   const scrollHandler = (e) => {
     if (
       e.target.documentElement.scrollHeight -
-      (e.target.documentElement.scrollTop + window.innerHeight) <
-      1
+      (e.target.documentElement.scrollTop + window.innerHeight) <1
     ) {
       setFetching(true);
     }

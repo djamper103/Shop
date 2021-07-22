@@ -55,12 +55,11 @@
     transition: all 0.5s;
     object-fit: cover;
     margin-bottom: 10px;
-    opacity: 80%;
-    
+    opacity:  0.8;
 }
 .image1 img:hover{
     transform: scale(1.05);
-    opacity: 100%;
+    opacity: 1;
 }
 .specificationMain p {
     text-indent: 20px;
@@ -301,6 +300,10 @@
     font-size: 11px;
     margin: -1px 5px;
 }
+.specificationMain{
+    font-size: 15px;
+    margin: 0 10px;
+}
 }
 @media all and (max-width:600px){
     .rightContent {
@@ -396,6 +399,10 @@
       margin-left: 10px;
       border-bottom: 2px solid #000;
   }
+  .specificationMain{
+    font-size: 13px;
+    margin: 0 15px;
+}
 }
 @media all and (max-width:500px){
     .rightContent {
@@ -451,7 +458,9 @@ font-size: 12px;
      margin: -1px 6px;
      font-size: 10px;
   }
-
+  .specificationMain{
+    font-size: 11px;
+}
 }
 @media all and (max-width:400px){
     .rightContent {
@@ -523,6 +532,9 @@ font-size: 10px;
       margin: 20px 0;
       font-size: 9px;
   }
+  .specificationMain{
+    font-size: 10px;
+}
 }
 
 
