@@ -156,9 +156,9 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 19px;
-    max-height: 40px;
-    max-width: 130px;
+    font-size: 22px;
+    height: 60px;
+    width: 150px;
     border-radius: 5px;
     letter-spacing: 1px;
     transform-style: preserve-3d;
@@ -171,10 +171,10 @@ a:hover{
   span button:after{
     position: absolute;
     content: "Add to Cart";
-    height: 40px;
-    width: 130px;
+    height: 60px;
+    width: 150px;
     display: flex;
-    top:-2px;
+    top:-6px;
     align-items: center;
     justify-content: center;
     border: 3px solid black;
@@ -194,7 +194,47 @@ a:hover{
       
     transform: translateZ(-25px) rotateX(-90deg);
   }
-  
+  @media screen and (max-width: 1000px) {
+    
+    span button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      height: 50px;
+      width: 140px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      transform-style: preserve-3d;
+      transform: translateZ(-25px);
+      transition: transform .25s;
+      font-family: 'Montserrat', sans-serif;
+      
+    }
+    span button:before,
+    span button:after{
+      position: absolute;
+      content: "Add to Cart";
+      height: 50px;
+      width: 140px;
+      display: flex;
+      top:-2px;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid black;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+    span button:before{
+      color: #fff;
+      background: #000;
+      transform: rotateY(0deg) translateZ(25px);
+    }
+    span button:after{
+      color: #000;
+      transform: rotateX(90deg) translateZ(25px);
+    }
+  }
   @media screen and (max-width: 800px) {
     .select {
         grid-area: select;
@@ -202,3 +242,86 @@ a:hover{
         margin: 0 auto;
     }
 }
+@media screen and (max-width: 600px) {
+    
+  span button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    height: 35px;
+    width: 110px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  span button:before,
+  span button:after{
+    position: absolute;
+    content: "Add to Cart";
+    height: 35px;
+    width: 110px;
+    display: flex;
+    top:-2px;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  span button:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  span button:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+}
+@media screen and (max-width: 400px) {
+    
+    span button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      height: 30px;
+      width: 110px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      transform-style: preserve-3d;
+      transform: translateZ(-25px);
+      transition: transform .25s;
+      font-family: 'Montserrat', sans-serif;
+      
+    }
+    span button:before,
+    span button:after{
+      position: absolute;
+      content: "Add to Cart";
+      height: 30px;
+      width: 110px;
+      display: flex;
+      top:-2px;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid black;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+    span button:before{
+      color: #fff;
+      background: #000;
+      transform: rotateY(0deg) translateZ(25px);
+    }
+    span button:after{
+      color: #000;
+      transform: rotateX(90deg) translateZ(25px);
+    }
+  }
+

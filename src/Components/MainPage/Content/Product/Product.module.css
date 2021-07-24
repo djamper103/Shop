@@ -513,7 +513,8 @@ font-size: 12px;
   }
   
   .size button {
-font-size: 10px;
+    margin: 0px 0px ;
+font-size: 8px;
   }
 
   .chosenSize p {

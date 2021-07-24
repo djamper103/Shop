@@ -81,9 +81,7 @@ const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
                     </select>
                     <div>
                         <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
-                    </div>
-                    
-
+                    </div>     
                 </div>
                 <div className={style.maincontent}>
                 <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />

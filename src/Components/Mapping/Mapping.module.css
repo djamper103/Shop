@@ -5,6 +5,12 @@
     justify-content: center;
     margin: 0px 200px;
 }
+
+.componentSale .price {
+    margin-bottom: 15px;
+}
+
+
 .product{
     display: flex;
     flex-wrap: wrap;
@@ -33,7 +39,7 @@
 .component {
     max-width: 285px;
     max-height: 350px;
-    margin:  60px 10px;
+    margin:  70px 10px;
     margin-bottom:220px;
     justify-content: center;
     align-items: center;
@@ -122,9 +128,6 @@
 }
 
 
-.addToCart button{
-    margin-bottom: 400px;
-}
 
 .addToCart span button{
     display: flex;
@@ -210,3 +213,16 @@
         justify-content: center;
     }
 }
+@media screen and (max-width: 600px) {
+    .addToCart span button{
+        font-size: 16px;
+      }
+      
+  }
+  @media screen and (max-width: 400px) {  
+    .addToCart span button{
+        font-size: 12px;
+      }
+    }
+  
+  

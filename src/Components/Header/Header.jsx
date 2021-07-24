@@ -1,13 +1,14 @@
 import style from './Header.module.css'
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
     FaShoppingCart,
-    BsHeart
+    BsHeart,
+    BsList,IoCloseOutline
 } from "react-icons/all";
 
 const Header = ({ cart, loadingg, priceCount }) => {
-
+    const [activeMenu,setActiveMenu]=useState(false)
 
     return (
 
@@ -22,7 +23,16 @@ const Header = ({ cart, loadingg, priceCount }) => {
                 <NavLink to='/Woman'>Woman</NavLink>
                 <NavLink to='/Shoes'>Shoes</NavLink>
             </div>
-
+            
+            <div className={style.menu}>
+                <button onClick={()=>setActiveMenu(!activeMenu)}>{activeMenu?<IoCloseOutline size = '35px'/>:<BsList size = '35px'/>}</button>
+                <ul className={activeMenu?style.menu1:style.menu2} onClick={()=>setActiveMenu(false)} >
+                    <li><NavLink to='/Shop'>Home</NavLink></li>
+                    <li><NavLink to='/Man'>Man</NavLink></li>
+                    <li><NavLink to='/Woman'>Woman</NavLink></li>
+                    <li><NavLink to='/Shoes'>Shoes</NavLink></li>
+                </ul>
+            </div>
             <div className={style.Login}>
 
                 <NavLink to={'/Cart'} className={style.cart}>
@@ -36,6 +46,7 @@ const Header = ({ cart, loadingg, priceCount }) => {
                 {
                     loadingg ?  <NavLink to={'/Dashboard'}>Logout</NavLink>:<NavLink to={'/Login'}>Login</NavLink> 
                 }
+
                 
                     
             </div>

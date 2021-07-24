@@ -8,12 +8,10 @@
     grid-area: header;
     display: flex;
     justify-content: center;
-    margin: 20px;
 }
 .header h3{
     font-size: 34px;
 }
-.maincontent {
+.Content {
     grid-area: maincontent;
-
 } 

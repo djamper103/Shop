@@ -11,6 +11,7 @@
     grid-template-columns: 1.8fr 6fr 4fr ;
     margin: 0px 0px 20px;
     font-family: 'Popins', sans-serif;
+    width: 100%;
 }
 
 .Header a:hover { 
@@ -53,8 +54,6 @@
     text-indent: 5em;
     font-size: 20px;
     margin-top: 24px;
-
-
 }
 .Login{
     display: flex;
@@ -85,10 +84,15 @@
 }
 
 
+@media screen and (min-width: 1000px) {
+  .menu{
+      display: none;
+  }
 
+}
 @media screen and (max-width: 1300px) {
     .Header {
-        grid-template-columns: 1fr 4fr 4fr ;
+        grid-template-columns: auto ;
 
 }
 .Header a{
@@ -100,146 +104,141 @@
     font-size: 25px;
 }
 .logo{
-    margin-top: 6px;
+    margin-top: 8px;
     margin-left: 18px;
 }
 
 }
-@media screen and (max-width: 1000px) {
-    .Header {
-        grid-template-columns: 1fr 4fr 4fr ;
+@media all and (max-width: 1000px) {
+
+.HeaderMain a{
+   display: none;
+}
+.Header{
+    grid-area: Header;
+    display:grid;
+    grid-template-areas:
+            'menu Logo Login ';
+    grid-template-columns: 2fr 2fr 5fr ;
+    /* position: fixed;
+    z-index: 100; */
+}
+.menu{
+    grid-area: menu;
+    position: relative;
+    top:15px;
+    left:20px;
+    z-index: 2;
+}
+.menu button:hover{
+    color: red;
+}
+.menu ul li{
+    list-style-type: none;
+}
+.menu1{
+    background-color: white;
+    display: flex;
+    flex-direction:column;
+    font-size: 20px;
+    width: 55%;
+    z-index: 2;
+}
+.menu1 a{
+    margin-left: -26px;
+}
+
+.menu2{
+    transform: translateX(-130%);
 }
 .Header a{
-    font-size: 16px;
-    letter-spacing: 2px;
-    text-indent: 1.5em;
-    margin-top: 16px;
+    max-height: 20px;
 }
-.logo a{
-    font-size: 22px;
-}
-.logo{
-    margin-top: -1px;
-    margin-left: 15px;
-}
-
-
 }
 
 @media screen and (max-width: 800px) {
-    .Header {
-        width: 96%;
-        grid-template-columns:auto ;
-}
-.Header a{
-    font-size: 16px;
-    letter-spacing: 2px;
-    text-indent: 1em;
-    margin-top: 18px;
-}
-.logo a{
-    font-size: 16px;
-}
-.logo{
-    margin-top: 0px;
-    margin-left: 20px;
-}
-
-}
-@media screen and (max-width: 700px) {
-    .Header {
-        width: 99%;
-        grid-template-columns: 1fr auto ;
-}
-.Header a{
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-indent: 1.3em;
-    margin-top: 19px;
-}
-.logo a{
-    font-size: 14px;
-}
-.logo{
-    margin-top: 0px;
-    margin-left: 4px;
+    .Header{
+        max-height: 50px;
+    }
+    .Header a{
+        font-size: 18px;
+    }
+    .logo a{
+        font-size: 21px;
+    }
+    .logo{
+        margin-top: 4px;
+        margin-left: 4px;
+    }
+    .menu{
+        grid-area: menu;
+        position: relative;
+        top:11px;
+        left:20px;
+        z-index: 2;
+    }
+    .menu1{
+        width: 58%;
+    }
 }
 
-}
-@media screen and (max-width: 600px) {
-    .Header {
-        width: 98%;
-        grid-template-columns: auto  ;
-}
-.Header a{
-    font-size: 11px;
-    margin-top: 17px;
-}
-.logo a{
-    font-size: 12px;
-}
-.logo{
-    margin-top: -6px;
-    margin-left: 10px;
-}
-
-}
 @media screen and (max-width: 500px) {
-    .Header {
-        width: 100%;
-        grid-template-columns: auto  ;
 
-}
-.Header a{
-    font-size: 8px;
-    margin-top: 20px;
-}
-.logo a{
-    font-size: 9px;
-}
-.logo{
-    margin-top: -6px;
-    margin-left: 4px;
-}
-
+    .Header{
+        width: 99%;
+        max-height: 20px;
+        grid-template-columns: 2fr 1.2fr 5.2fr ;
+    }
+    .Header a{
+        font-size: 14px;
+        text-indent: 1.2em;
+    }
+    .logo a{
+        font-size: 16px;
+        
+    }
+    .logo{
+        margin-top: 1px;
+        margin-left: 0px;
+    }
+    .menu{
+        grid-area: menu;
+        position: relative;
+        top:9px;
+        left:5px;
+        z-index: 2;
+    }
+    .menu1{
+        width: 77%;
+    }
+    .menu1 a{
+        margin-left: -26px;
+    }
+    
 }
 @media screen and (max-width: 400px) {
-    .Header {
-        width: 100%;
-        grid-template-columns: auto  ;
 
+    .Header{
+        max-height: 50px;
+        grid-template-columns: 1.5fr 1.2fr 5fr ;
+    }
+    .Header a{
+        font-size: 11px;
+        text-indent: 1em;
+    }
+    .logo a{
+        font-size: 12px;
+    }
+    .logo{
+        margin-top: -4px;
+        margin-left: 4px;
+    }
+    .menu{
+        grid-area: menu;
+        position: relative;
+        top:4px;
+        left:1px;
+        z-index: 2;
+        width: 130%;
+    }
 }
-.Header a{
-    font-size: 7px;
-    margin-top: 20px;
-}
-.logo a{
-    font-size: 8px;
-}
-.logo{
-    margin-top: -8px;
-    margin-left: 2px;
-}
-
-}
-@media screen and (max-width: 300px) {
-    .Header {
-        width: 98%;
-        grid-template-columns: auto;
-        margin-bottom: 20px;
-
-}
-.Header a{
-    font-size: 7px;
-    margin-top: 19px;
-}
-.logo a{
-    font-size: 8px;
-}
-.logo{
-    margin-top: -9px;
-    margin-left: 2px;
-}
-
-}
-
