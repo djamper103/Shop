@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Shop/static/css/main.44a04147.chunk.css",
+    "main.css": "/Shop/static/css/main.0c7e8110.chunk.css",
     "main.js": "/Shop/static/js/main.ae97bc87.chunk.js",
     "main.js.map": "/Shop/static/js/main.ae97bc87.chunk.js.map",
     "runtime-main.js": "/Shop/static/js/runtime-main.9177eea9.js",
@@ -12,7 +12,7 @@
     "static/js/3.f16261a1.chunk.js.map": "/Shop/static/js/3.f16261a1.chunk.js.map",
     "index.html": "/Shop/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/Shop/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.44a04147.chunk.css.map": "/Shop/static/css/main.44a04147.chunk.css.map",
+    "static/css/main.0c7e8110.chunk.css.map": "/Shop/static/css/main.0c7e8110.chunk.css.map",
     "static/js/2.43f29e7a.chunk.js.LICENSE.txt": "/Shop/static/js/2.43f29e7a.chunk.js.LICENSE.txt",
     "static/media/cart.eb77fe90.svg": "/Shop/static/media/cart.eb77fe90.svg",
     "static/media/favoriets.4f3384d4.svg": "/Shop/static/media/favoriets.4f3384d4.svg",
@@ -22,7 +22,7 @@
     "static/js/runtime-main.9177eea9.js",
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.43f29e7a.chunk.js",
-    "static/css/main.44a04147.chunk.css",
+    "static/css/main.0c7e8110.chunk.css",
     "static/js/main.ae97bc87.chunk.js"
   ]
 }
