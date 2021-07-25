@@ -108,8 +108,8 @@ font-size: 32px;
 }
 .Header a{
     font-size: 27px;
-    letter-spacing: 2px;
-    text-indent: 1.1em;
+    letter-spacing: 1px;
+    text-indent: 1em;
     margin-top: 18px;
 }
 .logo a{
@@ -131,7 +131,7 @@ font-size: 32px;
     display:grid;
     grid-template-areas:
             'menu Logo Login ';
-    grid-template-columns: 1fr 2fr 5fr ;
+    grid-template-columns: 1fr 2fr 5.9fr ;
     max-height: 50px;
     /* position: fixed;
     z-index: 100; */
@@ -154,7 +154,7 @@ font-size: 32px;
     left:0px;
     z-index: 2;
     max-height: 50px;
-    width: 120%;
+    width: 135%;
 }
 .menu button:hover{
     color: red;
@@ -167,12 +167,12 @@ font-size: 32px;
     display: flex;
     flex-direction:column;
     font-size: 20px;
-    width: 120%;
+    width: 135%;
     z-index: 2;
 }
 .menu1 a{
     margin-left: -26px;
-    font-size: 34px;
+    font-size: 42px;
 }
 
 .menu2{
@@ -188,26 +188,27 @@ font-size: 32px;
 @media screen and (max-width: 800px) {
     .Header{
             width: 99%;
-            grid-template-columns: 1fr 1.2fr 5.2fr ;
+            grid-template-columns: 1fr 1.2fr 5.8fr ;
     }
     .Header a{
-        font-size: 24px;
+        font-size: 22px;
+        text-indent: 0.7em;
     }
     .logo a{
-        font-size: 25px;
+        font-size: 23px;
     }
     .logo{
         margin-top: 18px;
     }
     .menu{
         top:18px;
-        width: 130%;
+        width: 162%;
     }
     .menu1{
-        width: 130%;
+        width: 162%;
     }
     .menu1 a{
-        font-size: 34px;
+        font-size: 40px;
     }
 }
 
@@ -216,14 +217,14 @@ font-size: 32px;
     .Header{
         width: 99%;
         max-height: 30px;
-        grid-template-columns: 1.2fr 1.2fr 5.3fr ;
+        grid-template-columns: 1fr 1.3fr 5.8fr ;
     }
     .Header a{
-        font-size: 17px;
-        text-indent: 1em;
+        font-size: 18px;
+        text-indent: 0.6em;
     }
     .logo a{
-        font-size: 17px;
+        font-size: 18px;
         
     }
     .logo{
@@ -231,41 +232,65 @@ font-size: 32px;
         margin-left: 0px;
     }
     .menu1{
-        width: 130%;
+        width: 142%;
     }
     .menu1 a{
-        font-size: 24px;
+        font-size: 26px;
     }
     .menu{
         top:9px;
-        width: 130%;
+        width: 142%;
     }
 }
 @media screen and (max-width: 400px) {
 
     .Header{
         max-height: 25px;
-        grid-template-columns: 0.2fr 1.6fr 6fr ;
+        grid-template-columns: 0.1fr 1.6fr 6.9fr ;
     }
     .Header a{
         font-size: 14px;
-        text-indent: 0.5em;
+        text-indent: 0.4em;
     }
     .logo a{
-        font-size: 15px;
+        font-size: 14px;
     }
     .logo{
         margin-top: 17px;
         margin-left: 0px;
     }
     .menu{
-        top:6px;
-        width: 130%;
+        top:7px;
+        width: 140%;
     }
     .menu1{
-        width: 135%;
+        width: 140%;
     }
     .menu1 a{
-        font-size: 20px;
+        font-size: 24px;
+    }
+}
+@media screen and (max-width: 300px) {
+
+    .Header{
+        max-height: 25px;
+        grid-template-columns: 0.1fr  auto ;
+    }
+    .Header a{
+        font-size: 13px;
+        text-indent: 0.5em;
+    }
+    .logo{
+        display: none;
+    }
+    .menu{
+        top:5px;
+        width: 140%;
+    }
+    .menu1{
+        width: 140%;
+    }
+    .menu1 a{
+        font-size: 24px;
     }
 }

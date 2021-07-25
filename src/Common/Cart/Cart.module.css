@@ -172,14 +172,14 @@ margin: 30px;
     width: 100%;
 }
 
-.noProductButton span button{
+.noProduct span button{
     display: flex;
-    justify-content: center;
+    margin: 0 auto;
+    margin-top: 70px;
     align-items: center;
-    font-size: 19px;
-    max-height: 100%;
-    max-width: 100%;
-    padding: 20px;
+    font-size: 20px;
+    height: 85px;
+    width: 165px;
     border-radius: 5px;
     letter-spacing: 1px;
     transform-style: preserve-3d;
@@ -188,28 +188,31 @@ margin: 30px;
     font-family: 'Montserrat', sans-serif;
     
   }
-.noProductButton span button:before,
-.noProductButton span button:after{
+  .noProduct span button:before,
+  .noProduct span button:after{
+    position: absolute;
     content: "ПЕРЕЙТИ В КАТАЛОГ";
-    height: 104%;
-    width: 102%;
+    height: 85px;
+    width: 165px;
     display: flex;
+    top:-20px;
     align-items: center;
     justify-content: center;
     border: 3px solid black;
     box-sizing: border-box;
     border-radius: 5px;
+    
   }
-.noProductButton span button:before{
+  .noProduct span button:before{
     color: #fff;
     background: #000;
     transform: rotateY(0deg) translateZ(25px);
   }
-  .noProductButton span button:after{
+  .noProduct span button:after{
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
   }
-  .noProductButton span button:hover{
+  .noProduct span button:hover{
       
     transform: translateZ(-25px) rotateX(-90deg);
   }
@@ -247,5 +250,47 @@ margin: 30px;
 }
 
 
+@media screen and (max-width: 500px) {
+    .noProduct span button{
+        display: flex;
+        margin: 0 auto;
+        margin-top: 70px;
+        align-items: center;
+        font-size: 20px;
+        height: 70px;
+        width: 140px;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        transform-style: preserve-3d;
+        transform: translateZ(-25px);
+        transition: transform .25s;
+        font-family: 'Montserrat', sans-serif;
+        
+      }
+      .noProduct span button:before,
+      .noProduct span button:after{
+        position: absolute;
+        content: "ПЕРЕЙТИ В КАТАЛОГ";
+        height: 70px;
+        width: 140px;
+        display: flex;
+        top:-20px;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid black;
+        box-sizing: border-box;
+        border-radius: 5px;
+        
+      }
+    .noProductButton span button{
+        font-size: 14px;
+      }
+      .favoritesandCart{
+        display: block;
+      }
+      .favoritesandCart button{
+        margin: 10px auto;
+      }
+  }
 
 

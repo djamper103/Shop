@@ -53,7 +53,7 @@ export default function Favorites({ favorites,removeFromFavorites,addToCart,setP
                                     </div>
                                     <div className={style.price}><p>{product.price}</p>грн.</div>
                                     <div className={style.favoritesandCart}>
-                                    <div className={style.removeFromFavorites}>
+                                    <div   div className={style.removeFromFavorites}>
                                     <span><button onClick={() => removeFromFavorites(product)}>ОЧИСТИТЬ ИЗБРАННОЕ</button></span>
                                     </div>
                                     <div className={style.addToCart}>
