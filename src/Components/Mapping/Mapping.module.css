@@ -190,6 +190,26 @@
     .addToCart span button{
         font-size: 16px;
       }
+      .productId{
+        margin: 20px 3px 8px;
+  }
+  .price{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.favorites{
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    display: flex;
+     margin: -418px 240px 400px;
+}
+
+.componentSale .price {
+    margin-bottom: 13px;
+}
+
       
   }
   @media all and (max-width: 500px){
@@ -197,7 +217,7 @@
         letter-spacing: 1px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+
         margin: 0px auto;
     }
     
@@ -218,6 +238,14 @@
         min-height: 350px;
        
     }
+    .productId{
+        margin: 20px 3px 8px;
+  }
+  .price{
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
 }
   
   @media screen and (max-width: 400px) {  

@@ -342,10 +342,11 @@ margin: 30px;
       }
       .favoritesandCart{
         display: block;
+        margin: -20px;
       }
       .favoritesandCart button{
         position: relative;
-        left: 20%;
+        left: 21%;
       }
       .header h3{
         font-size: 20px;
@@ -357,6 +358,19 @@ margin: 30px;
   .component {
     margin:  50px 10px 0px; 
 }
+.chosenSize{
+  font-size: 16px;
+}
+
+    
+  }
+  @media screen and (max-width: 400px) {
+    
+      .favoritesandCart button{
+        position: relative;
+        left: 23%;
+      }
+   
     
   }
 
