@@ -53,7 +53,7 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                 <div className={style.mainContent}>
                     <div className={style.product}>
                         {state.map(product =>
-                            <div key={product.id}>
+                            <div key={product.id} >
                                 <div className={style.component} key={product.id} >
                                 <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
                                 <div className={style.image}>
@@ -62,15 +62,15 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
                             <div className={style.favorites}>
-                            <div className={style.favorite}><span>{product.favorites ?
+                                <div className={style.favorite}><span>{product.favorites ?
                                 <BsHeartFill onClick={() => {
                                     removeFromFavorites(product)
                                     { product.favorites = false }}} />
                                 : <BsHeart onClick={() => {
                                     addFavorites(product)
                                     { product.favorites = true }}} />}</span>
+                                </div>
                             </div>
-                        </div>
                                     <div className={style.chosenSize}>Chosen Size: {product.chosenSize?product.chosenSize
                                     :"Size not selected"}
                                     </div>

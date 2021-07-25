@@ -39,8 +39,7 @@
 .component {
     max-width: 285px;
     max-height: 350px;
-    margin:  70px 10px;
-    margin-bottom:220px;
+    margin:  0 10px 290px;
     justify-content: center;
     align-items: center;
 }

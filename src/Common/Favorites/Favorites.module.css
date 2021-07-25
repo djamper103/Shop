@@ -16,7 +16,7 @@ grid-template-rows: auto auto ;
     font-family: 'Ubuntu', sans-serif;
     text-transform: uppercase;
     letter-spacing: 6px;
-    margin: 0;
+    margin-bottom: 40px;
     padding: 0;
     text-align: center;
 }
@@ -60,9 +60,7 @@ grid-template-rows: auto auto ;
 }
 .component {
     max-width: 285px;
-    max-height: 350px;
-    margin:  80px 10px 0px;
-    margin-bottom:220px;
+    margin:  0px 50px 0px;
     justify-content: center;
     align-items: center;
     
@@ -304,6 +302,14 @@ margin: 30px;
       
     transform: translateZ(-25px) rotateX(-90deg);
   }
+  @media screen and (max-width: 800px) {
+    .component {
+      max-width: 285px;
+      margin:  0px 50px 40px;
+      justify-content: center;
+      align-items: center; 
+  }
+  }
 
   @media screen and (max-width: 500px) {
     .noProduct span button{
@@ -351,15 +357,16 @@ margin: 30px;
       .header {
         margin:20px 0px 0px;
     }
-      .header h3{
-        font-size: 20px;
-    }
+    .header h3{
+      font-size: 20px;
+      margin-bottom: 0px;
+  }
     .image{
       max-width: 260px;
       max-height: 330px;    
   }
   .component {
-    margin:  50px 10px 0px; 
+    margin:  0px 10px 40px; 
 }
 .chosenSize{
   font-size: 16px;

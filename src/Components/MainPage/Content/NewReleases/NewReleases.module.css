@@ -30,6 +30,7 @@ a:hover{
     grid-area: select;
     display: flex;
     justify-content: center;
+    margin-bottom: 70px;
 }
 
 .maincontent {
@@ -39,7 +40,7 @@ a:hover{
     .select {
         grid-area: select;
         display: block;
-        margin: 0 auto;
+        margin: 0 auto 40px;
     }
 }
 
