@@ -330,7 +330,12 @@ margin: 30px;
 .chosenSize{
     font-size: 16px;
   }
-  
+  .header {
+    margin:20px 0px 0px;
+}
+.header h3{
+    font-size: 20px;
+}
 
   }
 
