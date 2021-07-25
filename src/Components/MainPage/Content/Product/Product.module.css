@@ -49,10 +49,8 @@
 }
 .image1 img{
     display: block;
-    min-height: 140px;
-    min-width: 100px;
-    max-width: 140px;
-    max-height: 100px;
+    height: 140px;
+    height: 100px;
     transition: all 0.5s;
     object-fit: cover;
     margin-bottom: 10px;
@@ -80,7 +78,6 @@
     font-size: 34px;
     font-weight: 300;
 }
-
 .favorites {
     justify-content: center;
     align-items: center;
@@ -89,6 +86,7 @@
     display: flex;
     margin: 11px 0 0 30px;
 }
+
 
 .favorite:active {
     color: red;
@@ -193,6 +191,22 @@
    margin-left: 4px;
 }
 
+@media all and (max-width:1200px){
+    .productId {
+        margin: 0;
+        font-family:  'Ubuntu', sans-serif;
+        font-size: 29px;
+        font-weight: 300;
+    }
+    .favorites {
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        margin: 5px 0 0 0px;
+    }
+    }
 @media all and (max-width:1000px){
     .image1 img{
         display: none;
@@ -212,7 +226,7 @@
 .productId {
     margin: 0;
     font-family:  'Ubuntu', sans-serif;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 300;
 }
 .category{
@@ -238,7 +252,7 @@
     width: 30px;
     height: 30px;
     display: flex;
-    margin: 8px 0 0 15px;
+    margin: 4px 0 0 15px;
 }
 
 }
@@ -323,7 +337,7 @@
 .productId {
     margin: 0;
     font-family:  'Ubuntu', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 300;
 }
 .category{
@@ -351,7 +365,7 @@
     width: 14px;
     display: flex;
     height: 14px;
-    margin: 6px -6px;
+    margin: 2px 5px;
 }
 
 .sizeTitle{

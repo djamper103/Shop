@@ -7,7 +7,7 @@ import {Container} from "react-bootstrap"
 
 
 
-export default function Favorites({ favorites,removeFromFavorites,addToCart,setPushingTheProduct}) {
+export default function Favorites({ favorites,removeFromFavorites,addToCart,}) {
 
     const [state,setState]=useState([...favorites])
     useEffect(() => {
@@ -35,7 +35,7 @@ export default function Favorites({ favorites,removeFromFavorites,addToCart,setP
                         {state.map(product =>
                             <div key={product.id}>
                                 <div className={style.component} key={product.id} >
-                                <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'} onClick={()=>setPushingTheProduct(true)}>
+                                <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'} >
                                 <div className={style.image}>
                             <img src={product.image} alt={product.id} title={product.id} />
                             </div>

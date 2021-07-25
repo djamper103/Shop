@@ -49,10 +49,10 @@ export default function Product({ state, addToCart, removeFromFavorites, addFavo
               <div className={style.rightContent}>
                 <div className={style.title}>
                   <div className={style.productId}>{product.id}</div>
-                  <div className={style.favorites}><div className={style.favorite}><span>{product.favorites ? <BsHeartFill onClick={() => {
+                  <div className={style.favorites}><div className={style.favorite}><span>{product.favorites ? <BsHeartFill size="21px" onClick={() => {
                     removeFromFavorites(product)
                     { product.favorites = false }
-                  }} /> : <BsHeart onClick={() => {
+                  }} /> : <BsHeart size="21px" onClick={() => {
                     addFavorites(product)
                     { product.favorites = true }
                   }} />}</span></div></div>
