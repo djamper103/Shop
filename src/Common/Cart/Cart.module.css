@@ -61,7 +61,7 @@ grid-template-rows: auto auto ;
 .component {
     max-width: 285px;
     max-height: 350px;
-    margin:  100px 10px 0px;
+    margin:  80px 10px 0px;
     margin-bottom:220px;
     justify-content: center;
     align-items: center;
@@ -291,6 +291,12 @@ margin: 30px;
       .favoritesandCart button{
         margin: 10px auto;
       }
+    .component {
+        max-width: 280px;
+        max-height: 340px;
+        margin:  50px 10px 0px; 
+        margin-bottom:210px;
+    }
   }
 
 
