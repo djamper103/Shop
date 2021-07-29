@@ -9,7 +9,7 @@ grid-template-rows: auto auto ;
     grid-area: header;
     display: flex;
     justify-content: center;
-    margin:30px 0px 0px;
+    margin:90px 0px 0px;
 }
 .header h3{
     font-size: 30px;
@@ -331,7 +331,7 @@ margin: 30px;
 }
 .header h3{
     font-size: 20px;
-    margin-bottom: 20px;
+    margin: 70px 0 20px;
 }
 .increase{
     margin-bottom: 200px;

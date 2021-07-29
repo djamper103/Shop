@@ -134,7 +134,7 @@ function App() {
                         className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
-                            <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
+                            <Route exact path='/Login' render={() => <Login cart={cart.length}  setLoadingg={setLoadingg} />} />
                             <Route exact path='/Dashboard' render={() => <Dashboard />} />
                             <Route exact path='/update-profile' render={() => <UpdateProfile />} />
                             <Route exact path='/forgot-password' render={() => <ForgotPassword />} />

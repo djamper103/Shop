@@ -7,7 +7,7 @@ export function useAuth() {
   return useContext(AuthContext)
 }
 
-export function AuthProvider({ children,setLoadingg }) {
+export function AuthProvider({ children,setLoadingg}) {
   const [currentUser, setCurrentUser] = useState()
   const [loading, setLoading] = useState(true)
 
@@ -16,7 +16,6 @@ export function AuthProvider({ children,setLoadingg }) {
   }
 
   function login(email, password) {
-    setLoadingg(true)
     return auth.signInWithEmailAndPassword(email, password)
   }
 

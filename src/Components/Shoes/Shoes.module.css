@@ -16,7 +16,7 @@
 .upImage img {
     width: 80%;
     height: 80%;
-    margin-bottom: 50px;
+    margin-top: 20px;
 }
 .ShoesContent{
     grid-area: ShoesContent;
@@ -238,6 +238,10 @@ a:hover{
       color: #000;
       transform: rotateX(90deg) translateZ(25px);
     }
+    .upImage img {
+      margin:70px 0;
+      
+  }
   }
   @media screen and (max-width: 800px) {
     .select {
@@ -245,6 +249,10 @@ a:hover{
         display: block;
         margin: 0 auto 40px;
     }
+    .upImage img {
+      margin:60px 0;
+      
+  }
 }
 @media screen and (max-width: 600px) {
     
@@ -286,6 +294,12 @@ a:hover{
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
   }
+}
+@media screen and (max-width: 400px) {
+  .upImage img {
+    margin:50px 0;
+    
+}
 }
 @media screen and (max-width: 400px) {
     

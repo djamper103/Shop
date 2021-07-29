@@ -4,7 +4,7 @@ import { Link, useHistory } from "react-router-dom"
 import { useAuth } from "./AuthContext";
 
 
-export default function Signup({}) {
+export default function Signup({setLoadingg,}) {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
@@ -24,6 +24,7 @@ export default function Signup({}) {
             setError("")
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
+            setLoadingg(false)
             history.push("/Login")
         } catch {
             setError("Failed to create an account")

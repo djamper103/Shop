@@ -14,4 +14,20 @@
     width: 100%;
     box-sizing: border-box;
     border-style: none;
+    margin-top: 20px;
+}
+@media all and (max-width: 1000px) {
+    .transition img{
+        margin-top: 70px;
+    }
+}
+@media all and (max-width: 800px) {
+    .transition img{
+        margin-top: 60px;
+    }
+}
+@media all and (max-width: 500px) {
+    .transition img{
+        margin-top: 50px;
+    }
 }
