@@ -16,7 +16,7 @@ grid-template-rows: auto auto ;
     font-family: 'Ubuntu', sans-serif;
     text-transform: uppercase;
     letter-spacing: 6px;
-    margin: 0;
+    margin-bottom: 40px;
     padding: 0;
     text-align: center;
 }
@@ -37,7 +37,6 @@ grid-template-rows: auto auto ;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0px 300px;
     
 }
 .component img {
@@ -62,8 +61,7 @@ grid-template-rows: auto auto ;
 .component {
     max-width: 285px;
     max-height: 350px;
-    margin:  100px 10px 0px;
-    margin-bottom:220px;
+    margin:10px 20px 245px;
     justify-content: center;
     align-items: center;
     
@@ -83,10 +81,8 @@ grid-template-rows: auto auto ;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 40px;
 }
-
-
 
 .increase{
     display: flex;
@@ -94,11 +90,13 @@ grid-template-rows: auto auto ;
     justify-content: center;
     align-items: center;
     text-align: center;
-    
+}
+.increase p{
+    font-size: 28px;
+    margin-top:-8px;
 }
 .increase span{
-    font-size: 20px;
-    
+    font-size: 25px;
 }
 .increase button{
     width: 26px;
@@ -106,6 +104,8 @@ grid-template-rows: auto auto ;
     margin: 3 3px;
     align-items: center;
     text-align: center;
+    font-size: 20px;
+    
 }
 
 .removeFromCart{
@@ -124,7 +124,6 @@ a:hover{
     text-decoration: none;
 }
 
-
 .size{
     display: flex;
     justify-content: center;
@@ -133,11 +132,11 @@ a:hover{
 .size button{
     margin: 0px 3px;
     border-radius: 3px;
-
+    background-color: white;
 }
 .size button:hover{
     color: #bf1650;
-    background-color: white;
+    background-color: rgb(230, 230, 230);
 }
 .chosenSize{
     display: flex;
@@ -171,14 +170,14 @@ margin: 30px;
     width: 100%;
 }
 
-.noProductButton span button{
+.noProduct span button{
     display: flex;
-    justify-content: center;
+    margin: 0 auto;
+    margin-top: 70px;
     align-items: center;
-    font-size: 19px;
-    max-height: 100%;
-    max-width: 100%;
-    padding: 20px;
+    font-size: 20px;
+    height: 85px;
+    width: 165px;
     border-radius: 5px;
     letter-spacing: 1px;
     transform-style: preserve-3d;
@@ -187,34 +186,160 @@ margin: 30px;
     font-family: 'Montserrat', sans-serif;
     
   }
-.noProductButton span button:before,
-.noProductButton span button:after{
+  .noProduct span button:before,
+  .noProduct span button:after{
+    position: absolute;
     content: "ПЕРЕЙТИ В КАТАЛОГ";
-    height: 104%;
-    width: 102%;
+    height: 85px;
+    width: 165px;
     display: flex;
+    top:-20px;
     align-items: center;
     justify-content: center;
     border: 3px solid black;
     box-sizing: border-box;
     border-radius: 5px;
+    
   }
-.noProductButton span button:before{
+  .noProduct span button:before{
     color: #fff;
     background: #000;
     transform: rotateY(0deg) translateZ(25px);
   }
-  .noProductButton span button:after{
+  .noProduct span button:after{
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
   }
-  .noProductButton span button:hover{
+  .noProduct span button:hover{
       
     transform: translateZ(-25px) rotateX(-90deg);
   }
   
   
+.favorites{
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    display: flex;
+     margin: -420px 240px 400px;
+}
+.favorite{
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border-radius:15px;
+    background-color: white;
+    
+}
+.favorite:active{
+    color: red;
+    transition: 0s;
+    z-index: 1;
+}
+.favorite:hover{
+    
+    color: red;
+    transition: 0s;
+    z-index: 1;
+}
 
 
+@media screen and (max-width: 500px) {
+    .noProduct span button{
+        display: flex;
+        margin: 0 auto;
+        margin-top: 10px;
+        align-items: center;
+        font-size: 20px;
+        height: 70px;
+        width: 140px;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        transform-style: preserve-3d;
+        transform: translateZ(-25px);
+        transition: transform .25s;
+        font-family: 'Montserrat', sans-serif;
+        
+      }
+      .noProduct span button:before,
+      .noProduct span button:after{
+        position: absolute;
+        content: "ПЕРЕЙТИ В КАТАЛОГ";
+        height: 70px;
+        width: 140px;
+        display: flex;
+        top:-20px;
+        align-items: center;
+        justify-content: center;
+        border: 3px solid black;
+        box-sizing: border-box;
+        border-radius: 5px;
+        
+      }
+    .noProductButton span button{
+        font-size: 14px;
+      }
+      .favoritesandCart{
+        display: block;
+      }
+      .favoritesandCart button{
+        margin: 10px auto;
+      }
+    .component {
+        max-width: 260px;
+        max-height: 330px;    
+    }
+    .image{
+        max-width: 260px;
+        max-height: 330px;    
+    }
+    .increase p{
+        font-size: 24px;
+        margin-top:-7px;
+    }
+    .increase span{
+        font-size: 22px;
+    }
+    .increase button{
+        width: 26px;
+        height: 30px;
+        margin: 0px 3px;
+        align-items: center;
+        text-align: center;
+        font-size: 18px;
+    }
+    .productId{
+      margin: 20px 3px 8px;
+  }
+  .favorites{
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    display: flex;
+     margin: -385px 215px 375px;
+}
+.chosenSize{
+    font-size: 16px;
+  }
+  .header {
+    margin:20px 0px 0px;
+}
+.header h3{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.increase{
+    margin-bottom: 200px;
+}
+.stripe{
+    margin-top: 5px;
+}
+
+  }
 
 

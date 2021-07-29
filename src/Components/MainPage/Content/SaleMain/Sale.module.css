@@ -8,12 +8,17 @@
     grid-area: header;
     display: flex;
     justify-content: center;
-    margin: 20px;
 }
 .header h3{
     font-size: 34px;
+    margin-bottom: 70px;
 }
-.maincontent {
+.Content {
     grid-area: maincontent;
-
 } 
+@media screen and (max-width: 800px) {
+    .header h3{
+        font-size: 34px;
+        margin-bottom: 40px;
+    }
+}

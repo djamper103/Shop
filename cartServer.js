@@ -10,7 +10,7 @@ app.use(cors());
 
 app.post("/payment", cors(), async (req, res) => {
   console.log("Request:", req.body);
-
+  debugger
   let error;
   let status;
   try {

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import style from './Shoes.module.css'
-import ShoesUpContent from "./shoesUpContent"
 import axios from 'axios'
 import Mapping from "../Mapping/Mapping"
 import ItemFilter from "../Mapping/itemFilter"
-
+import nike from "../../Common/Image/nike.jpg"
 
 
 const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
@@ -58,31 +57,25 @@ const Shoes = ({ addToCart, addFavorites, removeFromFavorites }) => {
   return (
 
     <div className={style.Content}>
-      <div className={style.ShoesUpContent} >
-        <ShoesUpContent />
-      </div>
-      <div className={style.ShoesContent}>
-        <div className={style.select} >
-          <div className={style.selectGender}>
-          <select name="select" onChange={event => { setGender(event.target.value) }}>
-            <option value="all" >All</option>
-            <option value="male" >Male</option>
-            <option value="female">Female</option>
-          </select>
-          </div>
-
-          <div className={style.selectPrice}>
-          <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
-            <option defaultValue="all" >All</option>
-            <option value="mostPrise" >Most Prise</option>
-            <option value="lowPrise">Low Prise</option>
-          </select>
-          </div>
-          <div className={style.selectSearch}>
-          <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
-          </div>
-
+       <div className={style.upImage}>
+                <img src={nike} />
         </div>
+      <div className={style.ShoesContent}>
+      <div className={style.select}>
+      <select name="select" onChange={event => { setGender(event.target.value) }}>
+                        <option value="all" >All</option>
+                        <option value="male" >Male</option>
+                        <option value="female">Female</option>
+                    </select>
+        <select name="select" onChange={(event) => {setPriceItem(event.target.value); }}>
+          <option defaultValue="all">All</option>
+          <option value="mostPrise">Most Prise</option>
+          <option value="lowPrise">Low Prise</option>
+        </select>
+        <div>
+                        <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
+                    </div>   
+      </div>
         <div className={style.maincontent}>
           <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
         </div>

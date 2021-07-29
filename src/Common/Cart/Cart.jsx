@@ -3,13 +3,12 @@ import cartImg from '../../Common/Image/cart.svg'
 import style from './Cart.module.css'
 import StripeCheckout from 'react-stripe-checkout';
 import axios from "axios"
-import { toast } from "react-toastify";
 import { NavLink,useHistory } from "react-router-dom";
 import {Container} from "react-bootstrap"
+import {BsHeart,BsHeartFill} from "react-icons/all";
 
 
-
-export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart, priceCount }) {
+export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart, priceCount,addFavorites,removeFromFavorites }) {
     const history = useHistory();
     const [state,setState]=useState([...cart])
     useEffect(() => {
@@ -26,15 +25,13 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
         }).reduce((all, item) => `${item}; ` + all).toString()
 
 
-        
-
-        axios.post(`"http://localhost:4000/payment`, { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) })
+        axios.post("http://localhost:4000/payment", { token, cart: newCart, priceCount: ((priceCount / 28).toFixed(2) * 100) })
         .then(response => {
         console.log("Response:", response.data);
         if (response.status === "success") {
-            toast("Success! Check email for details", { type: "success" });
+            alert("Success! Check email for details", { type: "success" });
         } else {
-            toast("Something went wrong", { type: "error" });
+            alert("Something went wrong", { type: "error" });
         }
     })
 }
@@ -56,7 +53,7 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                 <div className={style.mainContent}>
                     <div className={style.product}>
                         {state.map(product =>
-                            <div key={product.id}>
+                            <div key={product.id} >
                                 <div className={style.component} key={product.id} >
                                 <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'}>
                                 <div className={style.image}>
@@ -64,6 +61,16 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                             </div>
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
+                            <div className={style.favorites}>
+                                <div className={style.favorite}><span>{product.favorites ?
+                                <BsHeartFill onClick={() => {
+                                    removeFromFavorites(product)
+                                    { product.favorites = false }}} />
+                                : <BsHeart onClick={() => {
+                                    addFavorites(product)
+                                    { product.favorites = true }}} />}</span>
+                                </div>
+                            </div>
                                     <div className={style.chosenSize}>Chosen Size: {product.chosenSize?product.chosenSize
                                     :"Size not selected"}
                                     </div>
@@ -78,9 +85,9 @@ export default function Cart({ cart, removeFromCart, increaseCart, decreaseCart,
                         </div>
                                     <div className={style.price}><p>{product.price}</p>грн.</div>
                                     <div className={style.increase}>
-                                    <button onClick={() => decreaseCart(product)} >-</button>
+                                    <button onClick={() => decreaseCart(product)} ><p>-</p></button>
                                     <span>{product.count}</span>
-                                    <button onClick={() => increaseCart(product)}>+</button>
+                                    <button onClick={() => increaseCart(product)}><p>+</p></button>
                                     <div className={style.removeFromCart}>
                                     <button onClick={() => removeFromCart(product)}>X</button>
                                     </div>

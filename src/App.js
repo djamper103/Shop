@@ -102,8 +102,7 @@ function App() {
     return (
         <AuthProvider loadingg={loadingg} setLoadingg={setLoadingg}>
             <div className='Content'>
-                <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}
-                />
+                <Header cart={cart.length} priceCount={priceCount} loadingg={loadingg}/>
                 <div className='Maincontent'>
                     <Route exact path='/Shop' render={() => <MainPage  addToCart={addToCart} addFavorites={addFavorites}
                         removeFromFavorites={removeFromFavorites}  
@@ -126,7 +125,7 @@ function App() {
                     <Route exact path='/Cart'
                         render={() => loadingg ?
                             <Cart cart={cart} removeFromCart={removeFromCart} priceCount={priceCount}
-                                increaseCart={increaseCart} decreaseCart={decreaseCart}
+                                increaseCart={increaseCart} decreaseCart={decreaseCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites}
                             /> :
                             <Redirect to="/login" />
                         } />
@@ -135,7 +134,6 @@ function App() {
                         className="d-flex align-items-center justify-content-center  flex-wrap-wrap"
                         style={{ minHeight: "100vh" }}>
                         <div className="w-100" style={{ maxWidth: "400px" }}>
-                       
                             <Route exact path='/Login' render={() => <Login cart={cart.length} />} />
                             <Route exact path='/Dashboard' render={() => <Dashboard />} />
                             <Route exact path='/update-profile' render={() => <UpdateProfile />} />

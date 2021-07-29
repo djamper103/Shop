@@ -7,12 +7,12 @@ import {Container} from "react-bootstrap"
 
 
 
-export default function Favorites({ favorites,removeFromFavorites,addToCart,setPushingTheProduct}) {
+export default function Favorites({ favorites,removeFromFavorites,addToCart,}) {
 
     const [state,setState]=useState([...favorites])
     useEffect(() => {
         setState([...favorites])
-    }, [state])
+    }, [favorites])
 
     
     const history = useHistory();
@@ -35,27 +35,25 @@ export default function Favorites({ favorites,removeFromFavorites,addToCart,setP
                         {state.map(product =>
                             <div key={product.id}>
                                 <div className={style.component} key={product.id} >
-                                <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'} onClick={()=>setPushingTheProduct(true)}>
+                                <NavLink to={state.length!=0?`/Product/${product.id}`:'/Shop'} >
                                 <div className={style.image}>
                             <img src={product.image} alt={product.id} title={product.id} />
                             </div>
                             <div className={style.productId}>{product.id}</div>
                             </NavLink>
                                     <div className={style.chosenSize}>Chosen Size: {product.chosenSize?product.chosenSize
-                                    :"Size not selected"}
+                                        :"Size not selected"}
                                     </div>
                                     <div className={style.size}>
-                            {
-                                product.size.split(" ").map(item => <button key={item} onClick={() => 
-                                    product.chosenSize=item
-                                    
-                                   
-                                }>{item}</button>)
-                            }
-                        </div>
+                                        {
+                                            product.size.split(" ").map(item => <button key={item} onClick={() => 
+                                            product.chosenSize=item
+                                            }>{item}</button>)
+                                        }
+                                    </div>
                                     <div className={style.price}><p>{product.price}</p>грн.</div>
                                     <div className={style.favoritesandCart}>
-                                    <div className={style.removeFromFavorites}>
+                                    <div   div className={style.removeFromFavorites}>
                                     <span><button onClick={() => removeFromFavorites(product)}>ОЧИСТИТЬ ИЗБРАННОЕ</button></span>
                                     </div>
                                     <div className={style.addToCart}>

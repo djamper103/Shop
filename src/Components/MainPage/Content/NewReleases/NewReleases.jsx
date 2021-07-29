@@ -79,8 +79,9 @@ const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
                         <option value="mostPrise" >Most Prise</option>
                         <option value="lowPrise">Low Prise</option>
                     </select>
-                    <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
-
+                    <div>
+                        <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
+                    </div>     
                 </div>
                 <div className={style.maincontent}>
                 <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
