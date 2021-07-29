@@ -27,7 +27,7 @@ function App() {
     const [cart, setCart] = useState([])
     const [favorites, setFavorites] = useState([])
     const [priceCount, setPriceCount] = useState(0)
-    const [loadingg, setLoadingg] = useState(true)
+    const [loadingg, setLoadingg] = useState(false)
 
 
     useEffect(() => {
