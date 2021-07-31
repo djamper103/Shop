@@ -3,7 +3,7 @@ import style from "./WomanMain.module.css";
 import axios from "axios";
 import Mapping from "../Mapping/Mapping"
 import ItemFilter from "../Mapping/itemFilter"
-
+import '../../server'
 
 const WomanMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
 

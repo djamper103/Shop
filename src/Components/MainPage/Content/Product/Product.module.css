@@ -27,7 +27,7 @@
     grid-area: mainContent;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 90px;
 }
 
 .rightContent {
@@ -208,6 +208,9 @@
     }
     }
 @media all and (max-width:1000px){
+    .mainContent {
+        margin-top: 80px;
+    }
     .image1 img{
         display: none;
     }
@@ -258,6 +261,9 @@
 }
 
 @media all and (max-width:800px){
+    .mainContent {
+        margin-top: 70px;
+    }
     .rightContent {
         justify-content: center;
         margin-left: 20px;
@@ -420,6 +426,9 @@
 }
 }
 @media all and (max-width:500px){
+    .mainContent {
+        margin-top: 60px;
+    }
     .rightContent {
         width: 50%;
         justify-content: center;
@@ -478,6 +487,9 @@ font-size: 12px;
 }
 }
 @media all and (max-width:400px){
+    .mainContent {
+        margin-top: 55px;
+    }
     .rightContent {
         width: 40%;
         justify-content: center;

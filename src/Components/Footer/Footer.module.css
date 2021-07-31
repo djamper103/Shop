@@ -5,7 +5,7 @@
 .Footer {
     grid-area: footer;
     margin-top: 100px;
-    padding: 30px 20px;
+    padding: 30px 200px;
     font-family: 'Popins', sans-serif;
     background: #22242A;
     color: #fff;
@@ -130,13 +130,32 @@
     width: 100%;
     text-align: center;
     color: #999;
+    margin-top: 10px;
 }
-@media all and (max-width: 1000px) {
+@media all and (max-width: 1300px) {
     .Footer {
+        padding: 0;
+       font-size: 16px;
+    }
+    .Footer h3 {
+        margin-top: 20px;
+     }
+    .AboutUs  {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    
+    .Footer {
+        padding: 0;
        font-size: 16px;
     }
     .Container h3 {
         font-size: 18px;
+    }
+    .AboutUs  {
+        font-size: 12px;
     }
 }
 @media all and (max-width: 800px) {
@@ -153,6 +172,9 @@
         background: rgb(40, 39, 39);
         width: 40px;
         height: 40px;  
+    }
+    .AboutUs  {
+        font-size: 10px;
     }
 }
 @media all and (max-width: 600px) {
@@ -173,6 +195,9 @@
     }
     .Contact {
         font-size: 9px;
+    }
+    .AboutUs  {
+        font-size: 8px;
     }
 }
 @media all and (max-width: 500px) {
@@ -200,6 +225,9 @@
         height: 30px; 
         margin-bottom: 10px;
     }
+    .AboutUs  {
+        font-size: 7px;
+    }
 }
 
 @media all and (max-width: 400px) {
@@ -220,6 +248,9 @@
     }
     .Contact {
         font-size: 6px;
+    }
+    .AboutUs  {
+        font-size: 5px;
     }
 }
 
