@@ -131,7 +131,7 @@
     text-align: center;
     color: #999;
 }
-@media screen and (max-width: 1000px) {
+@media all and (max-width: 1000px) {
     .Footer {
        font-size: 16px;
     }
@@ -139,7 +139,7 @@
         font-size: 18px;
     }
 }
-@media screen and (max-width: 800px) {
+@media all and (max-width: 800px) {
     .Footer {
        font-size: 13px;
     }
@@ -155,7 +155,7 @@
         height: 40px;  
     }
 }
-@media screen and (max-width: 600px) {
+@media all and (max-width: 600px) {
     .Footer {
        font-size: 12px;
     }
@@ -175,7 +175,7 @@
         font-size: 9px;
     }
 }
-@media screen and (max-width: 500px) {
+@media all and (max-width: 500px) {
     .Footer {
        font-size: 10px;
     }
@@ -202,7 +202,7 @@
     }
 }
 
-@media screen and (max-width: 400px) {
+@media all and (max-width: 400px) {
     .Footer {
        font-size: 7px;
     }

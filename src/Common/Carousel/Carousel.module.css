@@ -14,4 +14,55 @@
     width: 100%;
     box-sizing: border-box;
     border-style: none;
+    height: 700px;
+}
+@media all and (max-width: 1920px) {
+    .transition img{
+        height: 599px;
+    }
+}
+@media all and (max-width: 1700px) {
+    .transition img{
+        height: 500px;
+    }
+}
+@media all and (max-width: 1500px) {
+    .transition img{
+        height: 450px;
+    }
+}
+@media all and (max-width: 1200px) {
+    .transition img{
+        height: 400px;
+    }
+}
+@media all and (max-width: 1000px) {
+    .transition img{
+        height: 350px;
+    }
+}
+@media all and (max-width: 800px) {
+    .transition img{
+        height: 300px;
+    }
+}
+@media all and (max-width: 600px) {
+    .transition img{
+        height: 250px;
+    }
+}
+@media all and (max-width: 500px) {
+    .transition img{
+        height: 220px;
+    }
+}
+@media all and (max-width: 400px) {
+    .transition img{
+        height: 170px;
+    }
+}
+@media all and (max-width: 300px) {
+    .transition img{
+        height: 150px;
+    }
 }

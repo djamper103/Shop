@@ -45,11 +45,8 @@ export default function CarouselBox() {
                 </Carousel.Item>
                 <Carousel.Item>
                     <NavLink to='/Shoes'>
-                    <Container
-                        className="d-flex align-items-center justify-content-center  "
-                        style={{ minHeight: "67vh" }}>
-                    <div className="w-50" style={{ maxWidth: "2000px" }}>
-                    <img src={nike} alt=''/></div>
+                    <Container>
+                    <img src={nike} alt=''/>
                             </Container>
                     </NavLink>
                     <Carousel.Caption>

@@ -180,7 +180,7 @@ a:hover{
     transform: translateZ(-25px) rotateX(-90deg);
   }
   
-  @media screen and (max-width: 800px) {
+  @media all and (max-width: 800px) {
     .select {
         grid-area: select;
         display: block;

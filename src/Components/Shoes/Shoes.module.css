@@ -7,7 +7,7 @@
     grid-template-columns: auto auto;
     justify-content: center;
 }
-.upImage img {
+.upImage{
   grid-area: header;
   position: relative;
   left:10%;
@@ -15,7 +15,7 @@
 }
 .upImage img {
     width: 80%;
-    height: 80%;
+    height: 800px;
     margin-bottom: 50px;
 }
 .ShoesContent{
@@ -198,7 +198,28 @@ a:hover{
       
     transform: translateZ(-25px) rotateX(-90deg);
   }
-  @media screen and (max-width: 1000px) {
+
+  @media all and (max-width: 1920px) {
+    .upImage img{
+        height: 599px;
+    }
+}
+@media all and (max-width: 1700px) {
+  .upImage img{
+        height: 500px;
+    }
+}
+@media all and (max-width: 1500px) {
+  .upImage img{
+        height: 450px;
+    }
+}
+@media all and (max-width: 1200px) {
+  .upImage img{
+        height: 400px;
+    }
+}
+  @media all and (max-width: 1000px) {
     
     span button{
       display: flex;
@@ -238,15 +259,21 @@ a:hover{
       color: #000;
       transform: rotateX(90deg) translateZ(25px);
     }
+    .upImage img{
+      height: 350px;
   }
-  @media screen and (max-width: 800px) {
+  }
+  @media all and (max-width: 800px) {
     .select {
         grid-area: select;
         display: block;
         margin: 0 auto 40px;
     }
+    .upImage img{
+      height: 300px;
+  }
 }
-@media screen and (max-width: 600px) {
+@media all and (max-width: 600px) {
     
   span button{
     display: flex;
@@ -286,8 +313,16 @@ a:hover{
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
   }
+  .upImage img{
+    height: 250px;
 }
-@media screen and (max-width: 400px) {
+}
+@media all and (max-width: 500px) {
+  .upImage img{
+      height: 220px;
+  }
+}
+@media all and (max-width: 400px) {
     
     span button{
       display: flex;
@@ -327,5 +362,14 @@ a:hover{
       color: #000;
       transform: rotateX(90deg) translateZ(25px);
     }
+    .upImage img{
+      height: 170px;
   }
+}
+@media all and (max-width: 300px) {
+  .upImage img{
+      height: 150px;
+  }
+}
+
 

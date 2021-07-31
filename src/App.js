@@ -8,7 +8,6 @@ import ManMain from "./Components/Man/ManMain";
 import WomanMain from "./Components/Woman/WomanMain";
 import axios from 'axios'
 import Cart from "./Common/Cart/Cart";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from "react-bootstrap"
 import { AuthProvider, useAuth } from "./Common/Login/AuthContext";
 import Login from "./Common/Login/Login";

@@ -84,13 +84,13 @@ font-size: 32px;
 }
 
 
-@media screen and (min-width: 1000px) {
+@media all and (min-width: 1000px) {
   .menu{
       display: none;
   }
 
 }
-@media screen and (max-width: 1500px) {
+@media all and (max-width: 1500px) {
     .Header a{
         font-size: 27px;
     }
@@ -101,7 +101,7 @@ font-size: 32px;
         margin-top: 19px;
     }
 }
-@media screen and (max-width: 1300px) {
+@media all and (max-width: 1300px) {
     .Header {
         grid-template-columns: auto ;
 
@@ -185,7 +185,7 @@ font-size: 32px;
 
 }
 
-@media screen and (max-width: 800px) {
+@media all and (max-width: 800px) {
     .Header{
             width: 99%;
             grid-template-columns: 1fr 1.2fr 5.8fr ;
@@ -212,7 +212,7 @@ font-size: 32px;
     }
 }
 
-@media screen and (max-width: 500px) {
+@media all and (max-width: 500px) {
 
     .Header{
         width: 99%;
@@ -242,7 +242,7 @@ font-size: 32px;
         width: 142%;
     }
 }
-@media screen and (max-width: 400px) {
+@media all and (max-width: 400px) {
 
     .Header{
         max-height: 25px;
@@ -270,7 +270,7 @@ font-size: 32px;
         font-size: 24px;
     }
 }
-@media screen and (max-width: 300px) {
+@media all and (max-width: 300px) {
 
     .Header{
         max-height: 25px;

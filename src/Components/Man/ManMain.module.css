@@ -179,21 +179,21 @@ a:hover{
       
     transform: translateZ(-25px) rotateX(-90deg);
   }
-  @media screen and (max-width: 1000px) {
+  @media all and (max-width: 1000px) {
     .upImage img {
       margin: 100px 0;
       
   }
 }
   
-  @media screen and (max-width: 800px) {
+  @media all and (max-width: 800px) {
     .select {
         grid-area: select;
         display: block;
         margin: 0 auto 40px;
     }
 }
-@media screen and (max-width: 500px) {
+@media all and (max-width: 500px) {
     
     span button{
       display: flex;
@@ -234,7 +234,7 @@ a:hover{
       transform: rotateX(90deg) translateZ(25px);
     }
   }
-  @media screen and (max-width: 400px) {
+  @media all and (max-width: 400px) {
       
       span button{
         display: flex;

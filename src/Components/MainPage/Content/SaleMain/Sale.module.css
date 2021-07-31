@@ -16,7 +16,7 @@
 .Content {
     grid-area: maincontent;
 } 
-@media screen and (max-width: 800px) {
+@media all and (max-width: 800px) {
     .header h3{
         font-size: 34px;
         margin-bottom: 40px;
