@@ -48,12 +48,13 @@ const Footer = () => {
                     <div className={style.Contact}>
                         <h3>Contact Info</h3>
                         <a href="https://www.google.com/maps/place/Нью-Йорк,+США/data=!4m2!3m1!1s0x89c24fa5d33f083b:0xc80b8f06e177fe62?sa=X&ved=2ahUKEwj3zPmTx6vvAhXnURUIHSg_DRQQ8gEwIHoECC0QAQ"><BiMap />
-                            &nbsp;  340 Main Street
-                            Los Angeles,<br /> &nbsp; CA 90291
+                            &nbsp;<span>  340 Main Street
+                            Los Angeles,<br />CA 90291
                             United States
+                            </span> 
                         </a>
-                        <a href="https://uk-ua.facebook.com/facebook"><HiOutlinePhone /> &nbsp;  +1 234 567 8900</a>
-                        <a href="https://www.google.com/intl/en/gmail/about/"><AiOutlineMail /> &nbsp;  google@gmail.com</a>
+                        <a href="https://uk-ua.facebook.com/facebook"><HiOutlinePhone /> &nbsp;  <span>+1 234 567 8900</span></a>
+                        <a href="https://www.google.com/intl/en/gmail/about/"><AiOutlineMail /> &nbsp;  <span>google@gmail.com</span></a>
                     </div>
 
                 </div>

@@ -20,11 +20,7 @@ font-size: 32px;
 }
 
 .Header a:hover { 
-
     color: #bf1650;
-    /*#ec5990;*/
-
-
 }
 
 .logo{
@@ -85,13 +81,10 @@ font-size: 32px;
     display: inline-block;
 }
 
-
-@media all and (min-width: 1000px) {
-  .menu{
-      display: none;
-  }
-
+.menu{
+    display: none;
 }
+
 @media screen and (max-width: 1600px) {
     .Header {
         height: 75px;
@@ -157,6 +150,7 @@ font-size: 32px;
 }
 
 .menu{
+    display: block;
     grid-area: menu;
     position: relative;
     top:22px;

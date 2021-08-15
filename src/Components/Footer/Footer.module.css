@@ -7,8 +7,7 @@
     margin-top: 100px;
     padding: 30px 200px;
     font-family: 'Popins', sans-serif;
-    background: #22242A;
-    color: #fff;
+    background: #f0f3f2;
     position: relative;
 }
 
@@ -22,12 +21,10 @@
 .AboutUs {
     margin: 0 auto;
     width: 40%;
-
 }
 
 .Container h3 {
     position: relative;
-    color: #fff;
     font-weight: 500;
     margin-bottom: 15px;
 }
@@ -42,39 +39,20 @@
     background: #f00;
 }
 
-.AboutUs p {
-    color: #999;
-}
+
 
 .Links {
-    margin-top: 20px;
     display: flex;
     justify-content: left;
 }
 
 .Links a {
-
-    display: inline-block;
-    font-size: 20px;
-    background: rgb(40, 39, 39);
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
     text-decoration: none;
-    width: 60px;
-    height: 60px;
-
-
+    text-indent: 2em;
+    margin-top: 10px;
 }
 
-.Links a:hover {
 
-    background: rgba(224, 11, 11, 0.9);
-
-
-}
 
 .QuickLinks h3:before {
     content: '';
@@ -91,13 +69,10 @@
 }
 
 .QuickLinks   a{
-    color: #999;
     text-decoration: none;
     margin-bottom: 10px;
     display: flex;
     list-style: none;
-
-
 }
 .QuickLinks  a:hover{
     color: #fff;
@@ -116,20 +91,17 @@
     background: #f00;
 }
 .Contact  a{
-    color: #999;
     text-decoration: none;
     margin-bottom: 10px;
     display: flex;
     list-style: none;
 }
 
-.Contact  a:hover{
-    color: #fff;
+.Footer  a:hover{
+    color: #bf1650;
 }
 .CopyrightText{
-    width: 100%;
     text-align: center;
-    color: #999;
     margin-top: 10px;
 }
 @media all and (max-width: 1300px) {
@@ -168,11 +140,6 @@
     .Contact {
         font-size: 12px;
     }
-    .Links a {
-        background: rgb(40, 39, 39);
-        width: 40px;
-        height: 40px;  
-    }
     .AboutUs  {
         font-size: 10px;
     }
@@ -196,6 +163,9 @@
     .Contact {
         font-size: 9px;
     }
+    .Contact span{
+        margin-top: 6px;
+    }
     .AboutUs  {
         font-size: 8px;
     }
@@ -216,14 +186,11 @@
         height: 2px;
         background: #f00;
     }
+    .Links a {
+        text-indent: 1em;
+    }
     .Contact {
         font-size: 7px;
-    }
-    .Links a {
-        background: rgb(40, 39, 39);
-        width: 40px;
-        height: 30px; 
-        margin-bottom: 10px;
     }
     .AboutUs  {
         font-size: 7px;
@@ -246,6 +213,10 @@
         height: 2px;
         background: #f00;
     }
+    .Links a {
+        text-indent: 0.5em;
+    }
+    
     .Contact {
         font-size: 6px;
     }

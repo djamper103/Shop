@@ -17,6 +17,7 @@ import ForgotPassword from "./Common/Login/ForgotPassword";
 import Dashboard from './Common/Login/DashBoard'
 import Header from "./Components/Header/Header";
 import Product from "./Components/MainPage/Content/Product/Product"
+import Delivery from "./Components/MainPage/Content/Product/Delivery"
 import Shoes from "./Components/Shoes/Shoes"
 import Favorites from "./Common/Favorites/Favorites"
 
@@ -118,6 +119,7 @@ function App() {
                     <Route exact path='/Product/:id' render={() =><Product state={state} addToCart={addToCart} addFavorites={addFavorites}
                         removeFromFavorites={removeFromFavorites}
                     />} />
+                     <Route exact path='/delivery' render={() =><Delivery/>} />
                     <Route exact path='/Favorites' render={() => <Favorites favorites={favorites} removeFromFavorites={removeFromFavorites}
                         addToCart={addToCart} />}  />
 
