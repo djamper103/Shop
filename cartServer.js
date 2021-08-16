@@ -1,18 +1,17 @@
 const cors = require("cors");
 const express = require("express");
 const stripe = require("stripe")("sk_test_51J12GCE9ORF0ZMb0vxnIJyLqn1ey3JKp7cChwt81RT4CtFKywIsNyr80gmQfrqvS5IQCbFtfpnmOQqPBPQJ8b27000vlNNmcA1");
-const { uuidv4 } = require('uuid')
-
+const { uuidv4 } = require("uuid")
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
 app.post("/payment", cors(), async (req, res) => {
-  console.log("Request:", req.body);
-  debugger
+
   let error;
   let status;
+
   try {
     const { token, cart, priceCount } = req.body;
 
@@ -22,6 +21,7 @@ app.post("/payment", cors(), async (req, res) => {
     });
 
     const idempotency_key = uuidv4;
+
     const charge = await stripe.charges.create(
       {
         amount: priceCount,
@@ -47,13 +47,11 @@ app.post("/payment", cors(), async (req, res) => {
         idempotency_key
       }
     );
-    console.log("Charge:", { charge });
     status = "success";
   } catch (error) {
-    console.error("Error:", error);
     status = "failure";
   }
-
+  
   res.json({ error, status });
 });
 

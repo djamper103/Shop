@@ -1,6 +1,6 @@
 .transition img{
-    width: 100%;
-    height: auto;
+    width: 500px;
+    height: 600px;
     object-fit: cover;
 }
 .transition{
@@ -11,51 +11,58 @@
     width: 500px;
     height: 600px;
 }
+
 @media all and (max-width:1000px){
     .transition{
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        width: 400px;
+        width: 350px;
+        height: 500px;
+    }
+    .transition img{
+        width: 350px;
         height: 500px;
     }
 }
+
 @media all and (max-width:800px){
     .transition{
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        width: 350px;
-        height: 450px;
+        margin-right: 40px;
     }
 }
+
 @media all and (max-width:700px){
     .transition{
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        width: 300px;
+        height: 400px;
+        margin: 0;
+    }
+    .transition img{
         width: 300px;
         height: 400px;
     }
 }
+
 @media all and (max-width:600px){
     .transition{
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        width: 270px;
+        width: 240px;
+        height: 370px;
+    }
+    .transition img{
+        width: 240px;
         height: 370px;
     }
 }
+
 @media all and (max-width:500px){
     .transition{
-        width: 100%;
-        height: auto;
-        object-fit: cover;
+        width: 190px;
+        height: 300px;
+    }
+    .transition img{
         width: 190px;
         height: 300px;
     }
 }
+
 
 
 

@@ -16,7 +16,7 @@ grid-template-rows: auto auto ;
     font-family: 'Ubuntu', sans-serif;
     text-transform: uppercase;
     letter-spacing: 6px;
-    margin-bottom: 40px;
+    margin: 40px 0;
     padding: 0;
     text-align: center;
 }

@@ -50,7 +50,7 @@
 .image1 img{
     display: block;
     height: 140px;
-    height: 100px;
+    width: 100px;
     transition: all 0.5s;
     object-fit: cover;
     margin-bottom: 10px;
