@@ -10,23 +10,25 @@ background-color:  white;
 
 }
 
-button:focus {
-  outline: none;
-}
-
 input:focus {
   outline: none;
 }
+
 a:hover { 
 
   cursor: pointer !important;
 
 }
+
 button{
 
   border: none;
   background: transparent;
 }
+button:focus {
+  outline: none;
+}
+
 
 
 
