@@ -1,10 +1,11 @@
-.Content {
+.content {
     display: grid;
     grid-template-areas: 'header' 'select' 'maincontent';
     grid-template-rows:auto auto auto;
     letter-spacing: 1px;
     justify-content: center;
 }
+
 a{
     color: black;
     text-decoration: none;
@@ -18,8 +19,10 @@ a:hover{
     grid-area: header;
     display: inline-block;
     width: 100%;
+    height: 600px;
     margin: 80px 0 50px;
 }
+
 .select {
     grid-area: select;
     display: flex;
@@ -31,11 +34,21 @@ a:hover{
     grid-area: maincontent;
 
 }
+
 .product{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0px 200px;
+}
+
+.component {
+  max-width: 285px;
+  max-height: 350px;
+  margin-bottom:220px;
+  justify-content: center;
+  align-items: center;
+  margin:  0px 10px 270px;
 }
 .component img {
     width: 100%;
@@ -45,35 +58,29 @@ a:hover{
     max-width: 285px;
     height: 350px;
     transition: all 0.5s;
-
 }
 .component img:hover {
     transform: scale(1.05);
 }
+
 .image{
     overflow: hidden;
     max-width: 285px;
     max-height: 350px;
     
 }
-.component {
-    max-width: 285px;
-    max-height: 350px;
-    margin-bottom:220px;
-    justify-content: center;
-    align-items: center;
-    margin:  0px 10px 270px;
-}
+
 .productId{
       display: flex;
     justify-content: center;
     text-align: center;
     margin: 20px 3px 20px;
     font-family: 'Montserrat', sans-serif;
-     font-size: 19px;
-     font-weight: 540;
-     height: 50px;
+    font-size: 19px;
+    font-weight: 540;
+    height: 50px;
 }
+
 .size{
     display: flex;
     justify-content: center;
@@ -89,7 +96,6 @@ a:hover{
     background-color: white;
 }
 
-
 .price{
     display: flex;
     justify-content: center;
@@ -99,20 +105,20 @@ a:hover{
     margin-top: 15px;
 }
 
-
-
 .addToCart {
     display: flex;
     justify-content: center;
 }
+
 .favorites{
     justify-content: center;
     align-items: center;
     width: 30px;
     height: 30px;
     display: flex;
-     margin: -430px 240px 400px;
+    margin: -430px 240px 400px;
 }
+
 .favorite{
     z-index: 1;
     justify-content: center;
@@ -136,7 +142,7 @@ a:hover{
     z-index: 1;
 }
 
-  span button{
+span button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -150,9 +156,9 @@ a:hover{
     transition: transform .25s;
     font-family: 'Montserrat', sans-serif;
     
-  }
-  span button:before,
-  span button:after{
+}
+span button:before,
+span button:after{
     position: absolute;
     content: "Add to Cart";
     height: 40px;
@@ -164,43 +170,57 @@ a:hover{
     border: 3px solid black;
     box-sizing: border-box;
     border-radius: 5px;
-  }
-  span button:before{
+}
+span button:before{
     color: #fff;
     background: #000;
     transform: rotateY(0deg) translateZ(25px);
-  }
-  span button:after{
+}
+span button:after{
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
-  }
-  span button:hover{
-      
+}
+span button:hover{   
     transform: translateZ(-25px) rotateX(-90deg);
-  }
+}
 
-  
-  @media all and (max-width: 1000px) {
-    .upImage img {
-      margin:70px 0;
-      
+@media all and (max-width: 1500px) {
+  .upImage img{
+      height: 500px;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  .upImage img{
+      height: 400px;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .upImage img {
+    margin:70px 0;
+    height: 300px;  
   }
 }
 
   
-  @media all and (max-width: 800px) {
-    .select {
-        grid-area: select;
-        display: block;
-        margin: 0 auto 40px;
-    }
-    .upImage img {
-      margin:60px 0;
-      
+@media all and (max-width: 800px) {
+  .select {
+      grid-area: select;
+      display: block;
+      margin: 0 auto 40px;
+  }
+  .upImage img {
+    margin:60px 0;
+    height: 250px;
   }
 }
+
 @media all and (max-width: 500px) {
-    
+    .upImage img {
+      margin:50px 0;
+      height: 200px; 
+    }
     span button{
       display: flex;
       justify-content: center;
@@ -239,13 +259,13 @@ a:hover{
       color: #000;
       transform: rotateX(90deg) translateZ(25px);
     }
-    .upImage img {
-      margin:50px 0;
-      
-  }
-  }
-  @media all and (max-width: 400px) {
-      
+}
+
+@media all and (max-width: 400px) {
+      .upImage img {
+        margin:50px 0;
+        height: 150px;
+      }
       span button{
         display: flex;
         justify-content: center;
@@ -284,6 +304,4 @@ a:hover{
         color: #000;
         transform: rotateX(90deg) translateZ(25px);
       }
-    }
-  
-  
+}

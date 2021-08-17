@@ -6,22 +6,22 @@ import axios from "axios"
 
 
 export default function Mapiing({ addToCart, addFavorites, removeFromFavorites, productItem, sale }) {
+
     const [state, setState] = useState([])
     const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         if(!loading){
             axios.get(`/api/sale`).then(response => {
-
                 setState([...state, ...response.data.data])
             })
             setLoading(true)
         }
-       
     }, [loading])
 
     return (
         <div className={sale?style.componentSale:style.product}>
+
             {
                 (sale?state:productItem).map((product) => (
                     <div className={style.component} key={product.id}>
@@ -31,6 +31,7 @@ export default function Mapiing({ addToCart, addFavorites, removeFromFavorites, 
                             </div>
                             <div className={style.productId}>{product.id}</div>
                         </NavLink>
+
                         <div className={style.favorites}>
                             <div className={style.favorite}><span>{product.favorites ?
                                 <BsHeartFill onClick={() => {
@@ -41,9 +42,11 @@ export default function Mapiing({ addToCart, addFavorites, removeFromFavorites, 
                                     { product.favorites = true }}} />}</span>
                             </div>
                         </div>
+
                         <div className={style.size}>
                             {product.size.split(" ").map(item => <button key={item} onClick={() =>product.chosenSize = item}>{item}</button>)}
                         </div>
+                        
                         <div className={style.price}>
                             {sale ?
                                 <div className={style.price}>
@@ -53,14 +56,17 @@ export default function Mapiing({ addToCart, addFavorites, removeFromFavorites, 
                                 :<p>{product.price} грн.</p>
                             }
                         </div>
+
                         <div className={style.addToCart}>
                             <span><button onClick={() =>{
-                                 addToCart(product)
+                                addToCart(product)
                             }}>Add to Cart</button></span>
                         </div>
+                        
                     </div>
                 ))
             }
+
         </div>
     )
 }

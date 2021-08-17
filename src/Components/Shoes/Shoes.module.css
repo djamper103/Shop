@@ -52,6 +52,14 @@ a:hover {
   margin: 0px 200px;
 }
 
+.component {
+  max-width: 285px;
+  max-height: 350px;
+  margin-bottom: 220px;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px 270px;
+}
 .component img {
   width: 100%;
   height: 100%;
@@ -70,15 +78,6 @@ a:hover {
   overflow: hidden;
   max-width: 285px;
   max-height: 350px;
-}
-
-.component {
-  max-width: 285px;
-  max-height: 350px;
-  margin-bottom: 220px;
-  justify-content: center;
-  align-items: center;
-  margin: 0px 10px 270px;
 }
 
 .productId {
@@ -197,7 +196,7 @@ span button:hover {
   }
 }
 
-@media all and (max-width: 1200px) {
+@media all and (max-width: 1300px) {
   .upImage img {
     width: 800px;
     height: 400px;
@@ -242,6 +241,7 @@ span button:hover {
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
   }
+  
   .upImage img {
     width: 780px;
     height: 400px;
@@ -255,6 +255,7 @@ span button:hover {
     display: block;
     margin: 0 auto 40px;
   }
+
   .upImage img {
     width: 560px;
     height: 350px;
@@ -299,6 +300,7 @@ span button:hover {
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
   }
+
   .upImage img {
     width: 480px;
     height: 320px;
@@ -348,11 +350,13 @@ span button:hover {
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
   }
+
   .upImage img {
     width: 290px;
     height: 180px;
   }
 }
+
 @media all and (max-width: 300px) {
   .upImage img {
     width: 250px;

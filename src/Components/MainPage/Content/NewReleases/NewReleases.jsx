@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import style from "./NewReleases.module.css";
-import axios from 'axios'
+import axios from "axios"
 import Mapping from "../../../Mapping/Mapping"
 import ItemFilter from "../../../Mapping/itemFilter"
+
 
 const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
 
@@ -14,7 +15,6 @@ const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
     const [priceItem, setPriceItem] = useState(["all"])
     const [productItem, setProductItem] = useState([])
     const [searchItem, setSearchItem] = useState("")
-
 
     useEffect(() => {
         if (fetching) {
@@ -30,9 +30,9 @@ const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
 
     useEffect(() => {
         if (currentPage > 1) {
-            document.addEventListener('scroll', scrollHandler)
+            document.addEventListener("scroll", scrollHandler)
             return function () {
-                document.removeEventListener('scroll', scrollHandler)
+                document.removeEventListener("scroll", scrollHandler)
             }
         }
     }, [currentPage])
@@ -41,24 +41,23 @@ const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
         if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 1) {
             setFetching(true)
         }
-
     }
-
 
     useEffect(() => {
         setProductItem(ItemFilter(typeItem, priceItem, state, searchItem, typeGender))
     }, [typeItem, priceItem, state, searchItem, typeGender]);
 
-
-
     return (
         <div className={style.main}>
-            <div className={style.Content}>
+
+            <div className={style.content}>
+
                 <div className={style.header}>
                     <h3>New Releases</h3>
                 </div>
 
                 <div className={style.select} >
+
                     <select name="select" onChange={event => { setGender(event.target.value) }}>
                         <option value="all" >All</option>
                         <option value="male" >Male</option>
@@ -74,21 +73,26 @@ const NewReleases = ({addToCart, addFavorites, removeFromFavorites}) => {
                         <option value="shorts">Shorts</option>
                         <option value="shoes" >Shoes</option>
                     </select>
+
                     <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
                         <option value="all" >All</option>
                         <option value="mostPrise" >Most Prise</option>
                         <option value="lowPrise">Low Prise</option>
                     </select>
-                    <div>
-                        <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
-                    </div>     
-                </div>
-                <div className={style.maincontent}>
-                <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
-                </div>
-            </div>
-        </div>
 
+                    <div>
+                        <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, "")) }} />
+                    </div>
+
+                </div>
+
+                <div className={style.maincontent}>
+                    <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
+                </div>
+
+            </div>
+
+        </div>
     )
 }
 export default NewReleases;

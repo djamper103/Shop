@@ -80,10 +80,13 @@ const WomanMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
         </div> 
           
       </div>
+
       <div className={style.maincontent}>
         <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
       </div>
+
     </div>
   );
 };
+
 export default WomanMain;

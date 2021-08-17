@@ -1,4 +1,3 @@
-
 .Content{
   display:grid;
   grid-template-areas:
@@ -6,8 +5,7 @@
           'maincontent'
           'footer';
   grid-template-rows: 0.2fr auto auto;
-background-color:  white;
-
+  background-color:  white;
 }
 
 input:focus {
@@ -15,13 +13,10 @@ input:focus {
 }
 
 a:hover { 
-
   cursor: pointer !important;
-
 }
 
 button{
-
   border: none;
   background: transparent;
 }

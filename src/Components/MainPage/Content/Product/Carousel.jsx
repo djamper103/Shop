@@ -1,10 +1,9 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import style from './Carousel.module.css'
+import style from "./Carousel.module.css"
 
 
 export default function CarouselBoxProduct({image1,image2,image3}) {
-
 
     return (
         <div className={style.transition}>
@@ -23,5 +22,4 @@ export default function CarouselBoxProduct({image1,image2,image3}) {
             </Carousel>
         </div>
     )
-
 }

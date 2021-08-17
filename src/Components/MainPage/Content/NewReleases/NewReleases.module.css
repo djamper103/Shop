@@ -1,13 +1,15 @@
 .main{
     grid-area:main;
 }
-.Content {
+
+.content {
     display: grid;
     grid-template-areas: 'header' 'select' 'maincontent';
     grid-template-rows:auto auto auto;
     letter-spacing: 1px;
     justify-content: center;
 }
+
 a{
     color: black;
     text-decoration: none;
@@ -26,6 +28,7 @@ a:hover{
 .header h3{
     font-size: 34px;
 }
+
 .select {
     grid-area: select;
     display: flex;
@@ -36,6 +39,7 @@ a:hover{
 .maincontent {
     grid-area: maincontent;
 }
+
 @media all and (max-width: 800px) {
     .select {
         grid-area: select;

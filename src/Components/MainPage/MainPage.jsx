@@ -1,24 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import style from './MainPage.module.css'
+import React, { useEffect, useState } from "react"
+import style from "./MainPage.module.css"
 import Sale from "./Content/SaleMain/Sale";
 import NewReleases from "./Content/NewReleases/NewReleases";
-import TopSelectionPanel from "./Content/TopSelectionPanel";
 import MainUpContent from "./Content/MainUpContent";
 
 
-
-const MainPage = ({addToCart, addFavorites, removeFromFavorites,}) => {
-    
+const MainPage = ({addToCart, addFavorites, removeFromFavorites,}) => {  
     return (
-        <div className={style.Maincontent}>
-
+        <div className={style.maincontent}>
             <MainUpContent />
-            {/* <TopSelectionPanel /> */}
+
             <Sale addToCart={addToCart} addFavorites={addFavorites}
-             removeFromFavorites={removeFromFavorites} />
+            removeFromFavorites={removeFromFavorites}
+            />
+
             <NewReleases  addToCart={addToCart} addFavorites={addFavorites}
-             removeFromFavorites={removeFromFavorites}/>
+            removeFromFavorites={removeFromFavorites}
+            />
         </div>
     )
 }
+
 export default MainPage;

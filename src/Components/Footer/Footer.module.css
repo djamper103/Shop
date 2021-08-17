@@ -2,7 +2,7 @@
     transition: 0.2s;
 }
 
-.Footer {
+.footer {
     grid-area: footer;
     margin-top: 100px;
     padding: 30px 200px;
@@ -11,25 +11,18 @@
     position: relative;
 }
 
-.Container {
+.container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.AboutUs {
+.aboutUs {
     margin: 0 auto;
     width: 40%;
 }
-
-.Container h3 {
-    position: relative;
-    font-weight: 500;
-    margin-bottom: 15px;
-}
-
-.AboutUs h3:before {
+.aboutUs h3:before {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -39,22 +32,23 @@
     background: #f00;
 }
 
+.container h3 {
+    position: relative;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
 
-
-.Links {
+.links {
     display: flex;
     justify-content: left;
 }
-
-.Links a {
+.links a {
     text-decoration: none;
     text-indent: 2em;
     margin-top: 10px;
 }
 
-
-
-.QuickLinks h3:before {
+.quickLinks h3:before {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -63,25 +57,25 @@
     height: 2px;
     background: #f00;
 }
-.QuickLinks {
+.quickLinks {
     position: relative;
     width: 25%;
 }
-
-.QuickLinks   a{
+.quickLinks   a{
     text-decoration: none;
     margin-bottom: 10px;
     display: flex;
     list-style: none;
 }
-.QuickLinks  a:hover{
+.quickLinks  a:hover{
     color: #fff;
 
 }
-.Contact{
+
+.contact{
     width: 25%;
 }
-.Contact h3:before {
+.contact h3:before {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -90,68 +84,74 @@
     height: 2px;
     background: #f00;
 }
-.Contact  a{
+.contact  a{
     text-decoration: none;
     margin-bottom: 10px;
     display: flex;
     list-style: none;
 }
 
-.Footer  a:hover{
+.footer  a:hover{
     color: #bf1650;
 }
-.CopyrightText{
+
+.copyrightText{
     text-align: center;
     margin-top: 10px;
 }
+
 @media all and (max-width: 1300px) {
-    .Footer {
+    .footer {
         padding: 0;
-       font-size: 16px;
+        font-size: 16px;
     }
-    .Footer h3 {
+
+    .footer h3 {
         margin-top: 20px;
-     }
-    .AboutUs  {
+    }
+
+    .aboutUs  {
         font-size: 14px;
     }
 }
 
 @media all and (max-width: 1000px) {
-    
-    .Footer {
+    .footer {
         padding: 0;
-       font-size: 16px;
+        font-size: 16px;
     }
-    .Container h3 {
+
+    .container h3 {
         font-size: 18px;
     }
-    .AboutUs  {
+
+    .aboutUs  {
         font-size: 12px;
     }
 }
+
 @media all and (max-width: 800px) {
-    .Footer {
-       font-size: 13px;
+    .footer {
+        font-size: 13px;
     }
-    .Container h3 {
+
+    .container h3 {
         font-size: 16px;
     }
-    .Contact {
+    .contact {
         font-size: 12px;
     }
-    .AboutUs  {
+
+    .aboutUs  {
         font-size: 10px;
     }
 }
+
 @media all and (max-width: 600px) {
-    .Footer {
-       font-size: 12px;
+    .footer {
+        font-size: 12px;
     }
-    .Container h3 {
-        font-size: 16px;
-    }
-    .Footer h3:before {
+    .footer h3:before {
         content: '';
         position: absolute;
         bottom: -5px;
@@ -160,24 +160,28 @@
         height: 2px;
         background: #f00;
     }
-    .Contact {
+
+    .container h3 {
+        font-size: 16px;
+    }
+
+    .contact {
         font-size: 9px;
     }
-    .Contact span{
+    .contact span{
         margin-top: 6px;
     }
-    .AboutUs  {
+
+    .aboutUs  {
         font-size: 8px;
     }
 }
+
 @media all and (max-width: 500px) {
-    .Footer {
-       font-size: 10px;
+    .footer {
+        font-size: 10px;
     }
-    .Container h3 {
-        font-size: 14px;
-    }
-    .Footer h3:before {
+    .footer h3:before {
         content: '';
         position: absolute;
         bottom: -5px;
@@ -186,25 +190,29 @@
         height: 2px;
         background: #f00;
     }
-    .Links a {
+
+    .container h3 {
+        font-size: 14px;
+    }
+
+    .links a {
         text-indent: 1em;
     }
-    .Contact {
+
+    .contact {
         font-size: 7px;
     }
-    .AboutUs  {
+
+    .aboutUs  {
         font-size: 7px;
     }
 }
 
 @media all and (max-width: 400px) {
-    .Footer {
-       font-size: 7px;
+    .footer {
+        font-size: 7px;
     }
-    .Container h3 {
-        font-size: 10px;
-    }
-    .Footer h3:before {
+    .footer h3:before {
         content: '';
         position: absolute;
         bottom: -5px;
@@ -213,14 +221,20 @@
         height: 2px;
         background: #f00;
     }
-    .Links a {
+
+    .container h3 {
+        font-size: 10px;
+    }
+
+    .links a {
         text-indent: 0.5em;
     }
     
-    .Contact {
+    .contact {
         font-size: 6px;
     }
-    .AboutUs  {
+    
+    .aboutUs  {
         font-size: 5px;
     }
 }

@@ -5,11 +5,9 @@
     justify-content: center;
     margin: 0px 200px;
 }
-
 .componentSale .price {
     margin-bottom: 15px;
 }
-
 
 .product{
     display: flex;
@@ -24,16 +22,17 @@
     height: 350px;
     transition: all 0.5s;
     min-height: 350px;
-   
 }
 .component img:hover {
     transform: scale(1.05);
 }
+
 .image{
     overflow: hidden;
     width: 285px;
     height: 350px;
 }
+
 .component {
     width: 285px;
     height: 350px;
@@ -41,16 +40,18 @@
     justify-content: center;
     align-items: center;
 }
+
 .productId{
-      display: flex;
+    display: flex;
     justify-content: center;
     text-align: center;
     margin: 20px 3px 20px;
     font-family: 'Montserrat', sans-serif;
-     font-size: 19px;
-     font-weight: 540;
-     height: 50px;
+    font-size: 19px;
+    font-weight: 540;
+    height: 50px;
 }
+
 .size{
     display: flex;
     justify-content: center;
@@ -64,7 +65,8 @@
 .size button:hover {
     color: #bf1650;
     background-color: #eaeaead2;
-  }
+}
+
 .price{
     display: flex;
     justify-content: center;
@@ -85,16 +87,15 @@
     text-decoration: line-through;
 }
 
-
-
 .favorites{
     justify-content: center;
     align-items: center;
     width: 30px;
     height: 30px;
     display: flex;
-     margin: -430px 240px 400px;
+    margin: -430px 240px 400px;
 }
+
 .favorite{
     z-index: 1;
     justify-content: center;
@@ -103,16 +104,14 @@
     width: 30px;
     height: 30px;
     border-radius:15px;
-    background-color: white;
-    
+    background-color: white; 
 }
 .favorite:active{
     color: red;
     transition: 0s;
     z-index: 1;
 }
-.favorite:hover{
-    
+.favorite:hover{  
     color: red;
     transition: 0s;
     z-index: 1;
@@ -123,9 +122,6 @@
     justify-content: center;
     width: 100%;
 }
-
-
-
 .addToCart span button{
     display: flex;
     justify-content: center;
@@ -139,11 +135,10 @@
     transform-style: preserve-3d;
     transform: translateZ(-25px);
     transition: transform .25s;
-    font-family: 'Montserrat', sans-serif;
-    
-  }
-  .addToCart span button:before,
-  .addToCart span button:after{
+    font-family: 'Montserrat', sans-serif;  
+}
+.addToCart span button:before,
+.addToCart span button:after{
     content: "Add to Cart";
     height: 108%;
     width: 104%;
@@ -153,22 +148,19 @@
     border: 3px solid black;
     box-sizing: border-box;
     border-radius: 5px;
-  }
-  .addToCart span button:before{
+}
+.addToCart span button:before{
     color: #fff;
     background: #000;
     transform: rotateY(0deg) translateZ(25px);
-  }
-  .addToCart span button:after{
+}
+.addToCart span button:after{
     color: #000;
     transform: rotateX(90deg) translateZ(25px);
-  }
-  .addToCart span button:hover{
-      
+}
+.addToCart span button:hover{    
     transform: translateZ(-25px) rotateX(-90deg);
-  }
-  
-
+}
 
 @media all and (max-width: 1600px) {
     .componentSale {
@@ -177,72 +169,75 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .product{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 }
+
 @media all and (max-width: 600px) {
     .addToCart span button{
         font-size: 16px;
-      }
-      .productId{
+    }
+
+    .productId{
         margin: 20px 3px 8px;
-  }
-  .price{
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-.favorites{
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    display: flex;
-     margin: -418px 240px 400px;
+    }
+
+    .price{
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .favorites{
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        margin: -418px 240px 400px;
+    }
+
+    .componentSale .price {
+        margin-bottom: 13px;
+    }       
 }
 
-.componentSale .price {
-    margin-bottom: 13px;
-}
-
-      
-  }
-  @media all and (max-width: 500px){
+@media all and (max-width: 500px){
     .componentSale {
         letter-spacing: 1px;
         display: flex;
         flex-wrap: wrap;
-
         margin: 0px auto;
     } 
+
     .product{
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         margin: 0px auto;
     }
+
     .component img {
         border-radius: 3px;
         width: 285px;
         height: 350px;
-       
     }
+
     .productId{
         margin: 20px 3px 8px;
-  }
-  .price{
-    margin-top: 8px;
-    margin-bottom: 2px;
+    }
+
+    .price{
+        margin-top: 8px;
+        margin-bottom: 2px;
+    }
 }
 
-}
-  
-  @media all and (max-width: 400px) {  
+@media all and (max-width: 400px) {  
     .addToCart span button{
         font-size: 15px;
-      }
     }
-  
-  
+}

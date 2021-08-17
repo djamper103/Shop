@@ -31,7 +31,6 @@ function App() {
 
 
     useEffect(() => {
-
         if (cart.length > 0) {
             const res = cart.reduce((prev, product) => {
                 return prev + parseInt(product.priceCount)
@@ -43,11 +42,9 @@ function App() {
     }, [cart])
 
     const addToCart = (product) => {
-
         const check = cart.every(item => {
             return item.id !== product.id
         })
-
         if (check) {
             setCart([...cart, { ...product }])
         } else {
@@ -56,7 +53,6 @@ function App() {
     }
 
     const addFavorites = (product) => {
-
         const check = favorites.every(item => {
             return item.id !== product.id
         })
@@ -118,7 +114,7 @@ function App() {
                         removeFromFavorites={removeFromFavorites}  
                     />} />
 
-                    <Route exact path="/Product/:id" render={() =><Product state={state} addToCart={addToCart} addFavorites={addFavorites}
+                    <Route exact path='/Product/:id' render={() =><Product state={state} addToCart={addToCart} addFavorites={addFavorites}
                         removeFromFavorites={removeFromFavorites}
                     />} />
 

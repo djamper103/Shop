@@ -1,13 +1,12 @@
-.Maincontent{
-    grid-area: maincontent;
-    background-color: white;
-    display:grid;
-    grid-template-areas:
-            'header'
-            'sale'
-            'main';
-    grid-template-rows: 0.1fr 0.1fr auto;
-  background-color:  white;
-  
+.maincontent{
+  grid-area: maincontent;
+  background-color: white;
+  display:grid;
+  grid-template-areas:
+    'header'
+    'sale'
+    'main';
+  grid-template-rows: 0.1fr 0.1fr auto;
+  background-color:  white; 
 }
 

@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react"
 import CircleLoader from "react-spinners/ClipLoader";
 
 
-
 const LoadingScreen = () => {
 
     let [loading, setLoading] = useState(false)
-
 
     useEffect(() => {
         setLoading(true)
@@ -20,7 +18,6 @@ const LoadingScreen = () => {
                     : null
             }
         </div>
-
     )
 }
 export default LoadingScreen;

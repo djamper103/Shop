@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import style from './ManMain.module.css'
-import axios from 'axios'
+import React, { useEffect, useState } from "react"
+import style from "./ManMain.module.css"
+import axios from "axios"
 import Mapping from "../Mapping/Mapping"
 import ItemFilter from "../Mapping/itemFilter"
 
@@ -31,10 +31,10 @@ const ManMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
 
     useEffect(() => {
         if (currentPage > 1) {
-            document.addEventListener('scroll', scrollHandler)
+            document.addEventListener("scroll", scrollHandler)
 
             return function () {
-                document.removeEventListener('scroll', scrollHandler)
+                document.removeEventListener("scroll", scrollHandler)
             }
         }
     }, [currentPage])
@@ -52,10 +52,12 @@ const ManMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
 
     return (
 
-        <div className={style.Content}>
+        <div className={style.content}>
+
             <div className={style.upImage}>
                 <img src="https://static.staff-clothes.com/uploads/media/default/0001/89/610dad00ed074fab8bdce984fd3821c6.jpeg" />
             </div>
+
             <div className={style.select} >
 
                 <select name="select" onChange={event => { setTypeItem(event.target.value) }}>
@@ -67,20 +69,25 @@ const ManMain = ({ addToCart, addFavorites, removeFromFavorites, }) => {
                     <option value="shorts">Shorts</option>
                     <option value="shoes" >Shoes</option>
                 </select>
+
                 <select name="select" onChange={event => { setPriceItem(event.target.value) }}>
                     <option defaultValue="all" >All</option>
                     <option value="mostPrise" >Most Prise</option>
                     <option value="lowPrise">Low Prise</option>
                 </select>
+
                 <div>
-                        <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, '')) }} />
-                    </div>   
+                    <input placeholder="Search..." onChange={event => { setSearchItem(event.target.value.replace(/\s+/g, "")) }} />
+                </div>   
 
             </div>
+
             <div className={style.maincontent}>
                 <Mapping addToCart={addToCart} addFavorites={addFavorites} removeFromFavorites={removeFromFavorites} productItem={productItem} sale={false} />
             </div>
+            
         </div>
     )
 }
+
 export default ManMain;

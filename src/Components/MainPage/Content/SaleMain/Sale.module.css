@@ -4,6 +4,7 @@
     grid-template-areas: 'header'  'maincontent';
     grid-template-rows:auto auto;
 }
+
 .header {
     grid-area: header;
     display: flex;
@@ -13,7 +14,8 @@
     font-size: 34px;
     margin-bottom: 70px;
 }
-.Content {
+
+.content {
     grid-area: maincontent;
 } 
 @media all and (max-width: 800px) {

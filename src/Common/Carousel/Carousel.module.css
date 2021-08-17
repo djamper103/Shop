@@ -15,19 +15,45 @@
     box-sizing: border-box;
     border-style: none;
     margin-top: 80px;
+    height: 600px;
 }
+
+@media all and (max-width: 1500px) {
+    .transition img{
+        height: 500px;
+    }
+}
+
+@media all and (max-width: 1300px) {
+    .transition img{
+        height: 400px;
+    }
+}
+
 @media all and (max-width: 1000px) {
     .transition img{
         margin-top: 70px;
+        height: 300px;
     }
 }
+
 @media all and (max-width: 800px) {
     .transition img{
         margin-top: 60px;
+        height: 250px;
     }
 }
+
 @media all and (max-width: 500px) {
     .transition img{
         margin-top: 50px;
+        height: 200px;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .transition img{
+        margin-top: 50px;
+        height: 150px;
     }
 }
