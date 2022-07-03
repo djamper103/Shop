@@ -1,61 +1,85 @@
-import style from "./Header.module.css"
+import style from "./Header.module.css";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import {FaShoppingCart,BsHeart,BsList,IoCloseOutline} from "react-icons/all";
+import { FaShoppingCart } from "react-icons/fa";
+import { BsHeart, BsList } from "react-icons/bs";
+import { IoCloseOutline } from "react-icons/io5";
 
-
+// eslint-disable-next-line react/prop-types
 const Header = ({ cart, loadingg, priceCount }) => {
+  const [activeMenu, setActiveMenu] = useState(false);
 
-    const [activeMenu,setActiveMenu]=useState(false)
+  return (
+    <div className={style.header}>
+      <div className={style.logo}>
+        <NavLink to={"/Shop"}> Logo</NavLink>
+      </div>
 
-    return (
-        <div className={style.header}>
+      <div className={style.headerMain}>
+        <NavLink to="/Shop">Home</NavLink>
+        <NavLink to="/Man">Man</NavLink>
+        <NavLink to="/Woman">Woman</NavLink>
+        <NavLink to="/Shoes">Shoes</NavLink>
+      </div>
 
-            <div className={style.logo}>
-                <NavLink to={"/Shop"}> Logo</NavLink>
-            </div>
+      <div className={style.menu}>
+        <button onClick={() => setActiveMenu(!activeMenu)}>
+          {activeMenu ? <IoCloseOutline size="35px" /> : <BsList size="35px" />}
+        </button>
 
-            <div className={style.headerMain}>
-                <NavLink to="/Shop">Home</NavLink>
-                <NavLink to="/Man">Man</NavLink>
-                <NavLink to="/Woman">Woman</NavLink>
-                <NavLink to="/Shoes">Shoes</NavLink>
-            </div>
-            
-            <div className={style.menu}>
-                <button onClick={()=>setActiveMenu(!activeMenu)}>
-                    {activeMenu?<IoCloseOutline size = "35px"/>:<BsList size = "35px"/>}
-                </button>
+        <ul
+          className={activeMenu ? style.menu1 : style.menu2}
+          onClick={() => setActiveMenu(false)}
+        >
+          <li>
+            <NavLink to="/Shop">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Man">Man</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Woman">Woman</NavLink>
+          </li>
+          <li>
+            <NavLink to="/Shoes">Shoes</NavLink>
+          </li>
+        </ul>
+      </div>
 
-                <ul className={activeMenu?style.menu1:style.menu2} onClick={()=>setActiveMenu(false)} >
-                    <li><NavLink to="/Shop">Home</NavLink></li>
-                    <li><NavLink to="/Man">Man</NavLink></li>
-                    <li><NavLink to="/Woman">Woman</NavLink></li>
-                    <li><NavLink to="/Shoes">Shoes</NavLink></li>
-                </ul>
+      <div className={style.login}>
+        <NavLink to={"/Cart"} className={style.cart}>
+          <FaShoppingCart />
+          <div className={style.cartLength}>
+            {loadingg ? (cart > 0 ? cart : "0") : "0"}{" "}
+          </div>
+        </NavLink>
 
-            </div>
+        <NavLink to={"/Cart"} className={style.cart}>
+          <div className={style.price}>
+            Price:{" "}
+            {loadingg
+              ? priceCount
+                ? priceCount > 0
+                  ? priceCount
+                  : "0"
+                : "0"
+              : "0"}
+          </div>
+        </NavLink>
 
-            <div className={style.login}>
+        <NavLink to={"/Favorites"}>
+          {" "}
+          <BsHeart />
+        </NavLink>
 
-                <NavLink to={"/Cart"} className={style.cart}>
-                    <FaShoppingCart /><div className={style.cartLength}>{loadingg ? cart > 0 ? cart : "0":"0" } </div>
-                </NavLink>
-                    
-                <NavLink to={"/Cart"} className={style.cart}>
-                    <div className={style.price}>Price: {loadingg ?priceCount ? priceCount > 0 ? priceCount: "0"  : "0" : "0"}</div>
-                </NavLink>
-
-                <NavLink to={"/Favorites"}> <BsHeart/></NavLink>
-
-                {
-                    loadingg ?  <NavLink to={"/Dashboard"}>Logout</NavLink>:<NavLink to={"/Login"}>Login</NavLink> 
-                }  
-
-            </div>
-
-        </div>
-    )
-}
+        {loadingg ? (
+          <NavLink to={"/Dashboard"}>Logout</NavLink>
+        ) : (
+          <NavLink to={"/Login"}>Login</NavLink>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default Header;

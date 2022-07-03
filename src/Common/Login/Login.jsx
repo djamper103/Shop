@@ -1,68 +1,64 @@
-import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+/* eslint-disable react/prop-types */
+import React, { useRef, useState } from "react";
+import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "./AuthContext";
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom";
 
+export default function Login({ cart, setLoadingg }) {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const history = useHistory();
 
-export default function Login({cart,setLoadingg}) {
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const { login } = useAuth()
-    const [error, setError] = useState("")
-    const [loading, setLoading] = useState(false)
-    const history = useHistory()
-  
-    async function handleSubmit(e) {
-      e.preventDefault()
-      try {
-        setError("")
-        setLoading(true)
-        await login(emailRef.current.value, passwordRef.current.value)
-        setLoadingg(true)
-        cart>0?history.push("/Cart"):history.push("/Shop")
-      } catch {
-        setError("Failed to log in")
-      }
-  
-      setLoading(false)
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      setLoadingg(true);
+      cart > 0 ? history.push("/Cart") : history.push("/Shop");
+    } catch {
+      setError("Failed to log in");
     }
-  
-    return (
-      <>
-        <Card>
-          <Card.Body>
 
-            <h2 className="text-center mb-4">Log In</h2>
+    setLoading(false);
+  }
 
-            {error && <Alert variant="danger">{error}</Alert>}
+  return (
+    <>
+      <Card>
+        <Card.Body>
+          <h2 className="text-center mb-4">Log In</h2>
 
-            <Form onSubmit={handleSubmit}>
+          {error && <Alert variant="danger">{error}</Alert>}
 
-              <Form.Group id="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control type="email" ref={emailRef} required />
-              </Form.Group>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group id="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" ref={emailRef} required />
+            </Form.Group>
 
-              <Form.Group id="password">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" ref={passwordRef} required />
-              </Form.Group>
-              
-              <Button disabled={loading} className="w-100" type="submit">
-                Log In
-              </Button>
+            <Form.Group id="password">
+              <Form.Label>Password</Form.Label>
+              <Form.Control type="password" ref={passwordRef} required />
+            </Form.Group>
 
-            </Form>
-            <div className="w-100 text-center mt-3">
-              <Link to="/forgot-password">Forgot Password?</Link>
-            </div>
+            <Button disabled={loading} className="w-100" type="submit">
+              Log In
+            </Button>
+          </Form>
+          <div className="w-100 text-center mt-3">
+            <Link to="/forgot-password">Forgot Password?</Link>
+          </div>
+        </Card.Body>
+      </Card>
 
-          </Card.Body>
-        </Card>
-
-        <div className="w-100 text-center mt-2">
-          Need an account? <Link to="/signup">Sign Up</Link>
-        </div>
-      </>
-    )
+      <div className="w-100 text-center mt-2">
+        Need an account? <Link to="/signup">Sign Up</Link>
+      </div>
+    </>
+  );
 }
